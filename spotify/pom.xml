@@ -32,6 +32,7 @@
   	
   	<module>AdquisicionProductos</module>
   	<module>EliminacionDeUsuarios</module>
+  	<module>EnvioDeMensajes</module>
   </modules>
   <description>iter 7</description>
 </project>
