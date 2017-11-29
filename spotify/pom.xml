@@ -30,6 +30,7 @@
   	<module>IntroducirAlbum-Cancion</module>
   	<module>CreacionDeUsers</module>
   	
+  	<module>AdquisicionProductos</module>
   </modules>
-  <description>iter 7</description>
+  <description>iter 6</description>
 </project>
