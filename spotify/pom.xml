@@ -27,5 +27,6 @@
   	<module>modificarPrecioYMetadatos</module>
   	<module>EliminarCancionesYAlbumes</module>
   	<module>BuscarCanciones</module>
+  	<module>IntroducirAlbum-Cancion</module>
   </modules>
 </project>
