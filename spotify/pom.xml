@@ -31,6 +31,7 @@
   	<module>CreacionDeUsers</module>
   	
   	<module>AdquisicionProductos</module>
+  	<module>EliminacionDeUsuarios</module>
   </modules>
-  <description>iter 6</description>
+  <description>iter 7</description>
 </project>
