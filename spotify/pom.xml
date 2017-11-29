@@ -28,5 +28,6 @@
   	<module>EliminarCancionesYAlbumes</module>
   	<module>BuscarCanciones</module>
   	<module>IntroducirAlbum-Cancion</module>
+  	<module>CreacionDeUsers</module>
   </modules>
 </project>
