@@ -29,5 +29,7 @@
   	<module>BuscarCanciones</module>
   	<module>IntroducirAlbum-Cancion</module>
   	<module>CreacionDeUsers</module>
+  	<module>AdquisicionProductos</module>
   </modules>
+  <description>iter 7</description>
 </project>
