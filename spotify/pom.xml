@@ -26,5 +26,6 @@
   	<module>CreacionDeUsers</module>
   	<module>modificarPrecioYMetadatos</module>
   	<module>EliminarCancionesYAlbumes</module>
+  	<module>BuscarCanciones</module>
   </modules>
 </project>
