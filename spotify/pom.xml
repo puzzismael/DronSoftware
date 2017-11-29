@@ -24,5 +24,6 @@
   </dependencies>
   <modules>
   	<module>CreacionDeUsers</module>
+  	<module>modificarPrecioYMetadatos</module>
   </modules>
 </project>
