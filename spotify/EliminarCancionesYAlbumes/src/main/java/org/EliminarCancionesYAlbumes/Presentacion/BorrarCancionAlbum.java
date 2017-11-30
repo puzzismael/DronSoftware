@@ -2,7 +2,7 @@ package org.EliminarCancionesYAlbumes.Presentacion;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import  org.EliminarCancionesYAlbumes.Dominio.Usuario;
+import  org.EliminarCancionesYAlbumes.Dominio.usuario;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -36,16 +36,16 @@ import java.awt.Color;
 
 public class BorrarCancionAlbum extends JFrame {
 	
-	private ArrayList<Usuario> usuarios;
+	private ArrayList<usuario> usuarios;
 	private JPanel contentPane;
 	private JTextField textN;
 	private JTextField textNombre;
 	private JTextField textApellidos;
 	private JScrollPane scrollPane;
-	private JList<Usuario> list;
+	private JList<usuario> list;
 
 
-	public BorrarCancionAlbum(ArrayList<Usuario> usuarios) {
+	public BorrarCancionAlbum(ArrayList<usuario> usuarios) {
 		this.usuarios=usuarios;
 		setResizable(false);
 		setTitle(Messages.getString("BorrarPaciente.0")); //$NON-NLS-1$
@@ -106,7 +106,7 @@ public class BorrarCancionAlbum extends JFrame {
 		scrollPane.setPreferredSize(new Dimension(150, 2));
 		contentPane.add(scrollPane, BorderLayout.WEST);
 		
-		list = new JList<Usuario>();
+		list = new JList<usuario>();
 		list.addListSelectionListener(new ListListSelectionListener());
 		scrollPane.setViewportView(list);
 		list.setFont(new Font(Messages.getString("BorrarPaciente.10"), Font.BOLD, 11)); //$NON-NLS-1$

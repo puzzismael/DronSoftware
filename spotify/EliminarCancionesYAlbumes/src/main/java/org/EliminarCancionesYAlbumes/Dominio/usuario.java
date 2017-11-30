@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
 
 //import presentacion.FramePrincipal;
 
-public class Usuario {
+public class usuario {
 	private String dni,cp, nombre, apellidos,nacionalidad,direccion,municipio,alergias,medicacion, id;
 	private String sexo,historia,historial,pruebas;
 	//private ImageIcon image=new ImageIcon(FramePrincipal.class.getResource("/resources/paciente.png")); 
@@ -21,7 +21,7 @@ public class Usuario {
 	private String fechacimiento;
 	
 	
-	public Usuario(String id,String nombre, String apellidos, String nacionalidad, String direccion, String municipio, String cp,
+	public usuario(String id,String nombre, String apellidos, String nacionalidad, String direccion, String municipio, String cp,
 			String alergias, String medicacion,String dni,String edad,  String historia, String sexo,String historial, String pruebas) {
 		super();
 		this.nombre = nombre;
@@ -44,7 +44,7 @@ public class Usuario {
 	
 
 
-	public Usuario(String id,String nombre, String apellidos, String nacionalidad, String direccion, String municipio, String cp,
+	public usuario(String id,String nombre, String apellidos, String nacionalidad, String direccion, String municipio, String cp,
 			String dni,String edad, String sexo) {
 		super();
 		this.nombre = nombre;
