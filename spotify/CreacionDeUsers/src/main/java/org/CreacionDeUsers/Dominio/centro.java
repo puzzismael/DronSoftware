@@ -6,14 +6,14 @@ import java.io.FileWriter;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Centro {
+public class centro {
 Stack <usuario> usuarios ;
 	
-	public Centro(Stack <usuario> usuarios)
+	public centro(Stack <usuario> usuarios)
 	{
 		this.usuarios=usuarios;
 	}
-	public Centro()
+	public centro()
 	{
 		
 	}

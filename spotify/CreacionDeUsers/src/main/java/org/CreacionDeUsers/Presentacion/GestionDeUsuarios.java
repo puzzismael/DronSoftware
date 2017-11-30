@@ -24,11 +24,11 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import com.toedter.calendar.JMonthChooser;
-import com.mysql.jdbc.Messages;
+
 import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JYearChooser;
 
-import org.CreacionDeUsers.Dominio.Centro;
+import org.CreacionDeUsers.Dominio.centro;
 import org.CreacionDeUsers.Dominio.usuario;
 
 import javax.swing.UIManager;
@@ -90,7 +90,7 @@ public class GestionDeUsuarios extends JDialog {
 	private JToolBar toolBar;
 	private JLabel lblNewLabel;
 	private static GestionDeUsuarios dialog;
-	private Centro centro;
+	private centro centro;
 	private Stack <usuario> user; 
 	private DefaultListModel modeloLista;
 	private JButton btnAñadir;
@@ -164,13 +164,13 @@ public class GestionDeUsuarios extends JDialog {
 					list.setModel(modeloLista);
 					//Añadimos dos elementos de prueba a la lista
 			
-					centro=new Centro();
+					centro=new centro();
 					user=centro.Leer_fichero();
 					System.out.println(user.size());
 					for(int i=0;i<user.size();i++)
 					modeloLista.addElement(user.elementAt(i).getDNI());
 					
-					list.setCellRenderer(new IdentificadorUsuario());
+					list.setCellRenderer(new identificadorUsuario());
 					scrollPane.setColumnHeaderView(list);
 				}
 			}

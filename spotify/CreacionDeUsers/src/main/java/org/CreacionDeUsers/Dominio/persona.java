@@ -1,13 +1,13 @@
 package org.CreacionDeUsers.Dominio;
 
-public class Persona {
+public class persona {
 	
 	protected String nombre;
 	protected String PrApellido;
 	protected String SegApellido;
 	protected String DNI;
 	
-	public Persona(String nombre, String PrApellido, String segApellido, String DNI) {
+	public persona(String nombre, String PrApellido, String segApellido, String DNI) {
 		this.nombre=nombre;
 		this.PrApellido=PrApellido;
 		this.SegApellido=segApellido;

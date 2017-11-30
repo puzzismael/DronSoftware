@@ -10,8 +10,8 @@ import javax.swing.JList;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 
-public class IdentificadorUsuario  extends DefaultListCellRenderer  {
-	public IdentificadorUsuario() {
+public class identificadorUsuario  extends DefaultListCellRenderer  {
+	public identificadorUsuario() {
 	}
 	protected DefaultListCellRenderer defaultRenderer = new DefaultListCellRenderer();
 
