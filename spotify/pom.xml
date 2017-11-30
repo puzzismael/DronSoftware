@@ -34,6 +34,7 @@
   	<module>CreacionYLoginDeUsers</module>
   	<module>AdquisicionCancionPago</module>
   	<module>reproducirCancionAlbum</module>
+  	<module>modificarBorrarListaCancion</module>
   </modules>
   <groupId>ISO2</groupId>
 </project>
