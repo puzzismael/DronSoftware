@@ -1,10 +1,12 @@
-package Dominio;
+
+package org.CreacionYLoginDeUsers.Dominio;
+
 
 public class Consulta {
-	private Usuario user;
+	private usuario user;
 	private String horaCita, motivo,dia;
 	
-	public Consulta(Usuario user,String dia, String horaCita, String motivo) {
+	public Consulta(usuario user,String dia, String horaCita, String motivo) {
 		this.user = user;
 		this.horaCita = horaCita;
 		this.motivo = motivo;
@@ -19,10 +21,10 @@ public class Consulta {
 		this.dia = dia;
 	}
 
-	public Usuario getUsuario() {
+	public usuario getUsuario() {
 		return user;
 	}
-	public void setPaciente(Usuario user) {
+	public void setPaciente(usuario user) {
 		this.user = user;
 	}
 	public String getHoraCita() {

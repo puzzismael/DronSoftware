@@ -1,4 +1,4 @@
-package Dominio;
+package org.CreacionYLoginDeUsers.Dominio;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -11,8 +11,8 @@ import javax.swing.ImageIcon;
 
 //import presentacion.FramePrincipal;
 
-public class Usuario {
-	private String dni,cp, nombre, apellidos,nacionalidad,direccion,municipio,alergias,medicación, id;
+public class usuario {
+	private String dni,cp, nombre, apellidos,nacionalidad,direccion,municipio,alergias,medicacion, id;
 	private String sexo,historia,historial,pruebas;
 	//private ImageIcon image=new ImageIcon(FramePrincipal.class.getResource("/resources/paciente.png")); 
 	
@@ -21,8 +21,8 @@ public class Usuario {
 	private String fechacimiento;
 	
 	
-	public Usuario(String id,String nombre, String apellidos, String nacionalidad, String direccion, String municipio, String cp,
-			String alergias, String medicación,String dni,String edad,  String historia, String sexo,String historial, String pruebas) {
+	public usuario(String id,String nombre, String apellidos, String nacionalidad, String direccion, String municipio, String cp,
+			String alergias, String medicacion,String dni,String edad,  String historia, String sexo,String historial, String pruebas) {
 		super();
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -30,7 +30,7 @@ public class Usuario {
 		this.direccion = direccion;
 		this.municipio = municipio;
 		this.alergias = alergias;
-		this.medicación = medicación;
+		this.medicacion = medicacion;
 		this.id = id;
 		this.dni = dni;
 		this.fechacimiento = edad;
@@ -44,7 +44,7 @@ public class Usuario {
 	
 
 
-	public Usuario(String id,String nombre, String apellidos, String nacionalidad, String direccion, String municipio, String cp,
+	public usuario(String id,String nombre, String apellidos, String nacionalidad, String direccion, String municipio, String cp,
 			String dni,String edad, String sexo) {
 		super();
 		this.nombre = nombre;
@@ -135,12 +135,12 @@ public class Usuario {
 		this.sexo = sexo;
 	}
 
-	public String getMedicación() {
-		return medicación;
+	public String getMedicacion() {
+		return medicacion;
 	}
 
-	public void setMedicación(String medicación) {
-		this.medicación = medicación;
+	public void setMedicacion(String medicacion) {
+		this.medicacion = medicacion;
 	}
 	
 	

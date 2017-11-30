@@ -32,6 +32,7 @@
   	<module>EliminacionDeUsuarios</module>
   	<module>EnvioDeMensajes</module>
   	<module>CreacionYLoginDeUsers</module>
+  	<module>AdquisicionCancionPago</module>
   </modules>
   <groupId>ISO2</groupId>
 </project>
