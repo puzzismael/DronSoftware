@@ -1,4 +1,4 @@
-package org.CreacionDeUsers.Dominio;
+package org.IntroducirAlbum.Dominio;
 
 import java.io.File;
 import java.io.FileNotFoundException;

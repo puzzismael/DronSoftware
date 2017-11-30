@@ -1,4 +1,4 @@
-package Presentacion;
+package org.CreacionDeUsers.Presentacion;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -28,8 +28,8 @@ import com.mysql.jdbc.Messages;
 import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JYearChooser;
 
-import Dominio.Centro;
-import Dominio.usuario;
+import org.CreacionDeUsers.Dominio.Centro;
+import org.CreacionDeUsers.Dominio.usuario;
 
 import javax.swing.UIManager;
 import java.awt.Color;
@@ -71,21 +71,21 @@ public class GestionDeUsuarios extends JDialog {
 	private JLabel lblDNI;
 	private JLabel lblNombre;
 	private static JList list;
-	private JLabel lblContraseña;
+	private JLabel lblContraseÃ±a;
 	private JLabel lblTelefono;
 	private JLabel lblDomicilio;
-	private JLabel lblCorreoEléctronico;
+	private JLabel lblCorreoElectronico;
 	private JLabel lblGenero;
-	private JLabel lblAñoDeNacimiento;
-	private JLabel lblNºCuentaBancaria;
+	private JLabel lblAÃ±oDeNacimiento;
+	private JLabel lblNCuentaBancaria;
 	private JTextField textDNI;
 	private JTextField textNombre;
-	private JTextField textContraseña;
+	private JTextField textContraseÃ±a;
 	private JTextField textTelf;
 	private JTextField textDom;
 	private JTextField textCorreoElectronico;
 	private JTextField textGenero;
-	private JTextField textAñoDeNacimiento;
+	private JTextField textAÃ±oDeNacimiento;
 	private JTextField textCuentaBancaria;
 	private JToolBar toolBar;
 	private JLabel lblNewLabel;
@@ -93,7 +93,7 @@ public class GestionDeUsuarios extends JDialog {
 	private Centro centro;
 	private Stack <usuario> user; 
 	private DefaultListModel modeloLista;
-	private JButton btnAñadir;
+	private JButton btnAÃ±adir;
 	private int opcion;
 	private JButton btnAtras;
 	private JButton btnGuardar;
@@ -182,9 +182,9 @@ public class GestionDeUsuarios extends JDialog {
 				Listado.add(panelBotones, BorderLayout.SOUTH);
 				{
 					{
-						btnAñadir = new JButton("A\u00F1adir "); //$NON-NLS-1$
-						btnAñadir.addActionListener(new BtnAadirActionListener());
-						panelBotones.add(btnAñadir);
+						btnAÃ±adir = new JButton("A\u00F1adir "); //$NON-NLS-1$
+						btnAÃ±adir.addActionListener(new BtnAadirActionListener());
+						panelBotones.add(btnAÃ±adir);
 					}
 				}
 			}
@@ -306,25 +306,25 @@ public class GestionDeUsuarios extends JDialog {
 				textApellidos.setColumns(10);
 			}
 			{
-				lblContraseña = new JLabel("Contrase\u00F1a"); //$NON-NLS-1$
-				GridBagConstraints gbc_lblContraseña = new GridBagConstraints();
-				gbc_lblContraseña.anchor = GridBagConstraints.WEST;
-				gbc_lblContraseña.insets = new Insets(0, 0, 5, 5);
-				gbc_lblContraseña.gridx = 2;
-				gbc_lblContraseña.gridy = 4;
-				panel_3.add(lblContraseña, gbc_lblContraseña);
+				lblContraseÃ±a = new JLabel("Contrase\u00F1a"); //$NON-NLS-1$
+				GridBagConstraints gbc_lblContraseÃ±a = new GridBagConstraints();
+				gbc_lblContraseÃ±a.anchor = GridBagConstraints.WEST;
+				gbc_lblContraseÃ±a.insets = new Insets(0, 0, 5, 5);
+				gbc_lblContraseÃ±a.gridx = 2;
+				gbc_lblContraseÃ±a.gridy = 4;
+				panel_3.add(lblContraseÃ±a, gbc_lblContraseÃ±a);
 			}
 			{
-				textContraseña = new JTextField();
-				textContraseña.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-				textContraseña.setEditable(false);
-				GridBagConstraints gbc_textContraseña = new GridBagConstraints();
-				gbc_textContraseña.insets = new Insets(0, 0, 5, 0);
-				gbc_textContraseña.fill = GridBagConstraints.HORIZONTAL;
-				gbc_textContraseña.gridx = 3;
-				gbc_textContraseña.gridy = 4;
-				panel_3.add(textContraseña, gbc_textContraseña);
-				textContraseña.setColumns(10);
+				textContraseÃ±a = new JTextField();
+				textContraseÃ±a.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+				textContraseÃ±a.setEditable(false);
+				GridBagConstraints gbc_textContraseÃ±a = new GridBagConstraints();
+				gbc_textContraseÃ±a.insets = new Insets(0, 0, 5, 0);
+				gbc_textContraseÃ±a.fill = GridBagConstraints.HORIZONTAL;
+				gbc_textContraseÃ±a.gridx = 3;
+				gbc_textContraseÃ±a.gridy = 4;
+				panel_3.add(textContraseÃ±a, gbc_textContraseÃ±a);
+				textContraseÃ±a.setColumns(10);
 			}
 			{
 				lblTelefono = new JLabel("telefono"); //$NON-NLS-1$
@@ -369,13 +369,13 @@ public class GestionDeUsuarios extends JDialog {
 				textDom.setColumns(10);
 			}
 			{
-				lblCorreoEléctronico = new JLabel("Correo electr\u00F3nico"); //$NON-NLS-1$
-				GridBagConstraints gbc_lblCorreoEléctronico = new GridBagConstraints();
-				gbc_lblCorreoEléctronico.anchor = GridBagConstraints.WEST;
-				gbc_lblCorreoEléctronico.insets = new Insets(0, 0, 5, 5);
-				gbc_lblCorreoEléctronico.gridx = 1;
-				gbc_lblCorreoEléctronico.gridy = 8;
-				panel_3.add(lblCorreoEléctronico, gbc_lblCorreoEléctronico);
+				lblCorreoElectronico = new JLabel("Correo electr\u00F3nico"); //$NON-NLS-1$
+				GridBagConstraints gbc_lblCorreoElectronico = new GridBagConstraints();
+				gbc_lblCorreoElectronico.anchor = GridBagConstraints.WEST;
+				gbc_lblCorreoElectronico.insets = new Insets(0, 0, 5, 5);
+				gbc_lblCorreoElectronico.gridx = 1;
+				gbc_lblCorreoElectronico.gridy = 8;
+				panel_3.add(lblCorreoElectronico, gbc_lblCorreoElectronico);
 			}
 			{
 				textCorreoElectronico = new JTextField();
@@ -411,34 +411,34 @@ public class GestionDeUsuarios extends JDialog {
 				textGenero.setColumns(10);
 			}
 			{
-				lblAñoDeNacimiento = new JLabel("A\u00F1o de nacimiento"); //$NON-NLS-1$
-				GridBagConstraints gbc_lblAñoDeNacimiento = new GridBagConstraints();
-				gbc_lblAñoDeNacimiento.anchor = GridBagConstraints.WEST;
-				gbc_lblAñoDeNacimiento.insets = new Insets(0, 0, 5, 5);
-				gbc_lblAñoDeNacimiento.gridx = 1;
-				gbc_lblAñoDeNacimiento.gridy = 10;
-				panel_3.add(lblAñoDeNacimiento, gbc_lblAñoDeNacimiento);
+				lblAÃ±oDeNacimiento = new JLabel("A\u00F1o de nacimiento"); //$NON-NLS-1$
+				GridBagConstraints gbc_lblAÃ±oDeNacimiento = new GridBagConstraints();
+				gbc_lblAÃ±oDeNacimiento.anchor = GridBagConstraints.WEST;
+				gbc_lblAÃ±oDeNacimiento.insets = new Insets(0, 0, 5, 5);
+				gbc_lblAÃ±oDeNacimiento.gridx = 1;
+				gbc_lblAÃ±oDeNacimiento.gridy = 10;
+				panel_3.add(lblAÃ±oDeNacimiento, gbc_lblAÃ±oDeNacimiento);
 			}
 			{
-				textAñoDeNacimiento = new JTextField();
-				textAñoDeNacimiento.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-				textAñoDeNacimiento.setEditable(false);
-				GridBagConstraints gbc_textAñoDeNacimiento = new GridBagConstraints();
-				gbc_textAñoDeNacimiento.insets = new Insets(0, 0, 5, 5);
-				gbc_textAñoDeNacimiento.fill = GridBagConstraints.HORIZONTAL;
-				gbc_textAñoDeNacimiento.gridx = 2;
-				gbc_textAñoDeNacimiento.gridy = 10;
-				panel_3.add(textAñoDeNacimiento, gbc_textAñoDeNacimiento);
-				textAñoDeNacimiento.setColumns(10);
+				textAÃ±oDeNacimiento = new JTextField();
+				textAÃ±oDeNacimiento.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+				textAÃ±oDeNacimiento.setEditable(false);
+				GridBagConstraints gbc_textAÃ±oDeNacimiento = new GridBagConstraints();
+				gbc_textAÃ±oDeNacimiento.insets = new Insets(0, 0, 5, 5);
+				gbc_textAÃ±oDeNacimiento.fill = GridBagConstraints.HORIZONTAL;
+				gbc_textAÃ±oDeNacimiento.gridx = 2;
+				gbc_textAÃ±oDeNacimiento.gridy = 10;
+				panel_3.add(textAÃ±oDeNacimiento, gbc_textAÃ±oDeNacimiento);
+				textAÃ±oDeNacimiento.setColumns(10);
 			}
 			{
-				lblNºCuentaBancaria = new JLabel("N\u00BA Cuenta bancaria"); //$NON-NLS-1$
-				GridBagConstraints gbc_lblNºCuentaBancaria = new GridBagConstraints();
-				gbc_lblNºCuentaBancaria.anchor = GridBagConstraints.WEST;
-				gbc_lblNºCuentaBancaria.insets = new Insets(0, 0, 5, 5);
-				gbc_lblNºCuentaBancaria.gridx = 1;
-				gbc_lblNºCuentaBancaria.gridy = 11;
-				panel_3.add(lblNºCuentaBancaria, gbc_lblNºCuentaBancaria);
+				lblNCuentaBancaria = new JLabel("N\u00BA Cuenta bancaria"); //$NON-NLS-1$
+				GridBagConstraints gbc_lblNCuentaBancaria = new GridBagConstraints();
+				gbc_lblNCuentaBancaria.anchor = GridBagConstraints.WEST;
+				gbc_lblNCuentaBancaria.insets = new Insets(0, 0, 5, 5);
+				gbc_lblNCuentaBancaria.gridx = 1;
+				gbc_lblNCuentaBancaria.gridy = 11;
+				panel_3.add(lblNCuentaBancaria, gbc_lblNCuentaBancaria);
 			}
 			{
 			}
@@ -488,14 +488,14 @@ public class GestionDeUsuarios extends JDialog {
 				{
 					textDNI.setText(user.elementAt(i).getDNI());
 					textNombre.setText(user.elementAt(i).getNombre());
-					textContraseña.setText(user.elementAt(i).getPrApellido());
+					textContraseÃ±a.setText(user.elementAt(i).getPrApellido());
 		
 					textTelf.setText(user.elementAt(i).getTelefono());
 					textDom.setText(user.elementAt(i).getDomicilio());
 					textCorreoElectronico.setText(user.elementAt(i).getAntecFamiliares());
 					
 					textGenero.setText(user.elementAt(i).getVacunas());
-					textAñoDeNacimiento.setText(user.elementAt(i).getTratamiento());
+					textAÃ±oDeNacimiento.setText(user.elementAt(i).getTratamiento());
 					textCuentaBancaria.setText(user.elementAt(i).getOperaciones());
 					
 					
@@ -507,14 +507,14 @@ public class GestionDeUsuarios extends JDialog {
 		public void actionPerformed(ActionEvent e) {
 			textDNI.setEditable(true);
 			textNombre.setEditable(true);
-			textContraseña.setEditable(true);
+			textContraseÃ±a.setEditable(true);
 		
 			textTelf.setEditable(true);
 			textDom.setEditable(true);
 			textCorreoElectronico.setEditable(true);
 			
 			textGenero.setEditable(true);
-			textAñoDeNacimiento.setEditable(true);
+			textAÃ±oDeNacimiento.setEditable(true);
 			textCuentaBancaria.setEditable(true);
 		
 			opcion=1;
@@ -529,14 +529,14 @@ public class GestionDeUsuarios extends JDialog {
 			
 			textDNI.setEditable(false);
 			textNombre.setEditable(false);
-			textContraseña.setEditable(false);
+			textContraseÃ±a.setEditable(false);
 		
 			textTelf.setEditable(false);
 			textDom.setEditable(false);
 			textCorreoElectronico.setEditable(false);
 	
 			textGenero.setEditable(false);
-			textAñoDeNacimiento.setEditable(false);
+			textAÃ±oDeNacimiento.setEditable(false);
 			textCuentaBancaria.setEditable(false);
 			
 			btnGuardar.setEnabled(false);
@@ -558,7 +558,7 @@ public class GestionDeUsuarios extends JDialog {
 		{
 			valor=false;	
 		}
-		if(textContraseña.getText().replace(" ","").equals(""))
+		if(textContraseÃ±a.getText().replace(" ","").equals(""))
 		{
 			valor=false;
 		}
@@ -580,7 +580,7 @@ public class GestionDeUsuarios extends JDialog {
 		{
 			valor=false;
 		}
-		if(textAñoDeNacimiento.getText().replace(" ","").equals(""))
+		if(textAÃ±oDeNacimiento.getText().replace(" ","").equals(""))
 		{
 			valor=false;
 		}

@@ -1,8 +1,8 @@
-package Presentacion;
+package org.AdquisicionProductos.Presentacion;
 import java.util.*;
 import javax.swing.table.*;
 class MiModeloTabla extends AbstractTableModel {
-private String[] nombreColumnas = { "ID","Nombre", "Apellidos","Contraseña"};
+private String[] nombreColumnas = { "ID","Nombre", "Apellidos","Contraseï¿½a"};
 private Vector datos = new Vector();
 boolean[] columnEditables = new boolean[] {
 		false,false , false, false,false,false,false,false};

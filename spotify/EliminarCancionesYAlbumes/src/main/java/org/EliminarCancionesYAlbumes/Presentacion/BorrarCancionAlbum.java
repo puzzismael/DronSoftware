@@ -1,7 +1,8 @@
-package Presentacion;
+package org.EliminarCancionesYAlbumes.Presentacion;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import  org.EliminarCancionesYAlbumes.Dominio.Usuario;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -15,8 +16,8 @@ import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import Dominio.Usuario;
-import presentacion.Messages;
+
+//import com.mysql.jdbc.Messages;
 
 import java.awt.SystemColor;
 import java.util.ArrayList;

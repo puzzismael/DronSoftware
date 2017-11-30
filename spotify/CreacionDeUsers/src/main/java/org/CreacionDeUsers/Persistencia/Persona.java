@@ -1,4 +1,4 @@
-package Persistencia;
+package org.CreacionDeUsers.Persistencia;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;

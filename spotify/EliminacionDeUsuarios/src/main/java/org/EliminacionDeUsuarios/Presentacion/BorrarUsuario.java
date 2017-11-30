@@ -1,4 +1,4 @@
-package Presentacion;
+package org.EliminacionDeUsuarios.Presentacion;
 
 import java.awt.BorderLayout;
 import java.awt.Cursor;
@@ -24,7 +24,7 @@ import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import Dominio.Usuario;
+import org.EliminacionDeUsuarios.Dominio.Usuario;
 import javax.swing.UIManager;
 import java.awt.Color;
 

@@ -1,4 +1,4 @@
-package Presentacion;
+package org.AdquisicionProductos.Presentacion;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;

@@ -1,4 +1,4 @@
-package Presentacion;
+package org.BuscarCanciones.Presentacion;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;

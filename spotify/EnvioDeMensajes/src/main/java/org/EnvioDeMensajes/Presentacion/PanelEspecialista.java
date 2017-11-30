@@ -1,4 +1,4 @@
-package Presentacion;
+package org.EnvioDeMensajes.Presentacion;
 
 import javax.swing.JPanel;
 import java.awt.SystemColor;
@@ -42,8 +42,8 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.JTextArea;
 import java.awt.Cursor;
-import Dominio.Especialista;
-import Dominio.Usuario;
+import org.EnvioDeMensajes.Dominio.Especialista;
+import org.EnvioDeMensajes.Dominio.Usuario;
 public class PanelEspecialista extends JPanel {
 	private JLabel lblAdjunto;
 	private String text=Messages.getString("PanelEspecialista.0"); //$NON-NLS-1$
@@ -52,14 +52,14 @@ public class PanelEspecialista extends JPanel {
 	private ArrayList<Especialista> especialistas;
 	private JList<Especialista> list;
 	private JTextField textApellidos;
-	private JTextField textContraseña;
+	private JTextField textContraseÃ±a;
 	private JTextField textId;
 	private JTextField textTlf;
 	private JTextField textDomicilio;
 	private JTextField textEmail;
 	private JTextField textDespacho;
 	private JTextField textGenero;
-	private JTextField textAñoDeNacimiento;
+	private JTextField textAÃ±oDeNacimiento;
 	private JTextField textCuentaBancaria;
 	private JTextField textEspecialidad;
 	private JTextField textTitulacion;
@@ -142,14 +142,14 @@ public class PanelEspecialista extends JPanel {
 		lblApellidos.setBounds(300, 23, 78, 14);
 		panel.add(lblApellidos);
 		
-		textContraseña = new JTextField();
-		textContraseña.setFont(new Font(Messages.getString("PanelEspecialista.13"), Font.PLAIN, 11)); //$NON-NLS-1$
-		textContraseña.setForeground(new Color(0, 0, 0));
-		textContraseña.setBorder(new TitledBorder(null, Messages.getString("PanelEspecialista.14"), TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
-		textContraseña.setBackground(SystemColor.scrollbar);
-		textContraseña.setBounds(56, 52, 68, 20);
-		panel.add(textContraseña);
-		textContraseña.setColumns(10);
+		textContraseÃ±a = new JTextField();
+		textContraseÃ±a.setFont(new Font(Messages.getString("PanelEspecialista.13"), Font.PLAIN, 11)); //$NON-NLS-1$
+		textContraseÃ±a.setForeground(new Color(0, 0, 0));
+		textContraseÃ±a.setBorder(new TitledBorder(null, Messages.getString("PanelEspecialista.14"), TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		textContraseÃ±a.setBackground(SystemColor.scrollbar);
+		textContraseÃ±a.setBounds(56, 52, 68, 20);
+		panel.add(textContraseÃ±a);
+		textContraseÃ±a.setColumns(10);
 		
 		textId = new JTextField();
 		textId.setFont(new Font(Messages.getString("PanelEspecialista.15"), Font.PLAIN, 11)); //$NON-NLS-1$
@@ -167,11 +167,11 @@ public class PanelEspecialista extends JPanel {
 		lblId.setBounds(6, 23, 46, 14);
 		panel.add(lblId);
 		
-		JLabel lblContraseña = new JLabel("Contrase\u00F1a:"); //$NON-NLS-1$
-		lblContraseña.setHorizontalAlignment(SwingConstants.TRAILING);
-		lblContraseña.setFont(new Font(Messages.getString("PanelEspecialista.20"), Font.BOLD, 11)); //$NON-NLS-1$
-		lblContraseña.setBounds(6, 54, 46, 14);
-		panel.add(lblContraseña);
+		JLabel lblContraseÃ±a = new JLabel("Contrase\u00F1a:"); //$NON-NLS-1$
+		lblContraseÃ±a.setHorizontalAlignment(SwingConstants.TRAILING);
+		lblContraseÃ±a.setFont(new Font(Messages.getString("PanelEspecialista.20"), Font.BOLD, 11)); //$NON-NLS-1$
+		lblContraseÃ±a.setBounds(6, 54, 46, 14);
+		panel.add(lblContraseÃ±a);
 		
 		JLabel lblTelefono = new JLabel(Messages.getString("PanelEspecialista.21")); //$NON-NLS-1$
 		lblTelefono.setHorizontalAlignment(SwingConstants.TRAILING);
@@ -231,25 +231,25 @@ public class PanelEspecialista extends JPanel {
 		panel.add(textGenero);
 		textGenero.setColumns(10);
 		
-		JLabel lblAñoDeNacimiento = new JLabel("A\u00F1o de nacimiento:"); //$NON-NLS-1$
-		lblAñoDeNacimiento.setFont(new Font(Messages.getString("PanelEspecialista.38"), Font.BOLD, 11)); //$NON-NLS-1$
-		lblAñoDeNacimiento.setBounds(312, 86, 68, 14);
-		panel.add(lblAñoDeNacimiento);
+		JLabel lblAÃ±oDeNacimiento = new JLabel("A\u00F1o de nacimiento:"); //$NON-NLS-1$
+		lblAÃ±oDeNacimiento.setFont(new Font(Messages.getString("PanelEspecialista.38"), Font.BOLD, 11)); //$NON-NLS-1$
+		lblAÃ±oDeNacimiento.setBounds(312, 86, 68, 14);
+		panel.add(lblAÃ±oDeNacimiento);
 		
-		textAñoDeNacimiento = new JTextField();
-		textAñoDeNacimiento.setFont(new Font(Messages.getString("PanelEspecialista.39"), Font.PLAIN, 11)); //$NON-NLS-1$
-		textAñoDeNacimiento.setForeground(new Color(0, 0, 0));
-		textAñoDeNacimiento.setBorder(new TitledBorder(null, Messages.getString("PanelEspecialista.40"), TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
-		textAñoDeNacimiento.setBackground(SystemColor.scrollbar);
-		textAñoDeNacimiento.setBounds(388, 83, 111, 20);
-		panel.add(textAñoDeNacimiento);
-		textAñoDeNacimiento.setColumns(10);
+		textAÃ±oDeNacimiento = new JTextField();
+		textAÃ±oDeNacimiento.setFont(new Font(Messages.getString("PanelEspecialista.39"), Font.PLAIN, 11)); //$NON-NLS-1$
+		textAÃ±oDeNacimiento.setForeground(new Color(0, 0, 0));
+		textAÃ±oDeNacimiento.setBorder(new TitledBorder(null, Messages.getString("PanelEspecialista.40"), TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		textAÃ±oDeNacimiento.setBackground(SystemColor.scrollbar);
+		textAÃ±oDeNacimiento.setBounds(388, 83, 111, 20);
+		panel.add(textAÃ±oDeNacimiento);
+		textAÃ±oDeNacimiento.setColumns(10);
 		
-		JLabel lblNºCuentaBancaria = new JLabel("N\u00BA de cuenta Bancaria:"); //$NON-NLS-1$
-		lblNºCuentaBancaria.setHorizontalAlignment(SwingConstants.TRAILING);
-		lblNºCuentaBancaria.setFont(new Font(Messages.getString("PanelEspecialista.42"), Font.BOLD, 11)); //$NON-NLS-1$
-		lblNºCuentaBancaria.setBounds(489, 86, 86, 14);
-		panel.add(lblNºCuentaBancaria);
+		JLabel lblNCuentaBancaria = new JLabel("N\u00BA de cuenta Bancaria:"); //$NON-NLS-1$
+		lblNCuentaBancaria.setHorizontalAlignment(SwingConstants.TRAILING);
+		lblNCuentaBancaria.setFont(new Font(Messages.getString("PanelEspecialista.42"), Font.BOLD, 11)); //$NON-NLS-1$
+		lblNCuentaBancaria.setBounds(489, 86, 86, 14);
+		panel.add(lblNCuentaBancaria);
 		
 		textCuentaBancaria = new JTextField();
 		textCuentaBancaria.setFont(new Font(Messages.getString("PanelEspecialista.43"), Font.PLAIN, 11)); //$NON-NLS-1$
@@ -498,12 +498,12 @@ public class PanelEspecialista extends JPanel {
 				textId.setText(Messages.getString("PanelEspecialista.98")); //$NON-NLS-1$
 				textNombre.setText(Messages.getString("PanelEspecialista.99")); //$NON-NLS-1$
 				textApellidos.setText(Messages.getString("PanelEspecialista.100")); //$NON-NLS-1$
-				textContraseña.setText(Messages.getString("PanelEspecialista.101")); //$NON-NLS-1$
+				textContraseÃ±a.setText(Messages.getString("PanelEspecialista.101")); //$NON-NLS-1$
 				textTlf.setText(Messages.getString("PanelEspecialista.102")); //$NON-NLS-1$
 				textDomicilio.setText(Messages.getString("PanelEspecialista.103")); //$NON-NLS-1$
 				textEmail.setText(Messages.getString("PanelEspecialista.104")); //$NON-NLS-1$
 				textGenero.setText(Messages.getString("PanelEspecialista.105")); //$NON-NLS-1$
-				textAñoDeNacimiento.setText(Messages.getString("PanelEspecialista.106")); //$NON-NLS-1$
+				textAÃ±oDeNacimiento.setText(Messages.getString("PanelEspecialista.106")); //$NON-NLS-1$
 				textCuentaBancaria.setText(Messages.getString("PanelEspecialista.107")); //$NON-NLS-1$
 				textEspecialidad.setText(Messages.getString("PanelEspecialista.108")); //$NON-NLS-1$
 				textTitulacion.setText(Messages.getString("PanelEspecialista.109")); //$NON-NLS-1$
@@ -526,12 +526,12 @@ public class PanelEspecialista extends JPanel {
 				textId.setText(especialistas.get(i).getId());
 				textNombre.setText(especialistas.get(i).getNombre());
 				textApellidos.setText(especialistas.get(i).getApellidos());
-				textContraseña.setText(especialistas.get(i).getDni());
+				textContraseÃ±a.setText(especialistas.get(i).getDni());
 				textTlf.setText(especialistas.get(i).getTlf());
 				textDomicilio.setText(especialistas.get(i).getMovil());
 				textEmail.setText(especialistas.get(i).getEmail());
 				textGenero.setText(especialistas.get(i).getDireccion());
-				textAñoDeNacimiento.setText(especialistas.get(i).getLocalidad());
+				textAÃ±oDeNacimiento.setText(especialistas.get(i).getLocalidad());
 				textCuentaBancaria.setText(especialistas.get(i).getProvincia());
 				textEspecialidad.setText(especialistas.get(i).getEspecialidad());
 				textTitulacion.setText(especialistas.get(i).getTitulacion());

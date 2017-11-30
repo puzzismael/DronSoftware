@@ -1,4 +1,4 @@
-package Presentacion;
+package org.modificarPrecioYMetadatos.Presentacion;
 
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;
@@ -26,7 +26,7 @@ public class ModificarProducto extends JPanel {
 	private JTextField textNombre;
 	private JTextField textDireccion;
 	private JTextField textDNI;
-	private JTextField textNºHistoria;
+	private JTextField textNHistoria;
 	private JTextField textFechaNacimiento;
 	private JTextField textGenero;
 	private JTextField textNacionalidad;
@@ -131,18 +131,18 @@ public class ModificarProducto extends JPanel {
 		textDNI.setBounds(113, 159, 172, 20);
 		panel.add(textDNI);
 		
-		JLabel lblNº_Historia = new JLabel("N\u00BA Historia: ");
-		lblNº_Historia.setForeground(Color.BLACK);
-		lblNº_Historia.setFont(new Font("Verdana", Font.BOLD, 11));
-		lblNº_Historia.setBounds(156, 42, 87, 15);
-		panel.add(lblNº_Historia);
+		JLabel lblNHistoria = new JLabel("N\u00BA Historia: ");
+		lblNHistoria.setForeground(Color.BLACK);
+		lblNHistoria.setFont(new Font("Verdana", Font.BOLD, 11));
+		lblNHistoria.setBounds(156, 42, 87, 15);
+		panel.add(lblNHistoria);
 		
-		textNºHistoria = new JTextField();
-		textNºHistoria.setColumns(10);
-		textNºHistoria.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		textNºHistoria.setBackground(SystemColor.activeCaptionBorder);
-		textNºHistoria.setBounds(240, 39, 45, 20);
-		panel.add(textNºHistoria);
+		textNHistoria = new JTextField();
+		textNHistoria.setColumns(10);
+		textNHistoria.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		textNHistoria.setBackground(SystemColor.activeCaptionBorder);
+		textNHistoria.setBounds(240, 39, 45, 20);
+		panel.add(textNHistoria);
 		
 		JLabel lblFechaNacimiento = new JLabel("Fecha Nacimiento :");
 		lblFechaNacimiento.setHorizontalAlignment(SwingConstants.TRAILING);

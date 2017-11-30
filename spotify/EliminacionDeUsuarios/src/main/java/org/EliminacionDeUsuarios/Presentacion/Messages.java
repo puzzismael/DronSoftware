@@ -1,4 +1,4 @@
-package Presentacion;
+package org.EliminacionDeUsuarios.Presentacion;
 
 import java.util.Locale;
 import java.util.MissingResourceException;
@@ -22,7 +22,7 @@ public class Messages {
 	
 	private static Locale getLocale(String appIdioma){
 		Locale locale=new Locale("es");
-		if (appIdioma.equals("inglés"))
+		if (appIdioma.equals("inglï¿½s"))
 			locale = new Locale("en");
 		
 		return locale;

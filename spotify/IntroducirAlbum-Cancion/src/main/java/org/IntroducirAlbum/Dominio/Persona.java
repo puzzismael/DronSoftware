@@ -1,4 +1,4 @@
-package org.CreacionDeUsers.Dominio;
+package org.IntroducirAlbum.Dominio;
 
 public class Persona {
 	

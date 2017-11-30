@@ -1,4 +1,4 @@
-package Dominio;
+package org.AdquisicionProductos.Dominio;
 
 public class Usuario {
 	private String nHistorial;

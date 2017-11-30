@@ -1,4 +1,4 @@
-package Dominio;
+package org.EnvioDeMensajes.Dominio;
 
 public class Especialista {
 	private String id, nombre, apellidos, dni, tlf, movil, email,direccion, localidad, provincia, Especialidad,  titulacion, entra, sale, clinica, dirClinica, tlfClinica, colegiado, expe;

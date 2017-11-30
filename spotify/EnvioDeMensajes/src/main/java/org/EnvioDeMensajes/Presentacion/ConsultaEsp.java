@@ -1,4 +1,4 @@
-package Presentacion;
+package org.EnvioDeMensajes.Presentacion;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -12,7 +12,7 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.border.TitledBorder;
 
-import Dominio.Especialista;
+import org.EnvioDeMensajes.Dominio.Especialista;
 
 import java.awt.SystemColor;
 import java.util.ArrayList;

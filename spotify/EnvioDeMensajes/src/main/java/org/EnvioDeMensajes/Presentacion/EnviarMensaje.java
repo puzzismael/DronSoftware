@@ -1,4 +1,4 @@
-package Presentacion;
+package org.EnvioDeMensajes.Presentacion;
 
 import java.awt.EventQueue;
 
