@@ -33,6 +33,7 @@
   	<module>EnvioDeMensajes</module>
   	<module>CreacionYLoginDeUsers</module>
   	<module>AdquisicionCancionPago</module>
+  	<module>reproducirCancionAlbum</module>
   </modules>
   <groupId>ISO2</groupId>
 </project>
