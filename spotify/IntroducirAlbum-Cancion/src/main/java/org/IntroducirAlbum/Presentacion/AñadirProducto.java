@@ -67,10 +67,10 @@ public class AñadirProducto extends JFrame {
 	private JButton btnAñadir;
 	private JButton btnLimpiar;
 	private JTextField textNumeroVentas;
-	ArrayList<usuario> users;
+	ArrayList<Usuario> users;
 	private JTextField textField;
 
-	public AñadirProducto(ArrayList<usuario> users) {
+	public AñadirProducto(ArrayList<Usuario> users) {
 		this.users=users;
 		setType(Type.POPUP);
 		setResizable(false);

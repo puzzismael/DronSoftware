@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Usuario extends Persona{
+public class Usuario extends persona{
 	
 	
 	
