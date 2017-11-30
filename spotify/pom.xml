@@ -31,6 +31,7 @@
   	<module>AdquisicionProductos</module>
   	<module>EliminacionDeUsuarios</module>
   	<module>EnvioDeMensajes</module>
+  	<module>CreacionYLoginDeUsers</module>
   </modules>
   <groupId>ISO2</groupId>
 </project>

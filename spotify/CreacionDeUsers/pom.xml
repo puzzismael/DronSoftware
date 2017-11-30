@@ -9,18 +9,39 @@
   </parent>
   <groupId>ISO2</groupId>
   <artifactId>CreacionDeUsers</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>CreacionDeUsers</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    
+    <failOnMissingWebXml>false</failOnMissingWebXml>
+    
   </properties>
   <dependencies>
+  <dependency>
+      <groupId>jcalendar</groupId>
+      <artifactId>jcalendar</artifactId>
+      <version>2.0</version>
+     
+    </dependency>
+    <dependency>
+      <groupId>JTimeChooser</groupId>
+      <artifactId>JTimeChooser</artifactId>
+      <version>2.0</version>
+     
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+     <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysqlc</artifactId>
+      <version>2.0</version>
+    </dependency>
   </dependencies>
+  
+  <version>0.0.1-SNAPSHOT</version>
 </project>
