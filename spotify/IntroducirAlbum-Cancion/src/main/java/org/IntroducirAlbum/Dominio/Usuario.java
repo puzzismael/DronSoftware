@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class usuario extends Persona{
+public class Usuario extends Persona{
 	
 	
 	
@@ -17,12 +17,12 @@ public class usuario extends Persona{
 	private String operaciones;
 	private String enfCronicas;
 	
-	public usuario()
+	public Usuario()
 	{
 		super(null, null, null, null);
 	}
 	
-	public usuario(String nombre, String PrApellido, String SegApellido,String DNI,String telefono,
+	public Usuario(String nombre, String PrApellido, String SegApellido,String DNI,String telefono,
 	String domicilio,String antecfamiliares,String alergias,String vacunas,String tratamiento,
 	String operaciones,String enfCronicas)
 	{

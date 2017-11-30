@@ -9,9 +9,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 
-import org.IntroducirAlbum.Dominio.usuario;
+import org.IntroducirAlbum.Dominio.Usuario;
 
-import com.mysql.jdbc.Messages;
+
 
 import java.util.ArrayList;
 import java.awt.GridBagLayout;
@@ -168,59 +168,59 @@ public class AñadirProducto extends JFrame {
 		
 		lblPrecAlbum = new JLabel("Precio album:"); //$NON-NLS-1$
 		lblPrecAlbum.setBounds(238, 116, 88, 36);
-		lblPrecAlbum.setFont(new Font(Messages.getString("A�adirPaciente.31"), Font.BOLD, 11)); //$NON-NLS-1$
+		lblPrecAlbum.setFont(new Font(Messages.getString("AñadirPaciente.31"), Font.BOLD, 11)); //$NON-NLS-1$
 		panel.add(lblPrecAlbum);
 		
 		textPrecAlbum = new JTextField();
 		textPrecAlbum.setBounds(336, 123, 151, 29);
-		textPrecAlbum.setBorder(new TitledBorder(null, Messages.getString("A�adirPaciente.32"), TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		textPrecAlbum.setBorder(new TitledBorder(null, Messages.getString("AñadirPaciente.32"), TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
 		textPrecAlbum.setBackground(SystemColor.scrollbar);
-		textPrecAlbum.setFont(new Font(Messages.getString("A�adirPaciente.33"), Font.BOLD, 11)); //$NON-NLS-1$
+		textPrecAlbum.setFont(new Font(Messages.getString("AñadirPaciente.33"), Font.BOLD, 11)); //$NON-NLS-1$
 		textPrecAlbum.setColumns(10);
 		panel.add(textPrecAlbum);
 		
 		lblDireccin = new JLabel("Artista"); //$NON-NLS-1$
 		lblDireccin.setBounds(497, 116, 65, 36);
-		lblDireccin.setFont(new Font(Messages.getString("A�adirPaciente.35"), Font.BOLD, 11)); //$NON-NLS-1$
+		lblDireccin.setFont(new Font(Messages.getString("AñadirPaciente.35"), Font.BOLD, 11)); //$NON-NLS-1$
 		panel.add(lblDireccin);
 		
 		textDireccion = new JTextField();
 		textDireccion.setBounds(572, 123, 120, 29);
-		textDireccion.setBorder(new TitledBorder(null, Messages.getString("A�adirPaciente.36"), TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		textDireccion.setBorder(new TitledBorder(null, Messages.getString("AñadirPaciente.36"), TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
 		textDireccion.setBackground(SystemColor.scrollbar);
-		textDireccion.setFont(new Font(Messages.getString("A�adirPaciente.37"), Font.BOLD, 11)); //$NON-NLS-1$
+		textDireccion.setFont(new Font(Messages.getString("AñadirPaciente.37"), Font.BOLD, 11)); //$NON-NLS-1$
 		textDireccion.setColumns(10);
 		panel.add(textDireccion);
 		
 		lblFechaLanz = new JLabel("Fecha de lanzamiento:"); //$NON-NLS-1$
 		lblFechaLanz.setBounds(34, 190, 65, 37);
-		lblFechaLanz.setFont(new Font(Messages.getString("A�adirPaciente.39"), Font.BOLD, 11)); //$NON-NLS-1$
+		lblFechaLanz.setFont(new Font(Messages.getString("AñadirPaciente.39"), Font.BOLD, 11)); //$NON-NLS-1$
 		panel.add(lblFechaLanz);
 		
 		textFechaLanz = new JTextField();
 		textFechaLanz.setBounds(109, 194, 119, 31);
-		textFechaLanz.setBorder(new TitledBorder(null, Messages.getString("A�adirPaciente.40"), TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		textFechaLanz.setBorder(new TitledBorder(null, Messages.getString("AñadirPaciente.40"), TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
 		textFechaLanz.setBackground(SystemColor.scrollbar);
-		textFechaLanz.setFont(new Font(Messages.getString("A�adirPaciente.41"), Font.BOLD, 11)); //$NON-NLS-1$
+		textFechaLanz.setFont(new Font(Messages.getString("AñadirPaciente.41"), Font.BOLD, 11)); //$NON-NLS-1$
 		textFechaLanz.setColumns(10);
 		panel.add(textFechaLanz);
 		
 		lblRanking = new JLabel("Ranking"); //$NON-NLS-1$
 		lblRanking.setBounds(238, 188, 92, 37);
-		lblRanking.setFont(new Font(Messages.getString("A�adirPaciente.43"), Font.BOLD, 11)); //$NON-NLS-1$
+		lblRanking.setFont(new Font(Messages.getString("AñadirPaciente.43"), Font.BOLD, 11)); //$NON-NLS-1$
 		panel.add(lblRanking);
 		
 		textRanking = new JTextField();
 		textRanking.setBounds(336, 194, 151, 31);
-		textRanking.setBorder(new TitledBorder(null, Messages.getString("A�adirPaciente.44"), TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		textRanking.setBorder(new TitledBorder(null, Messages.getString("AñadirPaciente.44"), TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
 		textRanking.setBackground(SystemColor.scrollbar);
-		textRanking.setFont(new Font(Messages.getString("A�adirPaciente.45"), Font.BOLD, 11)); //$NON-NLS-1$
+		textRanking.setFont(new Font(Messages.getString("AñadirPaciente.45"), Font.BOLD, 11)); //$NON-NLS-1$
 		textRanking.setColumns(10);
 		panel.add(textRanking);
 		
 		lblGnero = new JLabel("Pais:"); //$NON-NLS-1$
 		lblGnero.setBounds(511, 190, 51, 37);
-		lblGnero.setFont(new Font(Messages.getString("A�adirPaciente.47"), Font.BOLD, 11)); //$NON-NLS-1$
+		lblGnero.setFont(new Font(Messages.getString("AñadirPaciente.47"), Font.BOLD, 11)); //$NON-NLS-1$
 		panel.add(lblGnero);
 		
 		
