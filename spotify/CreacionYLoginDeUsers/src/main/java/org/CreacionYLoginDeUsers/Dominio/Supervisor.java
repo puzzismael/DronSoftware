@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
 
 public class Supervisor {
 	
-	private String usuario, contraseña, nombre, apellidos, dni,direccion, localidad, email, eCivil, provincia;
+	private String usuario, contraseï¿½a, nombre, apellidos, dni,direccion, localidad, email, eCivil, provincia;
 	private int tlf,movil, ext,cp, colegiado;
 	private ArrayList<Usuario> users;
 	private ArrayList<Consulta> consultas;
@@ -20,12 +20,12 @@ public class Supervisor {
 	//private ImageIcon image=new ImageIcon(FramePrincipal.class.getResource("/resources/doctor1.png")); 
 	
 	
-	public Supervisor(String usuario, String contraseña, String nombre, String apellidos, String dni, int colegiado, int tlf
+	public Supervisor(String usuario, String contraseÃ±a, String nombre, String apellidos, String dni, int colegiado, int tlf
 			,int movil, String direccion, int ext, String localidad, String email, int cp, String eCivil, String provincia
 			,ArrayList<Usuario> users,ArrayList<Consulta> consultas,ArrayList<Especialista> especialistas) {
 		super();
 		this.usuario = usuario;
-		this.contraseña = contraseña;
+		this.contraseÃ±a = contraseÃ±a;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.dni=dni;
@@ -44,9 +44,9 @@ public class Supervisor {
 		this.users=users;
 	}
 
-	public Supervisor(String usuario, String contraseña, String nombre, String apellidos){
+	public Supervisor(String usuario, String contraseï¿½a, String nombre, String apellidos){
 		this.usuario = usuario;
-		this.contraseña = contraseña;
+		this.contraseï¿½a = contraseï¿½a;
 		this.nombre = nombre;
 	}
 	 
@@ -136,12 +136,12 @@ public class Supervisor {
 		this.usuario = usuario;
 	}
 
-	public String getContraseña() {
-		return contraseña;
+	public String getContraseï¿½a() {
+		return contraseï¿½a;
 	}
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setContraseï¿½a(String contraseï¿½a) {
+		this.contraseï¿½a = contraseï¿½a;
 	}
 
 	public String getNombre() {

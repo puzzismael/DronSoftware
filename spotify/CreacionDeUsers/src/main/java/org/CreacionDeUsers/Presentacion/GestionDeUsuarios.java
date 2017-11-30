@@ -221,7 +221,7 @@ public class GestionDeUsuarios extends JDialog {
 		{
 			panel_3 = new JPanel();
 			panel_3.setBackground(new Color(192, 192, 192));
-			panel_3.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Uusario", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-2$
+			panel_3.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Usuario", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-2$
 			getContentPane().add(panel_3, BorderLayout.CENTER);
 			GridBagLayout gbl_panel_3 = new GridBagLayout();
 			gbl_panel_3.columnWidths = new int[]{82, 144, 123, 127, 0};
