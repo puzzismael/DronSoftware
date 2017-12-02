@@ -20,6 +20,22 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+     <dependency>
+      <groupId>JTimeChooser</groupId>
+      <artifactId>JTimeChooser</artifactId>
+      <version>2.0</version>
+    </dependency>
+      <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>jcalendar</groupId>
+      <artifactId>jcalendar</artifactId>
+      <version>2.0</version>
+    </dependency>
+
   </dependencies>
   <modules>
   	
@@ -35,6 +51,7 @@
   	<module>AdquisicionCancionPago</module>
   	<module>reproducirCancionAlbum</module>
   	<module>modificarBorrarListaCancion</module>
+  	<module>Integracion</module>
   </modules>
   <groupId>ISO2</groupId>
 </project>

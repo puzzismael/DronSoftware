@@ -1,4 +1,4 @@
-package Dominio;
+package org.CreacionYLoginDeUsers.Dominio;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -12,9 +12,9 @@ import javax.swing.ImageIcon;
 
 public class Supervisor {
 	
-	private String usuario, contrase�a, nombre, apellidos, dni,direccion, localidad, email, eCivil, provincia;
+	private String usuario, contraseña, nombre, apellidos, dni,direccion, localidad, email, eCivil, provincia;
 	private int tlf,movil, ext,cp, colegiado;
-	private ArrayList<Usuario> users;
+	private ArrayList<usuario> users;
 	private ArrayList<Consulta> consultas;
 	private ArrayList<Especialista> especialistas;
 	//private ImageIcon image=new ImageIcon(FramePrincipal.class.getResource("/resources/doctor1.png")); 
@@ -22,7 +22,7 @@ public class Supervisor {
 	
 	public Supervisor(String usuario, String contraseña, String nombre, String apellidos, String dni, int colegiado, int tlf
 			,int movil, String direccion, int ext, String localidad, String email, int cp, String eCivil, String provincia
-			,ArrayList<Usuario> users,ArrayList<Consulta> consultas,ArrayList<Especialista> especialistas) {
+			,ArrayList<usuario> users,ArrayList<Consulta> consultas,ArrayList<Especialista> especialistas) {
 		super();
 		this.usuario = usuario;
 		this.contraseña = contraseña;
@@ -44,9 +44,9 @@ public class Supervisor {
 		this.users=users;
 	}
 
-	public Supervisor(String usuario, String contrase�a, String nombre, String apellidos){
+	public Supervisor(String usuario, String contraseña, String nombre, String apellidos){
 		this.usuario = usuario;
-		this.contrase�a = contrase�a;
+		this.contraseña = contraseña;
 		this.nombre = nombre;
 	}
 	 
@@ -136,12 +136,12 @@ public class Supervisor {
 		this.usuario = usuario;
 	}
 
-	public String getContrase�a() {
-		return contrase�a;
+	public String getContraseña() {
+		return contraseña;
 	}
 
-	public void setContrase�a(String contrase�a) {
-		this.contrase�a = contrase�a;
+	public void setContraseña(String contraseña) {
+		this.contraseña = contraseña;
 	}
 
 	public String getNombre() {
@@ -182,10 +182,10 @@ public class Supervisor {
 	public void setEspecialistas(ArrayList<Especialista> especialistas) {
 		this.especialistas = especialistas;
 	}
-	public ArrayList<Usuario> getPacientes() {
+	public ArrayList<usuario> getPacientes() {
 		return users;
 	}
-	public void setPacientes(ArrayList<Usuario> users) {
+	public void setPacientes(ArrayList<usuario> users) {
 		this.users = users;
 	}
 }

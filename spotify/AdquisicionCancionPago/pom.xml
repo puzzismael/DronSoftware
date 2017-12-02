@@ -7,9 +7,7 @@
     <artifactId>spotify</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>ISO2</groupId>
   <artifactId>AdquisicionCancionPago</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>AdquisicionCancionPago</name>
   <url>http://maven.apache.org</url>
   <properties>
@@ -23,4 +21,5 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <version>0.0.1-SNAPSHOT</version>
 </project>
