@@ -144,5 +144,8 @@ public class EnviarMensaje {
 		gbc_btnEnviar.gridy = 7;
 		panel.add(btnEnviar, gbc_btnEnviar);
 	}
+	public JFrame  getFrame() {
+		return frame;
+	}
 
 }

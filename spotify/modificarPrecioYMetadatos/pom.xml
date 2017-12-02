@@ -8,7 +8,6 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>modificarPrecioYMetadatos</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>modificarPrecioYMetadatos</name>
   <url>http://maven.apache.org</url>
   <properties>

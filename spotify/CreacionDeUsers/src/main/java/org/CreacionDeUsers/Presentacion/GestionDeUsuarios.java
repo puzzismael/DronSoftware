@@ -133,7 +133,7 @@ public class GestionDeUsuarios extends JDialog {
 	public GestionDeUsuarios() throws FileNotFoundException {
 		setBackground(new Color(255, 255, 255));
 		setTitle("Spotify");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(GestionDeUsuarios.class.getResource("/Presentacion/GestionPacientes.jpg")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(GestionDeUsuarios.class.getResource("org.CreacionDeUsers.Presentacion/GestionPacientes.jpg")));
 		addWindowListener(new ThisWindowListener());
 		setName("Spotify"); //$NON-NLS-1$
 		setBounds(100, 100, 849, 530);
