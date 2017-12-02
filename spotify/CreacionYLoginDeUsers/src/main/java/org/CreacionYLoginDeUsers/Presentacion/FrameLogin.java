@@ -116,7 +116,7 @@ public class FrameLogin extends JFrame {
 		textUsuario.setFont(new Font("FrameLogin.15", Font.BOLD, 11));
 		GridBagConstraints gbc_textUsuario = new GridBagConstraints();
 		gbc_textUsuario.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textUsuario.gridwidth = 3;
+		gbc_textUsuario.gridwidth = 5;
 		gbc_textUsuario.insets = new Insets(0, 0, 5, 5);
 		gbc_textUsuario.gridx = 3;
 		gbc_textUsuario.gridy = 3;
@@ -148,7 +148,7 @@ public class FrameLogin extends JFrame {
 		GridBagConstraints gbc_textContraseña = new GridBagConstraints();
 		
 		gbc_textContraseña.fill = GridBagConstraints.BOTH;
-		gbc_textContraseña.gridwidth = 3;
+		gbc_textContraseña.gridwidth = 5;
 		gbc_textContraseña.insets = new Insets(0, 0, 5, 5);
 		gbc_textContraseña.gridx = 3;
 		gbc_textContraseña.gridy = 5;

@@ -133,7 +133,7 @@ public class GestionDeUsuarios extends JDialog {
 	public GestionDeUsuarios() throws FileNotFoundException {
 		setBackground(new Color(255, 255, 255));
 		setTitle("Spotify");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(GestionDeUsuarios.class.getResource("org.CreacionDeUsers.Presentacion/GestionPacientes.jpg")));
+		//setIconImage(Toolkit.getDefaultToolkit().getImage(GestionDeUsuarios.class.getResource("org.CreacionDeUsers.Presentacion/GestionPacientes.jpg")));
 		addWindowListener(new ThisWindowListener());
 		setName("Spotify"); //$NON-NLS-1$
 		setBounds(100, 100, 849, 530);
@@ -233,7 +233,7 @@ public class GestionDeUsuarios extends JDialog {
 			}
 			{
 				lblNewLabel = new JLabel("");
-				lblNewLabel.setIcon(new ImageIcon(GestionDeUsuarios.class.getResource("/Presentacion/IconoPaciente.png")));
+				//lblNewLabel.setIcon(new ImageIcon(GestionDeUsuarios.class.getResource("/Presentacion/IconoPaciente.png")));
 				GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 				gbc_lblNewLabel.gridwidth = 2;
 				gbc_lblNewLabel.gridheight = 4;
