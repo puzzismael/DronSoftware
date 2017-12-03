@@ -36,6 +36,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import org.EliminacionDeUsuarios.Presentacion.*;
 import org.EnvioDeMensajes.Presentacion.*;
+import org.AdquisicionProductos.Presentacion.*;
 
 public class PanelPrincipal extends JPanel {
 	private JButton btnNCrearConsulta;
@@ -174,6 +175,16 @@ public class PanelPrincipal extends JPanel {
 		JButton btnBuscar = new JButton("PanelPrincipal.14"); //$NON-NLS-1$
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							BuscarPaciente window = new BuscarPaciente();
+							window.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
 			}
 		});
 		btnBuscar.setToolTipText("PanelPrincipal.15"); //$NON-NLS-1$
@@ -238,23 +249,27 @@ public class PanelPrincipal extends JPanel {
 	
 	private class BtnCerrarActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
-			if(JOptionPane.showConfirmDialog(new JFrame(), "PanelPrincipal.35", "PanelPrincipal.36", //$NON-NLS-1$ //$NON-NLS-2$
-					JOptionPane.OK_CANCEL_OPTION )==JOptionPane.YES_OPTION){
-				JOptionPane.showMessageDialog(new JFrame(), "PanelPrincipal.37", "PanelPrincipal.38", JOptionPane.PLAIN_MESSAGE); //$NON-NLS-1$ //$NON-NLS-2$
-				cerrarFrame();
-				//FrameLogin login = new FrameLogin(usuarios);
-			//	login.setVisible(true);
+			EventQueue.invokeLater(new Runnable() {
+				public void run() {
+					try {
+						ListadoDeEspecialistas window = new ListadoDeEspecialistas();
+						window.setVisible(true);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
 			
 			}
 		}
 	}
-	private class BtnCrearPacienteActionListener implements ActionListener {
+	class BtnCrearPacienteActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			//AñadirPaciente a=new AñadirPaciente(pacientes);
 			//a.setVisible(true);
 		}
 	}
-	private class BtnProfesionalActionListener implements ActionListener {
+	class BtnProfesionalActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
@@ -268,7 +283,5 @@ public class PanelPrincipal extends JPanel {
 			});
 		}
 		}
-	}
-	
 	
 
