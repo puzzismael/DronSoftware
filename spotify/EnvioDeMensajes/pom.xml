@@ -9,7 +9,6 @@
   </parent>
   <groupId>ISO2</groupId>
   <artifactId>EnvioDeMensajes</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>EnvioDeMensajes</name>
   <url>http://maven.apache.org</url>
   <properties>
@@ -23,4 +22,5 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <version>0.0.1-SNAPSHOT</version>
 </project>

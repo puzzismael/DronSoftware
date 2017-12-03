@@ -12,6 +12,12 @@ import java.awt.GridLayout;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.border.TitledBorder;
+
+import org.CreacionDeUsers.Presentacion.PanelPacientes;
+
+import org.AdquisicionProductos.Presentacion.*;
+import org.CreacionDeUsers.Dominio.*;
+
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -20,11 +26,15 @@ import java.awt.GridBagConstraints;
 import javax.swing.JButton;
 import java.awt.Insets;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class IntegracionMenu extends JFrame {
-
+	private JPanel panelCardLayout;
 	private JPanel contentPane;
-
+	private JPanel panelEspecialistas;
 	/**
 	 * Launch the application.
 	 */
@@ -75,9 +85,9 @@ public class IntegracionMenu extends JFrame {
 		contentPane.add(panel, BorderLayout.WEST);
 		GridBagLayout gbl_panel = new GridBagLayout();
 		gbl_panel.columnWidths = new int[]{209, 0};
-		gbl_panel.rowHeights = new int[]{186, 45, 45, 45, 45, 45, 0};
+		gbl_panel.rowHeights = new int[]{186, 45, 45, 45, 45, 45, 0, 0};
 		gbl_panel.columnWeights = new double[]{0.0, Double.MIN_VALUE};
-		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel.setLayout(gbl_panel);
 		
 		JLabel lblNewLabel = new JLabel("New label");
@@ -89,6 +99,12 @@ public class IntegracionMenu extends JFrame {
 		panel.add(lblNewLabel, gbc_lblNewLabel);
 		
 		JButton button = new JButton("Panel Principal");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout)(panelCardLayout.getLayout());
+				cl.show(panelCardLayout, "panel inicio"); //$NON-NLS-1$
+			}
+		});
 		button.setHorizontalAlignment(SwingConstants.LEFT);
 		button.setPreferredSize(new Dimension(209, 45));
 		button.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -114,6 +130,13 @@ public class IntegracionMenu extends JFrame {
 		panel.add(button_1, gbc_button_1);
 		
 		JButton button_2 = new JButton("Gesti\u00F3n de Pacientes");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				CardLayout cl = (CardLayout)(panelCardLayout.getLayout());
+				cl.show(panelCardLayout, "panel usuarios"); //$NON-NLS-1$
+			}
+		});
 		button_2.setPreferredSize(new Dimension(209, 45));
 		button_2.setHorizontalTextPosition(SwingConstants.LEADING);
 		button_2.setHorizontalAlignment(SwingConstants.LEFT);
@@ -126,6 +149,12 @@ public class IntegracionMenu extends JFrame {
 		panel.add(button_2, gbc_button_2);
 		
 		JButton button_3 = new JButton("Gesti\u00F3n de Consultas");
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout)(panelCardLayout.getLayout());
+				cl.show(panelCardLayout, "panel usuarios"); //$NON-NLS-1$
+			}
+		});
 		button_3.setPreferredSize(new Dimension(209, 45));
 		button_3.setHorizontalTextPosition(SwingConstants.LEADING);
 		button_3.setHorizontalAlignment(SwingConstants.LEFT);
@@ -144,13 +173,51 @@ public class IntegracionMenu extends JFrame {
 		button_4.setFont(new Font("Verdana", Font.BOLD, 13));
 		button_4.setBorder(null);
 		GridBagConstraints gbc_button_4 = new GridBagConstraints();
+		gbc_button_4.insets = new Insets(0, 0, 5, 0);
 		gbc_button_4.gridx = 0;
 		gbc_button_4.gridy = 5;
 		panel.add(button_4, gbc_button_4);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setPreferredSize(new Dimension(104, 18));
-		contentPane.add(panel_1, BorderLayout.CENTER);
+		JButton btnListadoDeCompradores = new JButton("Listado de compradores");
+		btnListadoDeCompradores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnListadoDeCompradores.setPreferredSize(new Dimension(209, 45));
+		btnListadoDeCompradores.setHorizontalTextPosition(SwingConstants.LEADING);
+		btnListadoDeCompradores.setHorizontalAlignment(SwingConstants.LEFT);
+		btnListadoDeCompradores.setFont(new Font("Verdana", Font.BOLD, 13));
+		btnListadoDeCompradores.setBorder(null);
+		GridBagConstraints gbc_btnListadoDeCompradores = new GridBagConstraints();
+		gbc_btnListadoDeCompradores.gridx = 0;
+		gbc_btnListadoDeCompradores.gridy = 6;
+		panel.add(btnListadoDeCompradores, gbc_btnListadoDeCompradores);
+		
+		panelCardLayout= new JPanel();
+		panelCardLayout.setPreferredSize(new Dimension(104, 18));
+		contentPane.add(panelCardLayout, BorderLayout.CENTER);
+		panelCardLayout.setLayout(new CardLayout(0, 0));
+		
+		JPanel panelInicio = new PanelPrincipal();
+		panelCardLayout.add(panelInicio, "panel inicio");
+		usuario users=new usuario();
+		panelEspecialistas = new PanelPacientes(null);
+		panelCardLayout.add(panelEspecialistas, "FramePrincipal.3");
+		
+	
+		
+		JPanel panelAyuda = new JPanel();
+		panelCardLayout.add(panelAyuda, "name_34805679265668");
+		
+		JPanel panelPacientes = new PanelPacientes(null);
+		panelPacientes.setBorder(new TitledBorder(UIManager.getBorder("FramePrincipal.5"), "FramePrincipal.6", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 255))); //$NON-NLS-1$ //$NON-NLS-2$
+		panelCardLayout.add(panelPacientes, "panel usuarios"); //$NON-NLS-1$
+			
+		JPanel panelConsultas = new JPanel();
+		panelCardLayout.add(panelConsultas, "name_34805739852261");
+		
+		JPanel panelPerfil = new JPanel();
+		panelCardLayout.add(panelPerfil, "name_34805762748779");
 	}
 
 }

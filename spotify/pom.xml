@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>spotify</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>spotify</name>
@@ -39,6 +39,21 @@
     <dependency>
     	<groupId>ISO2</groupId>
     	<artifactId>EnvioDeMensajes</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+    	<groupId>ISO2</groupId>
+    	<artifactId>CreacionDeUsers</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+    	<groupId>ISO2</groupId>
+    	<artifactId>EliminacionDeUsuarios</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+    	<groupId>ISO2</groupId>
+    	<artifactId>AdquisicionProductos</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>

@@ -106,7 +106,10 @@ public class usuario extends persona{
 	}
 	
 	
-	 
+	 public String getApellidos()
+	 {
+		 return this.PrApellido;
+	 }
 		
 		
 	

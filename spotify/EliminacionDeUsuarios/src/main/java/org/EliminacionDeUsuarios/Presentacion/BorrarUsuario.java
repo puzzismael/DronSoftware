@@ -43,7 +43,7 @@ public class BorrarUsuario extends JFrame {
 	public BorrarUsuario(ArrayList<Usuario> usuarios) {
 		this.usuarios=usuarios;
 		setResizable(false);
-		setTitle(Messages.getString("BorrarPaciente.0")); //$NON-NLS-1$
+		//setTitle(Messages.getString("BorrarPaciente.0")); //$NON-NLS-1$
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 452, 299);
 		contentPane = new JPanel();
@@ -58,40 +58,40 @@ public class BorrarUsuario extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JLabel lblNPaciente = new JLabel(Messages.getString("BorrarPaciente.1")); //$NON-NLS-1$
-		lblNPaciente.setFont(new Font(Messages.getString("BorrarPaciente.2"), Font.BOLD, 11)); //$NON-NLS-1$
+		JLabel lblNPaciente = new JLabel("BorrarPaciente.1"); //$NON-NLS-1$
+		lblNPaciente.setFont(new Font("BorrarPaciente.2", Font.BOLD, 11)); //$NON-NLS-1$
 		lblNPaciente.setBounds(20, 23, 77, 14);
 		panel.add(lblNPaciente);
 		
 		textN = new JTextField();
 		textN.setEditable(false);
-		textN.setFont(new Font(Messages.getString("BorrarPaciente.3"), Font.BOLD, 11)); //$NON-NLS-1$
+		textN.setFont(new Font("BorrarPaciente.3", Font.BOLD, 11)); //$NON-NLS-1$
 		textN.setBackground(SystemColor.scrollbar);
 		textN.setBounds(110, 20, 41, 20);
 		panel.add(textN);
 		textN.setColumns(10);
 		
-		JLabel lblNombre = new JLabel(Messages.getString("BorrarPaciente.4")); //$NON-NLS-1$
-		lblNombre.setFont(new Font(Messages.getString("BorrarPaciente.5"), Font.BOLD, 11)); //$NON-NLS-1$
+		JLabel lblNombre = new JLabel("BorrarPaciente.4"); //$NON-NLS-1$
+		lblNombre.setFont(new Font("BorrarPaciente.5", Font.BOLD, 11)); //$NON-NLS-1$
 		lblNombre.setBounds(38, 71, 63, 14);
 		panel.add(lblNombre);
 		
 		textNombre = new JTextField();
 		textNombre.setEditable(false);
-		textNombre.setFont(new Font(Messages.getString("BorrarPaciente.6"), Font.BOLD, 11)); //$NON-NLS-1$
+		textNombre.setFont(new Font("BorrarPaciente.6", Font.BOLD, 11)); //$NON-NLS-1$
 		textNombre.setBackground(SystemColor.scrollbar);
 		textNombre.setBounds(110, 68, 145, 20);
 		panel.add(textNombre);
 		textNombre.setColumns(10);
 		
-		JLabel lblApellidos = new JLabel(Messages.getString("BorrarPaciente.7")); //$NON-NLS-1$
-		lblApellidos.setFont(new Font(Messages.getString("BorrarPaciente.8"), Font.BOLD, 11)); //$NON-NLS-1$
+		JLabel lblApellidos = new JLabel("BorrarPaciente.7"); //$NON-NLS-1$
+		lblApellidos.setFont(new Font("BorrarPaciente.8", Font.BOLD, 11)); //$NON-NLS-1$
 		lblApellidos.setBounds(33, 121, 77, 14);
 		panel.add(lblApellidos);
 		
 		textApellidos = new JTextField();
 		textApellidos.setEditable(false);
-		textApellidos.setFont(new Font(Messages.getString("BorrarPaciente.9"), Font.BOLD, 11)); //$NON-NLS-1$
+		textApellidos.setFont(new Font("BorrarPaciente.9", Font.BOLD, 11)); //$NON-NLS-1$
 		textApellidos.setBackground(SystemColor.scrollbar);
 		textApellidos.setBounds(110, 118, 145, 20);
 		panel.add(textApellidos);
@@ -104,7 +104,7 @@ public class BorrarUsuario extends JFrame {
 		list = new JList<Usuario>();
 		list.addListSelectionListener(new ListListSelectionListener());
 		scrollPane.setViewportView(list);
-		list.setFont(new Font(Messages.getString("BorrarPaciente.10"), Font.BOLD, 11)); //$NON-NLS-1$
+		list.setFont(new Font("BorrarPaciente.10", Font.BOLD, 11)); //$NON-NLS-1$
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		list.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Usuarios", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		actualizarDatos();
@@ -113,25 +113,25 @@ public class BorrarUsuario extends JFrame {
 		panel_1.setBackground(SystemColor.text);
 		contentPane.add(panel_1, BorderLayout.SOUTH);
 		
-		JButton btnCancelar = new JButton(Messages.getString("BorrarPaciente.12")); //$NON-NLS-1$
+		JButton btnCancelar = new JButton("BorrarPaciente.12"); //$NON-NLS-1$
 		btnCancelar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnCancelar.addActionListener(new BtnCancelarActionListener());
-		btnCancelar.setFont(new Font(Messages.getString("BorrarPaciente.13"), Font.BOLD, 11)); //$NON-NLS-1$
+		btnCancelar.setFont(new Font("BorrarPaciente.13", Font.BOLD, 11)); //$NON-NLS-1$
 		panel_1.add(btnCancelar);
 		
-		JButton btnBorrar = new JButton(Messages.getString("BorrarPaciente.14")); //$NON-NLS-1$
+		JButton btnBorrar = new JButton("BorrarPaciente.14"); //$NON-NLS-1$
 		btnBorrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnBorrar.addActionListener(new BtnBorrarActionListener());
-		btnBorrar.setFont(new Font(Messages.getString("BorrarPaciente.15"), Font.BOLD, 11)); //$NON-NLS-1$
+		btnBorrar.setFont(new Font("BorrarPaciente.15", Font.BOLD, 11)); //$NON-NLS-1$
 		panel_1.add(btnBorrar);
 	}
 	
 	public void actualizarDatos(){
-		DefaultListModel modelo = new DefaultListModel();
+		/*DefaultListModel modelo = new DefaultListModel();
 		for(int i=0;i<usuarios.size();i++){
-			modelo.addElement(usuarios.get(i).getApellidos()+Messages.getString("BorrarPaciente.16")+usuarios.get(i).getNombre()); //$NON-NLS-1$
-		}
-		list.setModel(modelo);
+			modelo.addElement(usuarios.get(i).getApellidos()+"BorrarPaciente.16"+usuarios.get(i).getNombre()); //$NON-NLS-1$
+		}*/
+		//list.setModel(modelo);
 	}
 	
 	
@@ -140,13 +140,13 @@ public class BorrarUsuario extends JFrame {
 			
 					int i=list.getSelectedIndex();
 					if(i==-1){
-						textNombre.setText(Messages.getString("BorrarPaciente.17")); //$NON-NLS-1$
-						textApellidos.setText(Messages.getString("BorrarPaciente.18")); //$NON-NLS-1$
-						textN.setText(Messages.getString("BorrarPaciente.19")); //$NON-NLS-1$
+						textNombre.setText("BorrarPaciente.17"); //$NON-NLS-1$
+						textApellidos.setText("BorrarPaciente.18"); //$NON-NLS-1$
+						textN.setText("BorrarPaciente.19"); //$NON-NLS-1$
 					}else{
 						textApellidos.setText(usuarios.get(i).getApellidos());
 						textNombre.setText(usuarios.get(i).getNombre());
-						textN.setText(Messages.getString("BorrarPaciente.20") + usuarios.get(i).getId()); //$NON-NLS-1$
+						textN.setText("BorrarPaciente.20" + usuarios.get(i).getId()); //$NON-NLS-1$
 			}
 		}
 	}
@@ -159,14 +159,14 @@ public class BorrarUsuario extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			int i=list.getSelectedIndex();
 			if(i==-1){
-				JOptionPane.showMessageDialog(new JFrame(), Messages.getString("BorrarPaciente.21"), //$NON-NLS-1$
-						Messages.getString("BorrarPaciente.22"),JOptionPane.PLAIN_MESSAGE ); //$NON-NLS-1$
+				JOptionPane.showMessageDialog(new JFrame(),"BorrarPaciente.21", //$NON-NLS-1$
+						"BorrarPaciente.22",JOptionPane.PLAIN_MESSAGE ); //$NON-NLS-1$
 			}else{
-				if((JOptionPane.showConfirmDialog(new JFrame (), Messages.getString("BorrarPaciente.23"), Messages.getString("BorrarPaciente.24"),JOptionPane.OK_CANCEL_OPTION)==JOptionPane.YES_OPTION)){ //$NON-NLS-1$ //$NON-NLS-2$
+				if((JOptionPane.showConfirmDialog(new JFrame (), "BorrarPaciente.23","BorrarPaciente.24",JOptionPane.OK_CANCEL_OPTION)==JOptionPane.YES_OPTION)){ //$NON-NLS-1$ //$NON-NLS-2$
 					usuarios.remove(i);
 					actualizarDatos();
-					JOptionPane.showMessageDialog(new JFrame(), Messages.getString("BorrarPaciente.25"), //$NON-NLS-1$
-							Messages.getString("BorrarPaciente.26"),JOptionPane.PLAIN_MESSAGE ); //$NON-NLS-1$
+					JOptionPane.showMessageDialog(new JFrame(), "BorrarPaciente.25", //$NON-NLS-1$
+							"BorrarPaciente.26",JOptionPane.PLAIN_MESSAGE ); //$NON-NLS-1$
 				}
 					
 			}
