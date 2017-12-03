@@ -1,4 +1,4 @@
-package ISO2.spotify;
+package Integracion;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -129,24 +129,24 @@ public class IntegracionMenu extends JFrame {
 		gbc_button_1.gridy = 2;
 		panel.add(button_1, gbc_button_1);
 		
-		JButton button_2 = new JButton("Gesti\u00F3n de Pacientes");
-		button_2.addActionListener(new ActionListener() {
+		JButton btnCreacinDeUsuarios = new JButton("Creación de Usuarios");
+		btnCreacinDeUsuarios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
 				CardLayout cl = (CardLayout)(panelCardLayout.getLayout());
 				cl.show(panelCardLayout, "panel usuarios"); //$NON-NLS-1$
 			}
 		});
-		button_2.setPreferredSize(new Dimension(209, 45));
-		button_2.setHorizontalTextPosition(SwingConstants.LEADING);
-		button_2.setHorizontalAlignment(SwingConstants.LEFT);
-		button_2.setFont(new Font("Verdana", Font.BOLD, 13));
-		button_2.setBorder(null);
-		GridBagConstraints gbc_button_2 = new GridBagConstraints();
-		gbc_button_2.insets = new Insets(0, 0, 5, 0);
-		gbc_button_2.gridx = 0;
-		gbc_button_2.gridy = 3;
-		panel.add(button_2, gbc_button_2);
+		btnCreacinDeUsuarios.setPreferredSize(new Dimension(209, 45));
+		btnCreacinDeUsuarios.setHorizontalTextPosition(SwingConstants.LEADING);
+		btnCreacinDeUsuarios.setHorizontalAlignment(SwingConstants.LEFT);
+		btnCreacinDeUsuarios.setFont(new Font("Verdana", Font.BOLD, 13));
+		btnCreacinDeUsuarios.setBorder(null);
+		GridBagConstraints gbc_btnCreacinDeUsuarios = new GridBagConstraints();
+		gbc_btnCreacinDeUsuarios.insets = new Insets(0, 0, 5, 0);
+		gbc_btnCreacinDeUsuarios.gridx = 0;
+		gbc_btnCreacinDeUsuarios.gridy = 3;
+		panel.add(btnCreacinDeUsuarios, gbc_btnCreacinDeUsuarios);
 		
 		JButton button_3 = new JButton("Gesti\u00F3n de Consultas");
 		button_3.addActionListener(new ActionListener() {

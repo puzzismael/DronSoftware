@@ -1,4 +1,4 @@
-package ISO2.spotify;
+package Integracion;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -148,7 +148,7 @@ public class PanelPrincipal extends JPanel {
 		btnCrearPaciente.setToolTipText("PanelPrincipal.9"); //$NON-NLS-1$
 		panelControles.add(btnCrearPaciente);
 		
-		btnBorrar = new JButton("PanelPrincipal.10"); //$NON-NLS-1$
+		btnBorrar = new JButton("Eliminación De Usuarios"); //$NON-NLS-1$
 		btnBorrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				EventQueue.invokeLater(new Runnable() {
@@ -172,7 +172,7 @@ public class PanelPrincipal extends JPanel {
 		btnBorrar.setToolTipText("PanelPrincipal.13"); //$NON-NLS-1$
 		panelControles.add(btnBorrar);
 		
-		JButton btnBuscar = new JButton("PanelPrincipal.14"); //$NON-NLS-1$
+		JButton btnBuscar = new JButton("Adquirir Productos"); //$NON-NLS-1$
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				EventQueue.invokeLater(new Runnable() {
@@ -199,7 +199,7 @@ public class PanelPrincipal extends JPanel {
 		/*Boton btnNewButton_3 = new Boton("Puta ah�",Color.BLUE, Color.RED,30,30);
 		panelControles.add(btnNewButton_3);*/
 		
-		btnProfesional = new JButton("PanelPrincipal.18"); //$NON-NLS-1$
+		btnProfesional = new JButton("Enviar Mensaje a los Usuarios"); //$NON-NLS-1$
 		btnProfesional.setToolTipText("PanelPrincipal.19"); //$NON-NLS-1$
 		btnProfesional.addActionListener(new BtnProfesionalActionListener());
 		btnProfesional.setHorizontalTextPosition(SwingConstants.RIGHT);
@@ -209,7 +209,7 @@ public class PanelPrincipal extends JPanel {
 		btnProfesional.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		panelControles.add(btnProfesional);
 		
-		btnCerrar = new JButton("PanelPrincipal.22"); //$NON-NLS-1$
+		btnCerrar = new JButton("Listado de Compradores"); //$NON-NLS-1$
 		btnCerrar.setToolTipText("PanelPrincipal.23"); //$NON-NLS-1$
 	//	btnCerrar.setIcon(new ImageIcon(PanelPrincipal.class.getResource("PanelPrincipal.24"))); //$NON-NLS-1$
 		btnCerrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -218,6 +218,10 @@ public class PanelPrincipal extends JPanel {
 		btnCerrar.addActionListener(new BtnCerrarActionListener());
 		
 		btnNCrearConsulta = new JButton("PanelPrincipal.26"); //$NON-NLS-1$
+		btnNCrearConsulta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNCrearConsulta.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 	//	btnNCrearConsulta.addActionListener(new BtnNCrearConsultaActionListener());
 		//btnNCrearConsulta.setIcon(new ImageIcon(PanelPrincipal.class.getResource("PanelPrincipal.27"))); //$NON-NLS-1$
