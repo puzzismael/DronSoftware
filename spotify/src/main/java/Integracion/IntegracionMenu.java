@@ -17,7 +17,7 @@ import org.CreacionDeUsers.Presentacion.PanelPacientes;
 
 import org.AdquisicionProductos.Presentacion.*;
 import org.CreacionDeUsers.Dominio.*;
-
+import org.modificarPrecioYMetadatos.Presentacion.*;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -133,7 +133,7 @@ public class IntegracionMenu extends JFrame {
 		gbc_button_1.gridy = 2;
 		panel.add(button_1, gbc_button_1);
 		
-		JButton btnCreacinDeUsuarios = new JButton("oo");
+		JButton btnCreacinDeUsuarios = new JButton("Creación de Usuarios");
 		btnCreacinDeUsuarios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
@@ -152,29 +152,33 @@ public class IntegracionMenu extends JFrame {
 		gbc_btnCreacinDeUsuarios.gridy = 3;
 		panel.add(btnCreacinDeUsuarios, gbc_btnCreacinDeUsuarios);
 		
-		JButton btnCreacinDeUsuarios_1 = new JButton("Creación de Usuarios");
-		btnCreacinDeUsuarios_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				CardLayout cl = (CardLayout)(panelCardLayout.getLayout());
-				cl.show(panelCardLayout, "panel usuarios"); //$NON-NLS-1$
-			}
-		});
-		btnCreacinDeUsuarios_1.setPreferredSize(new Dimension(209, 45));
-		btnCreacinDeUsuarios_1.setHorizontalTextPosition(SwingConstants.LEADING);
-		btnCreacinDeUsuarios_1.setHorizontalAlignment(SwingConstants.LEFT);
-		btnCreacinDeUsuarios_1.setFont(new Font("Verdana", Font.BOLD, 13));
-		btnCreacinDeUsuarios_1.setBorder(null);
-		GridBagConstraints gbc_btnCreacinDeUsuarios_1 = new GridBagConstraints();
-		gbc_btnCreacinDeUsuarios_1.insets = new Insets(0, 0, 5, 0);
-		gbc_btnCreacinDeUsuarios_1.gridx = 0;
-		gbc_btnCreacinDeUsuarios_1.gridy = 4;
-		panel.add(btnCreacinDeUsuarios_1, gbc_btnCreacinDeUsuarios_1);
-		
 		JButton button_4 = new JButton("Drs. Especialistas \r");
 		button_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
+		
+		JButton btnModificarProductos = new JButton("Modificar Productos");
+		btnModificarProductos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							ModificarProducto  window = new ModificarProducto();
+							window.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
+		btnModificarProductos.setPreferredSize(new Dimension(209, 45));
+		GridBagConstraints gbc_btnModificarProductos = new GridBagConstraints();
+		gbc_btnModificarProductos.insets = new Insets(0, 0, 5, 0);
+		gbc_btnModificarProductos.gridx = 0;
+		gbc_btnModificarProductos.gridy = 4;
+		panel.add(btnModificarProductos, gbc_btnModificarProductos);
 		button_4.setPreferredSize(new Dimension(209, 45));
 		button_4.setHorizontalTextPosition(SwingConstants.LEADING);
 		button_4.setHorizontalAlignment(SwingConstants.LEFT);
