@@ -75,7 +75,7 @@ public class AñadirProducto extends JFrame {
 		setType(Type.POPUP);
 		setResizable(false);
 		setTitle("AñadirPaciente.0"); //$NON-NLS-1$
-		setIconImage(Toolkit.getDefaultToolkit().getImage(AñadirProducto.class.getResource("AñadirPaciente.1"))); //$NON-NLS-1$
+		//setIconImage(Toolkit.getDefaultToolkit().getImage(AñadirProducto.class.getResource("AñadirPaciente.1"))); //$NON-NLS-1$
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 841, 427);
 		contentPane = new JPanel();

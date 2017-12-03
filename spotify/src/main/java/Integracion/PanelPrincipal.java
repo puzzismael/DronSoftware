@@ -34,10 +34,11 @@ import javax.swing.SwingConstants;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
+import org.IntroducirAlbum.Dominio.*;
 import org.EliminacionDeUsuarios.Presentacion.*;
 import org.EnvioDeMensajes.Presentacion.*;
 import org.AdquisicionProductos.Presentacion.*;
-
+import org.IntroducirAlbum.Presentacion.*;
 public class PanelPrincipal extends JPanel {
 	private JButton btnNCrearConsulta;
 	private JButton btnCrearPaciente;
@@ -138,7 +139,7 @@ public class PanelPrincipal extends JPanel {
 		add(panelControles, gbc_panelControles);
 		panelControles.setLayout(new GridLayout(2, 3,15, 15));
 		
-		btnCrearPaciente = new JButton("PanelPrincipal.6"); //$NON-NLS-1$
+		btnCrearPaciente = new JButton("Añadir Producto"); //$NON-NLS-1$
 		btnCrearPaciente.addActionListener(new BtnCrearPacienteActionListener());
 		btnCrearPaciente.setHorizontalTextPosition(SwingConstants.RIGHT);
 		//btnCrearPaciente.setIcon(new ImageIcon(PanelPrincipal.class.getResource("PanelPrincipal.7"))); //$NON-NLS-1$
@@ -269,8 +270,17 @@ public class PanelPrincipal extends JPanel {
 	}
 	class BtnCrearPacienteActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			//AñadirPaciente a=new AñadirPaciente(pacientes);
-			//a.setVisible(true);
+			EventQueue.invokeLater(new Runnable() {
+				public void run() {
+					try {
+						ArrayList<Usuario> users=new ArrayList();
+						AñadirProducto window = new AñadirProducto( users);
+						window.setVisible(true);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
 		}
 	}
 	class BtnProfesionalActionListener implements ActionListener {

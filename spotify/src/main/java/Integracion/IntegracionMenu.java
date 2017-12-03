@@ -118,6 +118,10 @@ public class IntegracionMenu extends JFrame {
 		panel.add(button, gbc_button);
 		
 		JButton button_1 = new JButton("Mi Perfil");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		button_1.setPreferredSize(new Dimension(209, 45));
 		button_1.setHorizontalTextPosition(SwingConstants.LEADING);
 		button_1.setHorizontalAlignment(SwingConstants.LEFT);
@@ -129,7 +133,7 @@ public class IntegracionMenu extends JFrame {
 		gbc_button_1.gridy = 2;
 		panel.add(button_1, gbc_button_1);
 		
-		JButton btnCreacinDeUsuarios = new JButton("Creación de Usuarios");
+		JButton btnCreacinDeUsuarios = new JButton("oo");
 		btnCreacinDeUsuarios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
@@ -148,25 +152,29 @@ public class IntegracionMenu extends JFrame {
 		gbc_btnCreacinDeUsuarios.gridy = 3;
 		panel.add(btnCreacinDeUsuarios, gbc_btnCreacinDeUsuarios);
 		
-		JButton button_3 = new JButton("Gesti\u00F3n de Consultas");
-		button_3.addActionListener(new ActionListener() {
+		JButton btnCreacinDeUsuarios_1 = new JButton("Creación de Usuarios");
+		btnCreacinDeUsuarios_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cl = (CardLayout)(panelCardLayout.getLayout());
 				cl.show(panelCardLayout, "panel usuarios"); //$NON-NLS-1$
 			}
 		});
-		button_3.setPreferredSize(new Dimension(209, 45));
-		button_3.setHorizontalTextPosition(SwingConstants.LEADING);
-		button_3.setHorizontalAlignment(SwingConstants.LEFT);
-		button_3.setFont(new Font("Verdana", Font.BOLD, 13));
-		button_3.setBorder(null);
-		GridBagConstraints gbc_button_3 = new GridBagConstraints();
-		gbc_button_3.insets = new Insets(0, 0, 5, 0);
-		gbc_button_3.gridx = 0;
-		gbc_button_3.gridy = 4;
-		panel.add(button_3, gbc_button_3);
+		btnCreacinDeUsuarios_1.setPreferredSize(new Dimension(209, 45));
+		btnCreacinDeUsuarios_1.setHorizontalTextPosition(SwingConstants.LEADING);
+		btnCreacinDeUsuarios_1.setHorizontalAlignment(SwingConstants.LEFT);
+		btnCreacinDeUsuarios_1.setFont(new Font("Verdana", Font.BOLD, 13));
+		btnCreacinDeUsuarios_1.setBorder(null);
+		GridBagConstraints gbc_btnCreacinDeUsuarios_1 = new GridBagConstraints();
+		gbc_btnCreacinDeUsuarios_1.insets = new Insets(0, 0, 5, 0);
+		gbc_btnCreacinDeUsuarios_1.gridx = 0;
+		gbc_btnCreacinDeUsuarios_1.gridy = 4;
+		panel.add(btnCreacinDeUsuarios_1, gbc_btnCreacinDeUsuarios_1);
 		
 		JButton button_4 = new JButton("Drs. Especialistas \r");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		button_4.setPreferredSize(new Dimension(209, 45));
 		button_4.setHorizontalTextPosition(SwingConstants.LEADING);
 		button_4.setHorizontalAlignment(SwingConstants.LEFT);
