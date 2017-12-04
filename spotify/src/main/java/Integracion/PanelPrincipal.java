@@ -70,7 +70,7 @@ public class PanelPrincipal extends JPanel {
 		gbl_panelInicio.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
 		setLayout(gbl_panelInicio);
 		
-		JLabel lblPanelPrincipal = new JLabel("PanelPrincipal.0"); //$NON-NLS-1$
+		JLabel lblPanelPrincipal = new JLabel("PanelPrincipal"); //$NON-NLS-1$
 		lblPanelPrincipal.setFont(new Font("PanelPrincipal.1", Font.BOLD, 18)); //$NON-NLS-1$
 		GridBagConstraints gbc_lblPanelPrincipal = new GridBagConstraints();
 		gbc_lblPanelPrincipal.fill = GridBagConstraints.HORIZONTAL;
@@ -95,7 +95,7 @@ public class PanelPrincipal extends JPanel {
 		gbl_panel_1.rowWeights = new double[]{0.0, Double.MIN_VALUE};
 		panel_1.setLayout(gbl_panel_1);
 		
-		JLabel lblNewLabel_1 = new JLabel("PanelPrincipal.2"+/*doctor.getNombre()*/"PanelPrincipal.3"/*doctor.getApellidos()*/); //$NON-NLS-1$ //$NON-NLS-2$
+		JLabel lblNewLabel_1 = new JLabel(""/*doctor.getApellidos()*/); //$NON-NLS-1$ //$NON-NLS-2$
 		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
 		gbc_lblNewLabel_1.gridx = 0;
 		gbc_lblNewLabel_1.gridy = 0;
@@ -117,7 +117,7 @@ public class PanelPrincipal extends JPanel {
 		clockFace.setBounds(82, 11, 117, 113);
 		panel.add(clockFace);
 		*/
-		JLabel lblNewLabel = new JLabel("PanelPrincipal.4"); //$NON-NLS-1$
+		JLabel lblNewLabel = new JLabel(""); //$NON-NLS-1$
 		lblNewLabel.setFont(new Font("PanelPrincipal.5", Font.BOLD, 14)); //$NON-NLS-1$
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.fill = GridBagConstraints.HORIZONTAL;
@@ -144,31 +144,22 @@ public class PanelPrincipal extends JPanel {
 		btnCrearPaciente.setHorizontalTextPosition(SwingConstants.RIGHT);
 		//btnCrearPaciente.setIcon(new ImageIcon(PanelPrincipal.class.getResource("PanelPrincipal.7"))); //$NON-NLS-1$
 		btnCrearPaciente.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnCrearPaciente.setFont(new Font("PanelPrincipal.8", Font.BOLD, 11)); //$NON-NLS-1$
+		btnCrearPaciente.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		btnCrearPaciente.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		btnCrearPaciente.setToolTipText("PanelPrincipal.9"); //$NON-NLS-1$
 		panelControles.add(btnCrearPaciente);
 		
-		btnBorrar = new JButton("Eliminación De Usuarios"); //$NON-NLS-1$
+		btnBorrar = new JButton("HUECO PARA MIGUEL"); //$NON-NLS-1$
 		btnBorrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							BorrarUsuario window= new BorrarUsuario(null);
-							window.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+				
 			}
 		});
 		//btnBorrar.addActionListener(new BtnBorrarActionListener());
 		btnBorrar.setHorizontalTextPosition(SwingConstants.RIGHT);
 	//	btnBorrar.setIcon(new ImageIcon(PanelPrincipal.class.getResource("PanelPrincipal.11"))); //$NON-NLS-1$
 		btnBorrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnBorrar.setFont(new Font("PanelPrincipal.12", Font.BOLD, 11)); //$NON-NLS-1$
+		btnBorrar.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		btnBorrar.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		btnBorrar.setToolTipText("PanelPrincipal.13"); //$NON-NLS-1$
 		panelControles.add(btnBorrar);
@@ -193,20 +184,20 @@ public class PanelPrincipal extends JPanel {
 		btnBuscar.setHorizontalTextPosition(SwingConstants.RIGHT);
 	//	btnBuscar.setIcon(new ImageIcon(PanelPrincipal.class.getResource("PanelPrincipal.16"))); //$NON-NLS-1$
 		btnBuscar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnBuscar.setFont(new Font("PanelPrincipal.17", Font.BOLD, 11)); //$NON-NLS-1$
+		btnBuscar.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		btnBuscar.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		panelControles.add(btnBuscar);
 		
 		/*Boton btnNewButton_3 = new Boton("Puta ah�",Color.BLUE, Color.RED,30,30);
 		panelControles.add(btnNewButton_3);*/
 		
-		btnProfesional = new JButton("Enviar Mensaje a los Usuarios"); //$NON-NLS-1$
+		btnProfesional = new JButton("HUECO PARA MIGUEL"); //$NON-NLS-1$
 		btnProfesional.setToolTipText("PanelPrincipal.19"); //$NON-NLS-1$
 		btnProfesional.addActionListener(new BtnProfesionalActionListener());
 		btnProfesional.setHorizontalTextPosition(SwingConstants.RIGHT);
 	//	btnProfesional.setIcon(new ImageIcon(PanelPrincipal.class.getResource("PanelPrincipal.20"))); //$NON-NLS-1$
 		btnProfesional.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnProfesional.setFont(new Font("PanelPrincipal.21", Font.BOLD, 11)); //$NON-NLS-1$
+		btnProfesional.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		btnProfesional.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		panelControles.add(btnProfesional);
 		
@@ -214,7 +205,7 @@ public class PanelPrincipal extends JPanel {
 		btnCerrar.setToolTipText("PanelPrincipal.23"); //$NON-NLS-1$
 	//	btnCerrar.setIcon(new ImageIcon(PanelPrincipal.class.getResource("PanelPrincipal.24"))); //$NON-NLS-1$
 		btnCerrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnCerrar.setFont(new Font("PanelPrincipal.25", Font.BOLD, 11)); //$NON-NLS-1$
+		btnCerrar.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		btnCerrar.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		btnCerrar.addActionListener(new BtnCerrarActionListener());
 		
@@ -237,7 +228,7 @@ public class PanelPrincipal extends JPanel {
 	//	btnNCrearConsulta.addActionListener(new BtnNCrearConsultaActionListener());
 		//btnNCrearConsulta.setIcon(new ImageIcon(PanelPrincipal.class.getResource("PanelPrincipal.27"))); //$NON-NLS-1$
 		btnNCrearConsulta.setToolTipText("PanelPrincipal.28"); //$NON-NLS-1$
-		btnNCrearConsulta.setFont(new Font("PanelPrincipal.29", Font.BOLD, 11)); //$NON-NLS-1$
+		btnNCrearConsulta.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		btnNCrearConsulta.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		panelControles.add(btnNCrearConsulta);
 		panelControles.add(btnCerrar);
@@ -296,16 +287,7 @@ public class PanelPrincipal extends JPanel {
 	}
 	class BtnProfesionalActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			EventQueue.invokeLater(new Runnable() {
-				public void run() {
-					try {
-						AñadirMensaje window = new AñadirMensaje();
-						window.setVisible(true);
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				}
-			});
+			
 		}
 		}
 	

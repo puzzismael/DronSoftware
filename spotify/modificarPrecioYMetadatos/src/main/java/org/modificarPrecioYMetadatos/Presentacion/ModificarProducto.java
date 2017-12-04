@@ -20,10 +20,11 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.JTextPane;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class ModificarProducto extends JPanel {
 	private JTextField textID;
-	private JTextField textApellidos;
 	private JTextField textNombre;
 	private JTextField textDireccion;
 	private JTextField textDNI;
@@ -78,25 +79,10 @@ public class ModificarProducto extends JPanel {
 		lblID.setBounds(71, 41, 23, 15);
 		panel.add(lblID);
 		
-		JLabel lblApellidos = new JLabel("Apellidos :");
-		lblApellidos.setFont(new Font("Verdana", Font.BOLD, 11));
-		lblApellidos.setBounds(26, 78, 68, 15);
-		panel.add(lblApellidos);
-		
 		JLabel lblNombre = new JLabel("Nombre :");
 		lblNombre.setFont(new Font("Verdana", Font.BOLD, 11));
 		lblNombre.setBounds(35, 104, 59, 15);
 		panel.add(lblNombre);
-		
-		JLabel lblDireccion = new JLabel("Direcci\u00F3n:");
-		lblDireccion.setFont(new Font("Verdana", Font.BOLD, 11));
-		lblDireccion.setBounds(26, 130, 68, 14);
-		panel.add(lblDireccion);
-		
-		JLabel lblDni = new JLabel("DNI:");
-		lblDni.setFont(new Font("Verdana", Font.BOLD, 11));
-		lblDni.setBounds(71, 161, 28, 14);
-		panel.add(lblDni);
 		
 		textID = new JTextField();
 		textID.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -104,13 +90,6 @@ public class ModificarProducto extends JPanel {
 		textID.setBounds(113, 39, 23, 20);
 		panel.add(textID);
 		textID.setColumns(10);
-		
-		textApellidos = new JTextField();
-		textApellidos.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		textApellidos.setBackground(SystemColor.activeCaptionBorder);
-		textApellidos.setBounds(113, 76, 172, 20);
-		panel.add(textApellidos);
-		textApellidos.setColumns(10);
 		
 		textNombre = new JTextField();
 		textNombre.setColumns(10);
@@ -133,12 +112,6 @@ public class ModificarProducto extends JPanel {
 		textDNI.setBounds(113, 159, 172, 20);
 		panel.add(textDNI);
 		
-		JLabel lblNHistoria = new JLabel("N\u00BA Historia: ");
-		lblNHistoria.setForeground(Color.BLACK);
-		lblNHistoria.setFont(new Font("Verdana", Font.BOLD, 11));
-		lblNHistoria.setBounds(156, 42, 87, 15);
-		panel.add(lblNHistoria);
-		
 		textNHistoria = new JTextField();
 		textNHistoria.setColumns(10);
 		textNHistoria.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -146,39 +119,12 @@ public class ModificarProducto extends JPanel {
 		textNHistoria.setBounds(240, 39, 45, 20);
 		panel.add(textNHistoria);
 		
-		JLabel lblFechaNacimiento = new JLabel("Fecha Nacimiento :");
-		lblFechaNacimiento.setHorizontalAlignment(SwingConstants.TRAILING);
-		lblFechaNacimiento.setFont(new Font("Verdana", Font.BOLD, 11));
-		lblFechaNacimiento.setBounds(310, 47, 124, 15);
-		panel.add(lblFechaNacimiento);
-		
 		textFechaNacimiento = new JTextField();
 		textFechaNacimiento.setColumns(10);
 		textFechaNacimiento.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		textFechaNacimiento.setBackground(SystemColor.activeCaptionBorder);
 		textFechaNacimiento.setBounds(444, 45, 86, 20);
 		panel.add(textFechaNacimiento);
-		
-		JLabel lblGenero = new JLabel("G\u00E9nero :");
-		lblGenero.setForeground(Color.BLACK);
-		lblGenero.setFont(new Font("Verdana", Font.BOLD, 11));
-		lblGenero.setBounds(379, 78, 55, 15);
-		panel.add(lblGenero);
-		
-		JLabel lblNacionalidad = new JLabel("Nacionalidad :");
-		lblNacionalidad.setFont(new Font("Verdana", Font.BOLD, 11));
-		lblNacionalidad.setBounds(344, 104, 92, 14);
-		panel.add(lblNacionalidad);
-		
-		JLabel lblMunicipio = new JLabel("Municipio :");
-		lblMunicipio.setFont(new Font("Verdana", Font.BOLD, 11));
-		lblMunicipio.setBounds(364, 130, 77, 15);
-		panel.add(lblMunicipio);
-		
-		JLabel lblCP = new JLabel("C.P :");
-		lblCP.setFont(new Font("Verdana", Font.BOLD, 11));
-		lblCP.setBounds(401, 162, 33, 14);
-		panel.add(lblCP);
 		
 		textGenero = new JTextField();
 		textGenero.setColumns(10);
@@ -207,6 +153,51 @@ public class ModificarProducto extends JPanel {
 		textCP.setBackground(SystemColor.activeCaptionBorder);
 		textCP.setBounds(444, 159, 86, 20);
 		panel.add(textCP);
+		
+		JLabel label = new JLabel("Tipo:");
+		label.setFont(new Font("Verdana", Font.BOLD, 11));
+		label.setBounds(61, 57, 33, 36);
+		panel.add(label);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"canción", "album"}));
+		comboBox.setBounds(113, 71, 73, 20);
+		panel.add(comboBox);
+		
+		JLabel label_1 = new JLabel("Precio Canción");
+		label_1.setFont(new Font("Verdana", Font.BOLD, 11));
+		label_1.setBounds(-2, 119, 96, 36);
+		panel.add(label_1);
+		
+		JLabel label_2 = new JLabel("PrecioAlbum");
+		label_2.setFont(new Font("Verdana", Font.BOLD, 11));
+		label_2.setBounds(15, 151, 88, 36);
+		panel.add(label_2);
+		
+		JLabel label_3 = new JLabel("Artista");
+		label_3.setFont(new Font("Verdana", Font.BOLD, 11));
+		label_3.setBounds(185, 30, 45, 36);
+		panel.add(label_3);
+		
+		JLabel label_4 = new JLabel("Estreno");
+		label_4.setFont(new Font("Verdana", Font.BOLD, 11));
+		label_4.setBounds(375, 40, 59, 29);
+		panel.add(label_4);
+		
+		JLabel label_5 = new JLabel("Ranking");
+		label_5.setFont(new Font("Verdana", Font.BOLD, 11));
+		label_5.setBounds(375, 67, 59, 37);
+		panel.add(label_5);
+		
+		JLabel label_6 = new JLabel("Pais:");
+		label_6.setFont(new Font("Verdana", Font.BOLD, 11));
+		label_6.setBounds(397, 93, 33, 37);
+		panel.add(label_6);
+		
+		JLabel label_7 = new JLabel("NºVentas");
+		label_7.setFont(new Font("Verdana", Font.BOLD, 11));
+		label_7.setBounds(375, 119, 73, 36);
+		panel.add(label_7);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Mensaje", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
