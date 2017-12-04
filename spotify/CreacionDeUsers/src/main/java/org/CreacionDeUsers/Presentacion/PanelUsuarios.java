@@ -52,7 +52,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JFormattedTextField.AbstractFormatter;
 import javax.swing.JTextArea;
 
-public class PanelPacientes extends JPanel {
+public class PanelUsuarios extends JPanel {
 	private JList<usuario> list;
 	private JButton btnGenerarReceta;
 	private JButton btnActualizar;
@@ -89,7 +89,7 @@ public class PanelPacientes extends JPanel {
 	private JTextField textField;
 
 	
-	public PanelPacientes(ArrayList<usuario> users) {
+	public PanelUsuarios(ArrayList<usuario> users) {
 		setBackground(SystemColor.text);
 		this.users=users;
 		setBorder(null);

@@ -13,8 +13,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.border.TitledBorder;
 
-import org.CreacionDeUsers.Presentacion.PanelPacientes;
-
+import org.CreacionDeUsers.Presentacion.PanelUsuarios;
 import org.AdquisicionProductos.Presentacion.*;
 import org.CreacionDeUsers.Dominio.*;
 import org.modificarPrecioYMetadatos.Presentacion.*;
@@ -212,7 +211,7 @@ public class IntegracionMenu extends JFrame {
 		JPanel panelInicio = new PanelPrincipal();
 		panelCardLayout.add(panelInicio, "panel inicio");
 		
-		JPanel panelCreacionDeUsers = new PanelPacientes(null);
+		JPanel panelCreacionDeUsers = new PanelUsuarios(null);
 		panelCardLayout.add(panelCreacionDeUsers, "panel creacion users");
 		
 		JPanel panelModificarProductos = new ModificarProducto();
