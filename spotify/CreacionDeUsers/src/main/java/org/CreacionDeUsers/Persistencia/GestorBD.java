@@ -72,17 +72,17 @@ public class GestorBD {
 				con =getConection();
 				
 				
-				PreparedStatement ps;
+				//PreparedStatement ps;
 				
-				ResultSet res = null; 
-				ps=(PreparedStatement) con.prepareStatement("SELECT * FROM persona");
-				res=ps.executeQuery();
+			//	ResultSet res = null; 
+				//ps=(PreparedStatement) con.prepareStatement("SELECT * FROM persona");
+				//res=ps.executeQuery();
 				
-				if(res.next()) {
-					JOptionPane.showMessageDialog(null,res.getString("nombre")+" "+res.getString("domicilio"));
-				} else {
-					JOptionPane.showMessageDialog(null,"no existen datos");
-				}
+			//	if(res.next()) {
+				//	JOptionPane.showMessageDialog(null,res.getString("nombre")+" "+res.getString("domicilio"));
+				//} else {
+				//	JOptionPane.showMessageDialog(null,"no existen datos");
+			//	}
 				con.close();
 				}catch(Exception e) {
 					System.out.println(e);

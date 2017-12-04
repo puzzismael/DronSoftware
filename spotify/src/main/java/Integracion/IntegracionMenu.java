@@ -37,18 +37,7 @@ public class IntegracionMenu extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					IntegracionMenu frame = new IntegracionMenu();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the frame.
@@ -116,21 +105,21 @@ public class IntegracionMenu extends JFrame {
 		gbc_button.gridy = 1;
 		panel.add(button, gbc_button);
 		
-		JButton btnfaltaPorRellenar = new JButton("GesionDeUsuarios");
-		btnfaltaPorRellenar.addActionListener(new ActionListener() {
+		JButton btnGestionUsuarios = new JButton("Gestión De Usuarios");
+		btnGestionUsuarios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnfaltaPorRellenar.setPreferredSize(new Dimension(209, 45));
-		btnfaltaPorRellenar.setHorizontalTextPosition(SwingConstants.LEADING);
-		btnfaltaPorRellenar.setHorizontalAlignment(SwingConstants.LEFT);
-		btnfaltaPorRellenar.setFont(new Font("Verdana", Font.BOLD, 13));
-		btnfaltaPorRellenar.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		GridBagConstraints gbc_btnfaltaPorRellenar = new GridBagConstraints();
-		gbc_btnfaltaPorRellenar.insets = new Insets(0, 0, 5, 0);
-		gbc_btnfaltaPorRellenar.gridx = 0;
-		gbc_btnfaltaPorRellenar.gridy = 2;
-		panel.add(btnfaltaPorRellenar, gbc_btnfaltaPorRellenar);
+		btnGestionUsuarios.setPreferredSize(new Dimension(209, 45));
+		btnGestionUsuarios.setHorizontalTextPosition(SwingConstants.LEADING);
+		btnGestionUsuarios.setHorizontalAlignment(SwingConstants.LEFT);
+		btnGestionUsuarios.setFont(new Font("Verdana", Font.BOLD, 13));
+		btnGestionUsuarios.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		GridBagConstraints gbc_btnGestionUsuarios = new GridBagConstraints();
+		gbc_btnGestionUsuarios.insets = new Insets(0, 0, 5, 0);
+		gbc_btnGestionUsuarios.gridx = 0;
+		gbc_btnGestionUsuarios.gridy = 2;
+		panel.add(btnGestionUsuarios, gbc_btnGestionUsuarios);
 		
 		JButton btnCreacinDeUsuarios = new JButton("Creación de Usuarios");
 		btnCreacinDeUsuarios.addActionListener(new ActionListener() {
@@ -206,11 +195,10 @@ public class IntegracionMenu extends JFrame {
 		JPanel panelListadoCompradores = new ListadoCompradores();
 		panelCardLayout.add(panelListadoCompradores, "panel Compradores"); //$NON-NLS-1$
 			
-		JPanel panelConsultas = new JPanel();
-		panelCardLayout.add(panelConsultas, "name_34805739852261");
+		JPanel panelGestionUsuarios = new JPanel();
+		panelCardLayout.add(panelGestionUsuarios, "name_34805739852261");
 		
-		JPanel panelPerfil = new JPanel();
-		panelCardLayout.add(panelPerfil, "name_34805762748779");
+		
 	}
 
 }

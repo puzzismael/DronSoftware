@@ -9,7 +9,7 @@
   </parent>
   <groupId>ISO2</groupId>
   <artifactId>GestionDeUsuarios</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>0.1.1-SNAPSHOT</version>
   <name>GestionDeUsuarios</name>
   <url>http://maven.apache.org</url>
   <properties>

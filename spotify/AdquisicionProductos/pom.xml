@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>AdquisicionProductos</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.1.2-SNAPSHOT</version>
   <name>AdquisicionProductos</name>
   <url>http://maven.apache.org</url>
   <properties>

@@ -206,9 +206,9 @@ public class FrameRegistro extends JFrame {
 	
 	private class BtnCancelarActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			FrameLogin login =new FrameLogin(usuarios);
-			login.setVisible(true);
-			dispose();
+		//	FrameLogin login =new FrameLogin(usuarios);
+			//login.setVisible(true);
+			//dispose();
 		}
 		
 	}
