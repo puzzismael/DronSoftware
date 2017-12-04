@@ -28,8 +28,11 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.event.ListSelectionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.FlowLayout;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 
-public class BuscarPaciente extends JFrame {
+public class AdquirirProductos extends JFrame {
 
 	private JPanel contentPane;
 	//private JList<Doctor> list;
@@ -37,19 +40,23 @@ public class BuscarPaciente extends JFrame {
 	//private ArrayList<Doctor> usuarios=new ArrayList<Doctor>();
 
 	
-	public BuscarPaciente(/*ArrayList<Doctor> usuarios*/) {
+	public AdquirirProductos(/*ArrayList<Doctor> usuarios*/) {
 		//this.usuarios=usuarios;
-		setTitle("BuscarPaciente.0"); //$NON-NLS-1$
+		setTitle("Adquirir Productos"); //$NON-NLS-1$
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 322);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
 		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBorder(new TitledBorder(null, "Productos", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		scrollPane.setPreferredSize(new Dimension(150, 2));
 		contentPane.add(scrollPane, BorderLayout.WEST);
+		
+		JList list = new JList();
+		scrollPane.setViewportView(list);
 		
 		//list = new JList</*Doctor*/>();
 		//list.addListSelectionListener(new ListListSelectionListener());
@@ -58,8 +65,12 @@ public class BuscarPaciente extends JFrame {
 		actualizarDatos();
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBorder(new TitledBorder(null, "Cesta", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		scrollPane_1.setPreferredSize(new Dimension(150, 2));
 		contentPane.add(scrollPane_1, BorderLayout.EAST);
+		
+		JList list_1 = new JList();
+		scrollPane_1.setViewportView(list_1);
 		
 		//list1 = new JList<Paciente>();
 		//list1.setBorder(new TitledBorder(null, Messages.getString("BuscarPaciente.2"), TitledBorder.LEADING, TitledBorder.TOP, null, SystemColor.infoText)); //$NON-NLS-1$
@@ -70,10 +81,22 @@ public class BuscarPaciente extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JButton button = new JButton("BuscarPaciente.3"); //$NON-NLS-1$
+		JButton button = new JButton(">>"); //$NON-NLS-1$
 		button.addActionListener(new ButtonActionListener());
 		button.setBounds(34, 90, 52, 23);
 		panel.add(button);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(UIManager.getColor("Button.disabledShadow"));
+		contentPane.add(panel_1, BorderLayout.SOUTH);
+		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
+		JButton btnNewButton = new JButton("Comprar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		panel_1.add(btnNewButton);
 	}
 
 	

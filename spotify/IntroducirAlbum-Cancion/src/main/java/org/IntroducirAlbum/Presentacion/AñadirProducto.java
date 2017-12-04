@@ -77,11 +77,11 @@ public class AñadirProducto extends JFrame {
 		setTitle("AñadirPaciente.0"); //$NON-NLS-1$
 		//setIconImage(Toolkit.getDefaultToolkit().getImage(AñadirProducto.class.getResource("AñadirPaciente.1"))); //$NON-NLS-1$
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 841, 427);
+		setBounds(100, 100, 731, 391);
 		contentPane = new JPanel();
 		contentPane.setBounds(new Rectangle(10, 10, 0, 0));
-		contentPane.setBackground(SystemColor.text);
-		contentPane.setBorder(new TitledBorder(UIManager.getBorder("AñadirPaciente.2"),"AñadirPaciente.3", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$ //$NON-NLS-2$
+		contentPane.setBackground(UIManager.getColor("Button.background"));
+		contentPane.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A\u00F1adir Producto", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$ //$NON-NLS-2$
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
@@ -90,27 +90,27 @@ public class AñadirProducto extends JFrame {
 		panelBotones.setBackground(SystemColor.menu);
 		contentPane.add(panelBotones, BorderLayout.SOUTH);
 		
-		btnCancelar = new JButton("AñadirPaciente.4"); //$NON-NLS-1$
+		btnCancelar = new JButton("Cancelar"); //$NON-NLS-1$
 		btnCancelar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnCancelar.setBounds(229, 5, 89, 25);
-		btnCancelar.setBorder(new TitledBorder(null, "AñadirPaciente.5", TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		btnCancelar.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		btnCancelar.addActionListener(new BtnCancelarActionListener());
 		panelBotones.setLayout(null);
 		btnCancelar.setFont(new Font("AñadirPaciente.6", Font.BOLD, 11)); //$NON-NLS-1$
 		panelBotones.add(btnCancelar);
 		
-		btnLimpiar = new JButton("AñadirPaciente.7"); //$NON-NLS-1$
+		btnLimpiar = new JButton("Limpiar"); //$NON-NLS-1$
 		btnLimpiar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnLimpiar.setBounds(323, 5, 81, 25);
-		btnLimpiar.setBorder(new TitledBorder(null, "AñadirPaciente.8", TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		btnLimpiar.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		btnLimpiar.addActionListener(new BtnLimpiarActionListener());
 		btnLimpiar.setFont(new Font("AñadirPaciente.9", Font.BOLD, 11)); //$NON-NLS-1$
 		panelBotones.add(btnLimpiar);
 		
-		btnAñadir = new JButton("AñadirPaciente.10"); //$NON-NLS-1$
+		btnAñadir = new JButton("Añadir"); //$NON-NLS-1$
 		btnAñadir.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnAñadir.setBounds(409, 5, 75, 25);
-		btnAñadir.setBorder(new TitledBorder(null, "AñadirPaciente.11", TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		btnAñadir.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		btnAñadir.addActionListener(new BtnAñadirActionListener());
 		btnAñadir.setFont(new Font("AñadirPaciente.12", Font.BOLD, 11)); //$NON-NLS-1$
 		panelBotones.add(btnAñadir);
@@ -122,32 +122,32 @@ public class AñadirProducto extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		lblNombre = new JLabel("AñadirPaciente.14"); //$NON-NLS-1$
+		lblNombre = new JLabel("Nombre"); //$NON-NLS-1$
 		lblNombre.setBounds(34, 45, 55, 36);
-		lblNombre.setFont(new Font("AñadirPaciente.15", Font.BOLD, 11)); //$NON-NLS-1$
+		lblNombre.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		panel.add(lblNombre);
 		
 		textNombre = new JTextField();
 		textNombre.setBounds(99, 52, 129, 29);
-		textNombre.setBorder(new TitledBorder(null,"AñadirPaciente.16", TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		textNombre.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		textNombre.setBackground(SystemColor.scrollbar);
-		textNombre.setFont(new Font("AñadirPaciente.17", Font.BOLD, 11)); //$NON-NLS-1$
+		textNombre.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		panel.add(textNombre);
 		textNombre.setColumns(10);
 		
 		lblTipo = new JLabel("Tipo:"); //$NON-NLS-1$
 		lblTipo.setBounds(262, 45, 64, 36);
-		lblTipo.setFont(new Font("A�adirPaciente.19", Font.BOLD, 11)); //$NON-NLS-1$
+		lblTipo.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		panel.add(lblTipo);
 		
 		lblID = new JLabel("ID:"); //$NON-NLS-1$
 		lblID.setBounds(534, 45, 28, 36);
-		lblID.setFont(new Font("AñadirPaciente.23", Font.BOLD, 11)); //$NON-NLS-1$
+		lblID.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		panel.add(lblID);
 		
 		textID = new JTextField();
 		textID.setBounds(572, 52, 120, 29);
-		textID.setBorder(new TitledBorder(null,"AñadirPaciente.24", TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		textID.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		textID.setBackground(SystemColor.scrollbar);
 		textID.setFont(new Font("AñadirPaciente.25", Font.BOLD, 11)); //$NON-NLS-1$
 		textID.setColumns(10);
@@ -155,25 +155,25 @@ public class AñadirProducto extends JFrame {
 		
 		lblPrecio = new JLabel("Precio Canci\u00F3n"); //$NON-NLS-1$
 		lblPrecio.setBounds(29, 116, 120, 36);
-		lblPrecio.setFont(new Font("AñadirPaciente.27", Font.BOLD, 11)); //$NON-NLS-1$
+		lblPrecio.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		panel.add(lblPrecio);
 		
 		textPrecio = new JTextField();
 		textPrecio.setBounds(155, 123, 73, 29);
-		textPrecio.setBorder(new TitledBorder(null, "AñadirPaciente.28", TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		textPrecio.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		textPrecio.setBackground(SystemColor.scrollbar);
 		textPrecio.setFont(new Font("AñadirPaciente.29", Font.BOLD, 11)); //$NON-NLS-1$
 		panel.add(textPrecio);
 		textPrecio.setColumns(10);
 		
-		lblPrecAlbum = new JLabel("Precio album:"); //$NON-NLS-1$
+		lblPrecAlbum = new JLabel("PrecioAlbum"); //$NON-NLS-1$
 		lblPrecAlbum.setBounds(238, 116, 88, 36);
-		lblPrecAlbum.setFont(new Font("AñadirPaciente.31", Font.BOLD, 11)); //$NON-NLS-1$
+		lblPrecAlbum.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		panel.add(lblPrecAlbum);
 		
 		textPrecAlbum = new JTextField();
 		textPrecAlbum.setBounds(336, 123, 151, 29);
-		textPrecAlbum.setBorder(new TitledBorder(null, "AñadirPaciente.32", TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		textPrecAlbum.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		textPrecAlbum.setBackground(SystemColor.scrollbar);
 		textPrecAlbum.setFont(new Font("AñadirPaciente.33", Font.BOLD, 11)); //$NON-NLS-1$
 		textPrecAlbum.setColumns(10);
@@ -181,25 +181,25 @@ public class AñadirProducto extends JFrame {
 		
 		lblDireccin = new JLabel("Artista"); //$NON-NLS-1$
 		lblDireccin.setBounds(497, 116, 65, 36);
-		lblDireccin.setFont(new Font("AñadirPaciente.35", Font.BOLD, 11)); //$NON-NLS-1$
+		lblDireccin.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		panel.add(lblDireccin);
 		
 		textDireccion = new JTextField();
 		textDireccion.setBounds(572, 123, 120, 29);
-		textDireccion.setBorder(new TitledBorder(null, "AñadirPaciente.36", TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		textDireccion.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		textDireccion.setBackground(SystemColor.scrollbar);
 		textDireccion.setFont(new Font("AñadirPaciente.37", Font.BOLD, 11)); //$NON-NLS-1$
 		textDireccion.setColumns(10);
 		panel.add(textDireccion);
 		
-		lblFechaLanz = new JLabel("Fecha de lanzamiento:"); //$NON-NLS-1$
+		lblFechaLanz = new JLabel("Estreno"); //$NON-NLS-1$
 		lblFechaLanz.setBounds(34, 190, 65, 37);
-		lblFechaLanz.setFont(new Font("AñadirPaciente.39", Font.BOLD, 11)); //$NON-NLS-1$
+		lblFechaLanz.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		panel.add(lblFechaLanz);
 		
 		textFechaLanz = new JTextField();
 		textFechaLanz.setBounds(109, 194, 119, 31);
-		textFechaLanz.setBorder(new TitledBorder(null, "AñadirPaciente.40", TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		textFechaLanz.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		textFechaLanz.setBackground(SystemColor.scrollbar);
 		textFechaLanz.setFont(new Font("AñadirPaciente.41", Font.BOLD, 11)); //$NON-NLS-1$
 		textFechaLanz.setColumns(10);
@@ -207,12 +207,12 @@ public class AñadirProducto extends JFrame {
 		
 		lblRanking = new JLabel("Ranking"); //$NON-NLS-1$
 		lblRanking.setBounds(238, 188, 92, 37);
-		lblRanking.setFont(new Font("AñadirPaciente.43", Font.BOLD, 11)); //$NON-NLS-1$
+		lblRanking.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		panel.add(lblRanking);
 		
 		textRanking = new JTextField();
 		textRanking.setBounds(336, 194, 151, 31);
-		textRanking.setBorder(new TitledBorder(null, "AñadirPaciente.44", TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		textRanking.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		textRanking.setBackground(SystemColor.scrollbar);
 		textRanking.setFont(new Font("AñadirPaciente.45", Font.BOLD, 11)); //$NON-NLS-1$
 		textRanking.setColumns(10);
@@ -220,20 +220,19 @@ public class AñadirProducto extends JFrame {
 		
 		lblGnero = new JLabel("Pais:"); //$NON-NLS-1$
 		lblGnero.setBounds(511, 190, 51, 37);
-		lblGnero.setFont(new Font("AñadirPaciente.47", Font.BOLD, 11)); //$NON-NLS-1$
+		lblGnero.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		panel.add(lblGnero);
 		
 		
-		lblNumeroDeVentas = new JLabel("N\u00FAmero de ventas:"); //$NON-NLS-1$
+		lblNumeroDeVentas = new JLabel("NºVentas"); //$NON-NLS-1$
 		lblNumeroDeVentas.setBounds(81, 260, 73, 36);
-		lblNumeroDeVentas.setFont(new Font("AñadirPaciente.55", Font.BOLD, 11)); //$NON-NLS-1$
+		lblNumeroDeVentas.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		panel.add(lblNumeroDeVentas);
 		
 		textNumeroVentas = new JTextField();
 		textNumeroVentas.setEditable(false);
-		textNumeroVentas.setText("AñadirPaciente.56"+(users.size()+1)); //$NON-NLS-1$
 		textNumeroVentas.setBounds(159, 266, 69, 30);
-		textNumeroVentas.setBorder(new TitledBorder(null, "AñadirPaciente.57", TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		textNumeroVentas.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		textNumeroVentas.setBackground(SystemColor.scrollbar);
 		textNumeroVentas.setFont(new Font("AñadirPaciente.58", Font.BOLD, 11)); //$NON-NLS-1$
 		panel.add(textNumeroVentas);
@@ -241,10 +240,11 @@ public class AñadirProducto extends JFrame {
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Canci\u00F3n", "Album"}));
-		comboBox.setBounds(336, 54, 28, 20);
+		comboBox.setBounds(336, 54, 73, 20);
 		panel.add(comboBox);
 		
 		textField = new JTextField();
+		textField.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		textField.setBackground(Color.LIGHT_GRAY);
 		textField.setForeground(Color.WHITE);
 		textField.setBounds(572, 199, 120, 28);

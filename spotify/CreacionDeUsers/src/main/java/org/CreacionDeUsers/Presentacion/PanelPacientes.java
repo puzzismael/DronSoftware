@@ -68,7 +68,6 @@ public class PanelPacientes extends JPanel {
 	private JTextField textApellidos;
 	private JRadioButton rdbtnF;
 	private JRadioButton rdbtnM;
-	private JFormattedTextField textFecha;
 	private JScrollPane scrollPane_2;
 	private JScrollPane scrollPane_3;
 	private JScrollPane scrollPane_4;
@@ -81,14 +80,13 @@ public class PanelPacientes extends JPanel {
 	private JTextField textDNI;
 	private JLabel lblCp;
 	private JTextField textCP;
-	private JPanel panelFoto;
-	private JLabel labelFoto;
 	private JTextField textHistoria;
 	private JTextArea textHistorial;
 	private JTextArea textPruebas;
-	private JTextArea textAlergias;
+	private JTextArea textFavoritos;
 	private JTextArea textTratamiento;
 	private JTextField textId;
+	private JTextField textField;
 
 	
 	public PanelPacientes(ArrayList<usuario> users) {
@@ -107,7 +105,7 @@ public class PanelPacientes extends JPanel {
 		
 		scrollPane_1 = new JScrollPane();
 		scrollPane_1.setEnabled(false);
-		scrollPane_1.setBorder(new TitledBorder(UIManager.getBorder("PanelPacientes.0"),"PanelPacientes.1", TitledBorder.CENTER, TitledBorder.TOP, null, Color.BLACK)); //$NON-NLS-1$ //$NON-NLS-2$
+		scrollPane_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Listado De Usuarios", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$ //$NON-NLS-2$
 		GridBagConstraints gbc_scrollPane_1 = new GridBagConstraints();
 		gbc_scrollPane_1.gridheight = 12;
 		gbc_scrollPane_1.gridwidth = 4;
@@ -130,7 +128,7 @@ public class PanelPacientes extends JPanel {
 		grupo1 = new ButtonGroup();
 		
 		panel = new JPanel();
-		panel.setBorder(new TitledBorder(null, "PanelPacientes.3", TitledBorder.LEADING, TitledBorder.TOP, null, Color.BLACK)); //$NON-NLS-1$
+		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Panel usuario", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		panel.setLayout(null);
 		GridBagConstraints gbc_panel = new GridBagConstraints();
 		gbc_panel.gridheight = 6;
@@ -141,180 +139,172 @@ public class PanelPacientes extends JPanel {
 		gbc_panel.gridy = 0;
 		add(panel, gbc_panel);
 		
-		JLabel label = new JLabel("PanelPacientes.4"); //$NON-NLS-1$
-		label.setFont(new Font("PanelPacientes.5", Font.BOLD, 11)); //$NON-NLS-1$
-		label.setBounds(54, 27, 23, 15);
-		panel.add(label);
+		JLabel lblId = new JLabel("ID:"); //$NON-NLS-1$
+		lblId.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
+		lblId.setBounds(73, 27, 23, 15);
+		panel.add(lblId);
 		
-		JLabel label_1 = new JLabel("PanelPacientes.6"); //$NON-NLS-1$
-		label_1.setFont(new Font("PanelPacientes.7", Font.BOLD, 11)); //$NON-NLS-1$
-		label_1.setBounds(9, 64, 68, 15);
-		panel.add(label_1);
+		JLabel lblNombre = new JLabel("Nombre:"); //$NON-NLS-1$
+		lblNombre.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
+		lblNombre.setBounds(38, 65, 58, 15);
+		panel.add(lblNombre);
 		
-		JLabel label_2 = new JLabel("PanelPacientes.8"); //$NON-NLS-1$
-		label_2.setFont(new Font("PanelPacientes.9", Font.BOLD, 11)); //$NON-NLS-1$
-		label_2.setBounds(18, 102, 59, 15);
-		panel.add(label_2);
+		JLabel lblEdad = new JLabel("Edad:"); //$NON-NLS-1$
+		lblEdad.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
+		lblEdad.setBounds(52, 103, 44, 15);
+		panel.add(lblEdad);
 		
 		textNombre = new JTextField();
 		textNombre.setFont(new Font("PanelPacientes.10", Font.PLAIN, 12)); //$NON-NLS-1$
 		textNombre.setColumns(10);
-		textNombre.setBorder(new TitledBorder(null, "PanelPacientes.11", TitledBorder.LEADING, TitledBorder.TOP, null, Color.BLACK)); //$NON-NLS-1$
+		textNombre.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		textNombre.setBackground(SystemColor.scrollbar);
-		textNombre.setBounds(78, 98, 181, 24);
+		textNombre.setBounds(106, 98, 186, 24);
 		panel.add(textNombre);
 		
 		textApellidos = new JTextField();
 		textApellidos.setFont(new Font("PanelPacientes.12", Font.PLAIN, 12)); //$NON-NLS-1$
 		textApellidos.setColumns(10);
-		textApellidos.setBorder(new TitledBorder(UIManager.getBorder("PanelPacientes.13"), "PanelPacientes.14", TitledBorder.LEADING, TitledBorder.TOP, null, Color.BLACK)); //$NON-NLS-1$ //$NON-NLS-2$
+		textApellidos.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$ //$NON-NLS-2$
 		textApellidos.setBackground(SystemColor.scrollbar);
-		textApellidos.setBounds(78, 60, 181, 24);
+		textApellidos.setBounds(106, 60, 186, 24);
 		panel.add(textApellidos);
 		
-		JLabel lblNHistoria = new JLabel("PanelPacientes.15"); //$NON-NLS-1$
+		JLabel lblNHistoria = new JLabel("Contraseña:"); //$NON-NLS-1$
 		lblNHistoria.setForeground(Color.BLACK);
 		lblNHistoria.setFont(new Font("PanelPacientes.16", Font.BOLD, 11)); //$NON-NLS-1$
-		lblNHistoria.setBounds(112, 27, 87, 15);
+		lblNHistoria.setBounds(145, 27, 73, 15);
 		panel.add(lblNHistoria);
 		
-		JLabel label_4 = new JLabel("PanelPacientes.17"); //$NON-NLS-1$
-		label_4.setHorizontalAlignment(SwingConstants.TRAILING);
-		label_4.setFont(new Font("PanelPacientes.18", Font.BOLD, 11)); //$NON-NLS-1$
-		label_4.setBounds(267, 27, 124, 15);
-		panel.add(label_4);
+		JLabel lblAaa = new JLabel("nacionalidad"); //$NON-NLS-1$
+		lblAaa.setHorizontalAlignment(SwingConstants.TRAILING);
+		lblAaa.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
+		lblAaa.setBounds(302, 27, 87, 15);
+		panel.add(lblAaa);
 		
 		//textFecha = new JFormattedTextField();
 		MaskFormatter formatoFecha;
 		try {
 			formatoFecha = new MaskFormatter("PanelPacientes.19"); //$NON-NLS-1$
 			formatoFecha.setPlaceholderCharacter('_');
-			textFecha = new JFormattedTextField(formatoFecha);
-			textFecha.setBorder(new TitledBorder(null,"PanelPacientes.20", TitledBorder.LEADING, TitledBorder.TOP, null, SystemColor.infoText)); //$NON-NLS-1$
-			textFecha.setBackground(SystemColor.scrollbar);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		textFecha.setBounds(393, 24, 87, 20);
-		panel.add(textFecha);
-		textFecha.setEnabled(false);
-		textFecha.setFont(new Font("PanelPacientes.21", Font.PLAIN, 11)); //$NON-NLS-1$
+		JLabel lblGenero = new JLabel("Genero"); //$NON-NLS-1$
+		lblGenero.setForeground(Color.BLACK);
+		lblGenero.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
+		lblGenero.setBounds(334, 65, 55, 15);
+		panel.add(lblGenero);
 		
-		JLabel label_5 = new JLabel("PanelPacientes.22"); //$NON-NLS-1$
-		label_5.setForeground(Color.BLACK);
-		label_5.setFont(new Font("PanelPacientes.23", Font.BOLD, 11)); //$NON-NLS-1$
-		label_5.setBounds(328, 64, 55, 15);
-		panel.add(label_5);
-		
-		rdbtnF = new JRadioButton("PanelPacientes.24"); //$NON-NLS-1$
+		rdbtnF = new JRadioButton("F"); //$NON-NLS-1$
 		rdbtnF.addActionListener(new RdbtnFActionListener());
 		rdbtnF.setFont(new Font("PanelPacientes.25", Font.BOLD, 11)); //$NON-NLS-1$
-		rdbtnF.setBorder(new TitledBorder(null, "PanelPacientes.26", TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		rdbtnF.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		rdbtnF.setBackground(SystemColor.scrollbar);
-		rdbtnF.setBounds(393, 59, 33, 25);
+		rdbtnF.setBounds(399, 60, 33, 25);
 		panel.add(rdbtnF);
 		
-		rdbtnM = new JRadioButton("PanelPacientes.27"); //$NON-NLS-1$
+		rdbtnM = new JRadioButton("M"); //$NON-NLS-1$
 		rdbtnM.addActionListener(new RdbtnMActionListener());
 		rdbtnM.setFont(new Font("PanelPacientes.28", Font.BOLD, 11)); //$NON-NLS-1$
-		rdbtnM.setBorder(new TitledBorder(null, "PanelPacientes.29", TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		rdbtnM.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		rdbtnM.setBackground(SystemColor.scrollbar);
-		rdbtnM.setBounds(436, 59, 35, 25);
+		rdbtnM.setBounds(460, 60, 35, 25);
 		panel.add(rdbtnM);
 		
-		lblNacionalidad = new JLabel("PanelPacientes.30"); //$NON-NLS-1$
-		lblNacionalidad.setFont(new Font("PanelPacientes.31", Font.BOLD, 11)); //$NON-NLS-1$
-		lblNacionalidad.setBounds(291, 102, 92, 14);
+		lblNacionalidad = new JLabel("Municipio"); //$NON-NLS-1$
+		lblNacionalidad.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
+		lblNacionalidad.setBounds(325, 103, 64, 14);
 		panel.add(lblNacionalidad);
 		
 		textNacionalidad = new JTextField();
-		textNacionalidad.setBorder(new TitledBorder(null, "PanelPacientes.32", TitledBorder.LEADING, TitledBorder.TOP, null, SystemColor.infoText)); //$NON-NLS-1$
+		textNacionalidad.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		textNacionalidad.setBackground(SystemColor.scrollbar);
 		textNacionalidad.setFont(new Font("PanelPacientes.33", Font.PLAIN, 12)); //$NON-NLS-1$
-		textNacionalidad.setBounds(394, 100, 86, 20);
+		textNacionalidad.setBounds(393, 100, 102, 20);
 		panel.add(textNacionalidad);
 		textNacionalidad.setColumns(10);
 		
-		JLabel lblDireccin = new JLabel("PanelPacientes.34"); //$NON-NLS-1$
-		lblDireccin.setFont(new Font("PanelPacientes.35", Font.BOLD, 11)); //$NON-NLS-1$
-		lblDireccin.setBounds(9, 138, 77, 14);
+		JLabel lblDireccin = new JLabel("Código Postal"); //$NON-NLS-1$
+		lblDireccin.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
+		lblDireccin.setBounds(9, 138, 101, 14);
 		panel.add(lblDireccin);
 		
 		textDireccion = new JTextField();
-		textDireccion.setBorder(new TitledBorder(null,"PanelPacientes.36", TitledBorder.LEADING, TitledBorder.TOP, null, SystemColor.infoText)); //$NON-NLS-1$
+		textDireccion.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		textDireccion.setBackground(SystemColor.scrollbar);
 		textDireccion.setFont(new Font("PanelPacientes.37", Font.PLAIN, 12)); //$NON-NLS-1$
-		textDireccion.setBounds(78, 136, 181, 20);
+		textDireccion.setBounds(106, 136, 186, 20);
 		panel.add(textDireccion);
 		textDireccion.setColumns(10);
 		
-		JLabel lblMunicipio = new JLabel("PanelPacientes.38"); //$NON-NLS-1$
-		lblMunicipio.setFont(new Font("PanelPacientes.39", Font.BOLD, 11)); //$NON-NLS-1$
-		lblMunicipio.setBounds(314, 138, 77, 15);
+		JLabel lblMunicipio = new JLabel("Correo"); //$NON-NLS-1$
+		lblMunicipio.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
+		lblMunicipio.setBounds(345, 138, 44, 15);
 		panel.add(lblMunicipio);
 		
 		textMunicipio = new JTextField();
-		textMunicipio.setBorder(new TitledBorder(null, "PanelPacientes.40", TitledBorder.LEADING, TitledBorder.TOP, null, SystemColor.infoText)); //$NON-NLS-1$
+		textMunicipio.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		textMunicipio.setBackground(SystemColor.scrollbar);
 		textMunicipio.setFont(new Font("PanelPacientes.41", Font.PLAIN, 12)); //$NON-NLS-1$
-		textMunicipio.setBounds(394, 136, 86, 20);
+		textMunicipio.setBounds(394, 136, 101, 20);
 		panel.add(textMunicipio);
 		textMunicipio.setColumns(10);
 		
-		JLabel lblDni = new JLabel("PanelPacientes.42"); //$NON-NLS-1$
-		lblDni.setFont(new Font("PanelPacientes.43", Font.BOLD, 11)); //$NON-NLS-1$
-		lblDni.setBounds(43, 169, 34, 14);
+		JLabel lblDni = new JLabel("Estudios"); //$NON-NLS-1$
+		lblDni.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
+		lblDni.setBounds(38, 170, 58, 14);
 		panel.add(lblDni);
 		
 		textDNI = new JTextField();
-		textDNI.setBorder(new TitledBorder(null, "PanelPacientes.44", TitledBorder.LEADING, TitledBorder.TOP, null, SystemColor.infoText)); //$NON-NLS-1$
+		textDNI.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		textDNI.setBackground(SystemColor.scrollbar);
 		textDNI.setFont(new Font("PanelPacientes.45", Font.PLAIN, 12)); //$NON-NLS-1$
-		textDNI.setBounds(78, 167, 181, 20);
+		textDNI.setBounds(106, 167, 186, 20);
 		panel.add(textDNI);
 		textDNI.setColumns(10);
 		
-		lblCp = new JLabel("PanelPacientes.46"); //$NON-NLS-1$
-		lblCp.setFont(new Font("PanelPacientes.47", Font.BOLD, 11)); //$NON-NLS-1$
-		lblCp.setBounds(354, 169, 33, 14);
+		lblCp = new JLabel("C. Bancaria"); //$NON-NLS-1$
+		lblCp.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
+		lblCp.setBounds(316, 170, 73, 14);
 		panel.add(lblCp);
 		
 		textCP = new JTextField();
-		textCP.setBorder(new TitledBorder(null,"PanelPacientes.48", TitledBorder.LEADING, TitledBorder.TOP, null, SystemColor.infoText)); //$NON-NLS-1$
+		textCP.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		textCP.setBackground(SystemColor.scrollbar);
 		textCP.setFont(new Font("PanelPacientes.49", Font.PLAIN, 12)); //$NON-NLS-1$
-		textCP.setBounds(393, 167, 86, 20);
+		textCP.setBounds(393, 167, 102, 20);
 		panel.add(textCP);
 		textCP.setColumns(10);
 		
-		panelFoto = new JPanel();
-		panelFoto.setBorder(new TitledBorder(null,"PanelPacientes.50", TitledBorder.LEADING, TitledBorder.TOP, null, SystemColor.infoText)); //$NON-NLS-1$
-		panelFoto.setBounds(517, 24, 153, 163);
-		panel.add(panelFoto);
-		
-		labelFoto = new JLabel("PanelPacientes.51"); //$NON-NLS-1$
-		panelFoto.add(labelFoto);
-		
 		textHistoria = new JTextField();
 		textHistoria.setFont(new Font("PanelPacientes.52", Font.PLAIN, 12)); //$NON-NLS-1$
-		textHistoria.setBorder(new TitledBorder(null,"PanelPacientes.53", TitledBorder.LEADING, TitledBorder.TOP, null, SystemColor.infoText)); //$NON-NLS-1$
+		textHistoria.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		textHistoria.setBackground(SystemColor.scrollbar);
-		textHistoria.setBounds(195, 25, 64, 20);
+		textHistoria.setBounds(228, 24, 64, 20);
 		panel.add(textHistoria);
 		textHistoria.setColumns(10);
 		
 		textId = new JTextField();
-		textId.setBorder(new TitledBorder(null, "PanelPacientes.54", TitledBorder.LEADING, TitledBorder.TOP, null, SystemColor.infoText)); //$NON-NLS-1$
+		textId.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		textId.setFont(new Font("PanelPacientes.55", Font.PLAIN, 12)); //$NON-NLS-1$
 		textId.setBackground(SystemColor.scrollbar);
-		textId.setBounds(77, 25, 23, 20);
+		textId.setBounds(106, 24, 33, 20);
 		panel.add(textId);
 		textId.setColumns(10);
 		
+		textField = new JTextField();
+		textField.setFont(new Font("Dialog", Font.PLAIN, 12));
+		textField.setColumns(10);
+		textField.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		textField.setBackground(SystemColor.scrollbar);
+		textField.setBounds(399, 25, 96, 24);
+		panel.add(textField);
+		
 		scrollPane_5 = new JScrollPane();
-		scrollPane_5.setBorder(new TitledBorder(null, "PanelPacientes.56", TitledBorder.LEADING, TitledBorder.TOP, null, SystemColor.infoText)); //$NON-NLS-1$
+		scrollPane_5.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Historial spotify", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		GridBagConstraints gbc_scrollPane_5 = new GridBagConstraints();
 		gbc_scrollPane_5.gridwidth = 8;
 		gbc_scrollPane_5.insets = new Insets(0, 0, 5, 5);
@@ -329,7 +319,7 @@ public class PanelPacientes extends JPanel {
 		scrollPane_5.setViewportView(textHistorial);
 		
 		scrollPane_4 = new JScrollPane();
-		scrollPane_4.setBorder(new TitledBorder(null, "PanelPacientes.58", TitledBorder.LEADING, TitledBorder.TOP, null, SystemColor.infoText)); //$NON-NLS-1$
+		scrollPane_4.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Productos favoritos", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		GridBagConstraints gbc_scrollPane_4 = new GridBagConstraints();
 		gbc_scrollPane_4.gridwidth = 5;
 		gbc_scrollPane_4.insets = new Insets(0, 0, 5, 0);
@@ -338,14 +328,13 @@ public class PanelPacientes extends JPanel {
 		gbc_scrollPane_4.gridy = 6;
 		add(scrollPane_4, gbc_scrollPane_4);
 		
-		textAlergias = new JTextArea();
-		textAlergias.setFont(new Font("PanelPacientes.59", Font.PLAIN, 11)); //$NON-NLS-1$
-		textAlergias.setBackground(SystemColor.menu);
-		textAlergias.setText("PanelPacientes.60"); //$NON-NLS-1$
-		scrollPane_4.setViewportView(textAlergias);
+		textFavoritos = new JTextArea();
+		textFavoritos.setFont(new Font("PanelPacientes.59", Font.PLAIN, 11)); //$NON-NLS-1$
+		textFavoritos.setBackground(SystemColor.menu);
+		scrollPane_4.setViewportView(textFavoritos);
 		
 		scrollPane_2 = new JScrollPane();
-		scrollPane_2.setBorder(new TitledBorder(null,"PanelPacientes.61", TitledBorder.LEADING, TitledBorder.TOP, null, SystemColor.infoText)); //$NON-NLS-1$
+		scrollPane_2.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Lista de deseados", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		GridBagConstraints gbc_scrollPane_2 = new GridBagConstraints();
 		gbc_scrollPane_2.gridheight = 2;
 		gbc_scrollPane_2.gridwidth = 8;
@@ -361,7 +350,7 @@ public class PanelPacientes extends JPanel {
 		scrollPane_2.setViewportView(textPruebas);
 		
 		scrollPane_3 = new JScrollPane();
-		scrollPane_3.setBorder(new TitledBorder(UIManager.getBorder("PanelPacientes.63"),"PanelPacientes.64", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$ //$NON-NLS-2$
+		scrollPane_3.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "M\u00E1s comprados", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$ //$NON-NLS-2$
 		GridBagConstraints gbc_scrollPane_3 = new GridBagConstraints();
 		gbc_scrollPane_3.gridheight = 2;
 		gbc_scrollPane_3.gridwidth = 5;
@@ -374,13 +363,12 @@ public class PanelPacientes extends JPanel {
 		textTratamiento = new JTextArea();
 		textTratamiento.setFont(new Font("PanelPacientes.65", Font.PLAIN, 11)); //$NON-NLS-1$
 		textTratamiento.setBackground(SystemColor.menu);
-		textTratamiento.setText("PanelPacientes.66"); //$NON-NLS-1$
 		scrollPane_3.setViewportView(textTratamiento);
 		
 		scrollPane = new JScrollPane();
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPane.setBackground(SystemColor.menu);
-		scrollPane.setBorder(new TitledBorder(null,"PanelPacientes.67", TitledBorder.CENTER, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		scrollPane.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Notas sobre el cliente", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
 		gbc_scrollPane.gridheight = 3;
 		gbc_scrollPane.gridwidth = 11;
@@ -397,9 +385,10 @@ public class PanelPacientes extends JPanel {
 		textReceta.setBackground(SystemColor.menu);
 		scrollPane.setViewportView(textReceta);
 		
-		btnImprimir = new JButton("PanelPacientes.69"); //$NON-NLS-1$
+		btnImprimir = new JButton("Guardar"); //$NON-NLS-1$
+		btnImprimir.setFont(new Font("Verdana", Font.BOLD, 11));
 		btnImprimir.setEnabled(false);
-		btnImprimir.setBorder(new TitledBorder(null, "PanelPacientes.70", TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		btnImprimir.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		//btnImprimir.setIcon(new ImageIcon(PanelPacientes.class.getResource("PanelPacientes.71"))); //$NON-NLS-1$
 		GridBagConstraints gbc_btnImprimir = new GridBagConstraints();
 		gbc_btnImprimir.gridheight = 2;
@@ -410,10 +399,10 @@ public class PanelPacientes extends JPanel {
 		gbc_btnImprimir.gridy = 9;
 		add(btnImprimir, gbc_btnImprimir);
 		
-		btnGenerarReceta = new JButton("PanelPacientes.72"); //$NON-NLS-1$
-		btnGenerarReceta.setBorder(new TitledBorder(null, "PanelPacientes.73", TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
+		btnGenerarReceta = new JButton("imprimir"); //$NON-NLS-1$
+		btnGenerarReceta.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		//btnGenerarReceta.setIcon(new ImageIcon(PanelPacientes.class.getResource("PanelPacientes.74"))); //$NON-NLS-1$
-		btnGenerarReceta.setFont(new Font("PanelPacientes.75", Font.BOLD, 11)); //$NON-NLS-1$
+		btnGenerarReceta.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		btnGenerarReceta.addActionListener(new BtnGenerarRecetaActionListener());
 		btnGenerarReceta.setEnabled(false);
 		GridBagConstraints gbc_btnGenerarReceta = new GridBagConstraints();
@@ -424,15 +413,15 @@ public class PanelPacientes extends JPanel {
 		gbc_btnGenerarReceta.gridy = 11;
 		add(btnGenerarReceta, gbc_btnGenerarReceta);
 		
-		btnActualizar = new JButton("PanelPacientes.76"); //$NON-NLS-1$
-		btnActualizar.setFont(new Font("PanelPacientes.77", Font.BOLD, 11)); //$NON-NLS-1$
+		btnActualizar = new JButton("Guardar Cambios"); //$NON-NLS-1$
+		btnActualizar.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		btnActualizar.setEnabled(false);
 		btnActualizar.addActionListener(new BtnActualizarActionListener());
 		
-		btnLimpiar = new JButton("PanelPacientes.78"); //$NON-NLS-1$
+		btnLimpiar = new JButton("Limpiar"); //$NON-NLS-1$
 		btnLimpiar.addActionListener(new BtnLimpiarActionListener());
 		
-		btnActualizarListaDe = new JButton("PanelPacientes.79"); //$NON-NLS-1$
+		btnActualizarListaDe = new JButton("Actualizar lista de Usuarios"); //$NON-NLS-1$
 		btnActualizarListaDe.addActionListener(new BtnActualizarListaDeActionListener());
 		GridBagConstraints gbc_btnActualizarListaDe = new GridBagConstraints();
 		gbc_btnActualizarListaDe.fill = GridBagConstraints.HORIZONTAL;
@@ -442,7 +431,7 @@ public class PanelPacientes extends JPanel {
 		gbc_btnActualizarListaDe.gridx = 0;
 		gbc_btnActualizarListaDe.gridy = 12;
 		add(btnActualizarListaDe, gbc_btnActualizarListaDe);
-		btnLimpiar.setFont(new Font("PanelPacientes.80", Font.BOLD, 11)); //$NON-NLS-1$
+		btnLimpiar.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		btnLimpiar.setEnabled(false);
 		GridBagConstraints gbc_btnLimpiar = new GridBagConstraints();
 		gbc_btnLimpiar.anchor = GridBagConstraints.SOUTH;
@@ -479,23 +468,23 @@ public class PanelPacientes extends JPanel {
 				textHistoria.setText("PanelPacientes.85"); //$NON-NLS-1$
 				textReceta.setEnabled(false);
 				textReceta.setText("PanelPacientes.86"); //$NON-NLS-1$
-				textFecha.setText("PanelPacientes.87"); //$NON-NLS-1$
+			//.setText("PanelPacientes.87"); //$NON-NLS-1$
 				textDireccion.setText("PanelPacientes.88"); //$NON-NLS-1$
 				textDNI.setText("PanelPacientes.89"); //$NON-NLS-1$
 				textNacionalidad.setText("PanelPacientes.90"); //$NON-NLS-1$
 				textMunicipio.setText("PanelPacientes.91"); //$NON-NLS-1$
 				textCP.setText("PanelPacientes.92"); //$NON-NLS-1$
 				textHistorial.setText("PanelPacientes.93"); //$NON-NLS-1$
-				textAlergias.setText("PanelPacientes.94"); //$NON-NLS-1$
+				textFavoritos.setText("PanelPacientes.94"); //$NON-NLS-1$
 				textPruebas.setText("PanelPacientes.95"); //$NON-NLS-1$
 				textTratamiento.setText("PanelPacientes.96"); //$NON-NLS-1$
 				btnActualizar.setEnabled(false);
 				btnGenerarReceta.setEnabled(false);
 				btnLimpiar.setEnabled(false);
 				btnImprimir.setEnabled(false);
-				textFecha.setEnabled(false);
+				//textFecha.setEnabled(false);
 				grupo1.clearSelection();
-				labelFoto.setIcon(null);
+				//labelFoto.setIcon(null);
 				
 			}else{
 				textApellidos.setText(users.get(i).getApellidos());
@@ -526,7 +515,7 @@ public class PanelPacientes extends JPanel {
 				btnLimpiar.setEnabled(true);
 				textReceta.setEnabled(true);
 				btnImprimir.setEnabled(true);
-				textFecha.setEnabled(true);
+				//textFecha.setEnabled(true);
 				
 			}
 		}

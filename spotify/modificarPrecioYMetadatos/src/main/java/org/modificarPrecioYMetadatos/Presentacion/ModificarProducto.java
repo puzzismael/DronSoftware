@@ -19,6 +19,7 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import javax.swing.JTextPane;
 
 public class ModificarProducto extends JPanel {
 	private JTextField textID;
@@ -37,11 +38,12 @@ public class ModificarProducto extends JPanel {
 	 * Create the panel.
 	 */
 	public ModificarProducto() {
+		setBackground(UIManager.getColor("Button.disabledShadow"));
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{110, 65, 55, 57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{32, 23, 0, 51, 0, 45, 65, 40, 32, 40, 36, 53, 45, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.columnWidths = new int[]{57, 35, 32, 107, -47, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gridBagLayout.rowHeights = new int[]{35, 30, 31, 31, 30, 46, 51, 40, 32, 40, 27, 30, 45, 0};
+		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -64,7 +66,7 @@ public class ModificarProducto extends JPanel {
 		panel.setLayout(null);
 		GridBagConstraints gbc_panel = new GridBagConstraints();
 		gbc_panel.gridheight = 6;
-		gbc_panel.gridwidth = 22;
+		gbc_panel.gridwidth = 21;
 		gbc_panel.insets = new Insets(0, 0, 5, 0);
 		gbc_panel.fill = GridBagConstraints.BOTH;
 		gbc_panel.gridx = 4;
@@ -157,11 +159,6 @@ public class ModificarProducto extends JPanel {
 		textFechaNacimiento.setBounds(444, 45, 86, 20);
 		panel.add(textFechaNacimiento);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new TitledBorder(null, "Panel foto", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_1.setBounds(540, 28, 105, 174);
-		panel.add(panel_1);
-		
 		JLabel lblGenero = new JLabel("G\u00E9nero :");
 		lblGenero.setForeground(Color.BLACK);
 		lblGenero.setFont(new Font("Verdana", Font.BOLD, 11));
@@ -211,13 +208,74 @@ public class ModificarProducto extends JPanel {
 		textCP.setBounds(444, 159, 86, 20);
 		panel.add(textCP);
 		
-		JButton button = new JButton("Actualizar lista de Pacientes");
-		GridBagConstraints gbc_button = new GridBagConstraints();
-		gbc_button.gridwidth = 4;
-		gbc_button.insets = new Insets(0, 0, 0, 5);
-		gbc_button.gridx = 0;
-		gbc_button.gridy = 12;
-		add(button, gbc_button);
+		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Mensaje", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
+		gbc_panel_1.gridheight = 3;
+		gbc_panel_1.gridwidth = 12;
+		gbc_panel_1.insets = new Insets(0, 0, 5, 5);
+		gbc_panel_1.fill = GridBagConstraints.BOTH;
+		gbc_panel_1.gridx = 4;
+		gbc_panel_1.gridy = 6;
+		add(panel_1, gbc_panel_1);
+		panel_1.setLayout(new BorderLayout(0, 0));
+		
+		JTextPane textPane = new JTextPane();
+		panel_1.add(textPane, BorderLayout.CENTER);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBorder(new TitledBorder(null, "Datos econ\u00F3micos", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_2.setBackground(UIManager.getColor("Button.background"));
+		GridBagConstraints gbc_panel_2 = new GridBagConstraints();
+		gbc_panel_2.gridheight = 3;
+		gbc_panel_2.gridwidth = 9;
+		gbc_panel_2.insets = new Insets(0, 0, 5, 0);
+		gbc_panel_2.fill = GridBagConstraints.BOTH;
+		gbc_panel_2.gridx = 16;
+		gbc_panel_2.gridy = 6;
+		add(panel_2, gbc_panel_2);
+		panel_2.setLayout(new BorderLayout(0, 0));
+		
+		JTextPane textPane_1 = new JTextPane();
+		panel_2.add(textPane_1, BorderLayout.CENTER);
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBorder(new TitledBorder(null, "Datos spotify", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		GridBagConstraints gbc_panel_3 = new GridBagConstraints();
+		gbc_panel_3.gridwidth = 12;
+		gbc_panel_3.gridheight = 2;
+		gbc_panel_3.insets = new Insets(0, 0, 5, 5);
+		gbc_panel_3.fill = GridBagConstraints.BOTH;
+		gbc_panel_3.gridx = 4;
+		gbc_panel_3.gridy = 9;
+		add(panel_3, gbc_panel_3);
+		panel_3.setLayout(new BorderLayout(0, 0));
+		
+		JTextPane textPane_2 = new JTextPane();
+		panel_3.add(textPane_2, BorderLayout.CENTER);
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setBorder(new TitledBorder(null, "Datos Calidad", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		GridBagConstraints gbc_panel_4 = new GridBagConstraints();
+		gbc_panel_4.gridwidth = 9;
+		gbc_panel_4.gridheight = 2;
+		gbc_panel_4.insets = new Insets(0, 0, 5, 5);
+		gbc_panel_4.fill = GridBagConstraints.BOTH;
+		gbc_panel_4.gridx = 16;
+		gbc_panel_4.gridy = 9;
+		add(panel_4, gbc_panel_4);
+		panel_4.setLayout(new BorderLayout(0, 0));
+		
+		JTextPane textPane_3 = new JTextPane();
+		panel_4.add(textPane_3, BorderLayout.CENTER);
+		
+		JButton btnActualizarListaDe = new JButton("Actualizar lista de productos");
+		GridBagConstraints gbc_btnActualizarListaDe = new GridBagConstraints();
+		gbc_btnActualizarListaDe.gridwidth = 4;
+		gbc_btnActualizarListaDe.insets = new Insets(0, 0, 0, 5);
+		gbc_btnActualizarListaDe.gridx = 0;
+		gbc_btnActualizarListaDe.gridy = 12;
+		add(btnActualizarListaDe, gbc_btnActualizarListaDe);
 		
 		JButton button_1 = new JButton("Limpiar");
 		button_1.setFont(new Font("Verdana", Font.BOLD, 11));

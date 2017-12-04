@@ -19,8 +19,8 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.border.TitledBorder;
 
-
-
+import org.BuscarCanciones.Presentacion.*;
+import org.EliminarCancionesYAlbumes.Presentacion.*;
 import java.awt.SystemColor;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.BevelBorder;
@@ -179,7 +179,7 @@ public class PanelPrincipal extends JPanel {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
-							BuscarPaciente window = new BuscarPaciente();
+							AdquirirProductos window = new AdquirirProductos();
 							window.setVisible(true);
 						} catch (Exception e) {
 							e.printStackTrace();
@@ -210,7 +210,7 @@ public class PanelPrincipal extends JPanel {
 		btnProfesional.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		panelControles.add(btnProfesional);
 		
-		btnCerrar = new JButton("Listado de Compradores"); //$NON-NLS-1$
+		btnCerrar = new JButton("BuscarCancion/Album"); //$NON-NLS-1$
 		btnCerrar.setToolTipText("PanelPrincipal.23"); //$NON-NLS-1$
 	//	btnCerrar.setIcon(new ImageIcon(PanelPrincipal.class.getResource("PanelPrincipal.24"))); //$NON-NLS-1$
 		btnCerrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -218,9 +218,19 @@ public class PanelPrincipal extends JPanel {
 		btnCerrar.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		btnCerrar.addActionListener(new BtnCerrarActionListener());
 		
-		btnNCrearConsulta = new JButton("PanelPrincipal.26"); //$NON-NLS-1$
+		btnNCrearConsulta = new JButton("Borrar cancion/album"); //$NON-NLS-1$
 		btnNCrearConsulta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+					EventQueue.invokeLater(new Runnable() {
+						public void run() {
+							try {
+								BorrarCancionAlbum bc =new BorrarCancionAlbum(null);
+								bc.setVisible(true);
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+						}
+					});
 			}
 		});
 		btnNCrearConsulta.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -254,17 +264,18 @@ public class PanelPrincipal extends JPanel {
 	
 	private class BtnCerrarActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
+			
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						ListadoDeEspecialistas window = new ListadoDeEspecialistas();
+					
+						BuscarCanciones window = new BuscarCanciones( );
 						window.setVisible(true);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
 				}
 			});
-			
 			}
 		}
 	}
