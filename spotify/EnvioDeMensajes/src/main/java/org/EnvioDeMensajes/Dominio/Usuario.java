@@ -1,162 +1,147 @@
 package org.EnvioDeMensajes.Dominio;
 
+
+
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Date;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
-//import presentacion.FramePrincipal;
+
 
 public class Usuario {
-	private String dni,cp, nombre, apellidos,nacionalidad,direccion,municipio,alergias,medicacion, id;
-	private String sexo,historia,historial,pruebas;
-	//private ImageIcon image=new ImageIcon(FramePrincipal.class.getResource("/resources/paciente.png")); 
+	private String usuario, contraseña,dni, nombre, apellidos,direccion, id,fechanacimiento, sexo;
+	private long tarjetaCredito;
+	private ArrayList<Album> albumes;
+	private ArrayList<Cancion> cancion;
 	
-	
-
-	private String fechacimiento;
-	
-	
-	public Usuario(String id,String nombre, String apellidos, String nacionalidad, String direccion, String municipio, String cp,
-			String alergias, String medicaciOn,String dni,String edad,  String historia, String sexo,String historial, String pruebas) {
+	public Usuario(String usuario, String contraseña, String id,String nombre, String apellidos, String direccion, String dni, String fechanacimiento,
+			 String sexo, long tarjetaCredito,ArrayList<Album> albumes, ArrayList<Cancion> cancion ) {
+		
 		super();
+		this.usuario=usuario;
+		this.contraseña=contraseña;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
-		this.nacionalidad = nacionalidad;
 		this.direccion = direccion;
-		this.municipio = municipio;
-		this.alergias = alergias;
-		this.medicacion = medicacion;
 		this.id = id;
 		this.dni = dni;
-		this.fechacimiento = edad;
-		this.cp = cp;
+		this.fechanacimiento = fechanacimiento;
 		this.sexo = sexo;
-		this.historia=historia;
-		this.historial=historial;
-		this.pruebas=pruebas;
-		
+		this.albumes=albumes;
+		this.cancion=cancion;
+		this.tarjetaCredito=tarjetaCredito;
 	}
 	
-
-
-	public Usuario(String id,String nombre, String apellidos, String nacionalidad, String direccion, String municipio, String cp,
-			String dni,String edad, String sexo) {
-		super();
+	public Usuario(String usuario, String contraseña, String nombre, String apellidos){
+		this.usuario = usuario;
+		this.contraseña = contraseña;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
-		this.nacionalidad = nacionalidad;
-		this.direccion = direccion;
-		this.municipio = municipio;
-		this.id = id;
+	}
+
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
+	public String getContraseña() {
+		return contraseña;
+	}
+
+	public void setContraseña(String contraseña) {
+		this.contraseña = contraseña;
+	}
+
+	public String getDni() {
+		return dni;
+	}
+
+	public void setDni(String dni) {
 		this.dni = dni;
-		this.fechacimiento = edad;
-		this.cp = cp;
-		this.sexo = sexo;
-		
-	}
-
-	public String getHistoria() {
-		return historia;
-	}
-
-	public void setHistoria(String historia) {
-		this.historia = historia;
 	}
 
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 	public String getApellidos() {
 		return apellidos;
 	}
+
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
-	public String getNacionalidad() {
-		return nacionalidad;
-	}
-	public void setNacionalidad(String nacionalidad) {
-		this.nacionalidad = nacionalidad;
-	}
+
 	public String getDireccion() {
 		return direccion;
 	}
+
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-	public String getMunicipio() {
-		return municipio;
-	}
-	public void setMunicipio(String municipio) {
-		this.municipio = municipio;
-	}
-	public String getAlergias() {
-		return alergias;
-	}
-	public void setAlergias(String alergias) {
-		this.alergias = alergias;
-	}
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getDni() {
-		return dni;
+
+	public String getFechanacimiento() {
+		return fechanacimiento;
 	}
-	public void setDni(String dni) {
-		this.dni = dni;
+
+	public void setFechanacimiento(String fechanacimiento) {
+		this.fechanacimiento = fechanacimiento;
 	}
-	public String getEdad() {
-		return fechacimiento;
-	}
-	public void setEdad(String date) {
-		this.fechacimiento = date;
-	}
-	public String getCp() {
-		return cp;
-	}
-	public void setCp(String cp) {
-		this.cp = cp;
-	}
+
 	public String getSexo() {
 		return sexo;
 	}
+
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
 
-	public String getMedicacion() {
-		return medicacion;
+	public long getTarjetaCredito() {
+		return tarjetaCredito;
 	}
 
-	public void setMedicacion(String medicacion) {
-		this.medicacion = medicacion;
+	public void setTarjetaCredito(long tarjetaCredito) {
+		this.tarjetaCredito = tarjetaCredito;
+	}
+
+	public ArrayList<Album> getAlbumes() {
+		return albumes;
+	}
+
+	public void setAlbumes(ArrayList<Album> albumes) {
+		this.albumes = albumes;
+	}
+
+	public ArrayList<Cancion> getCancion() {
+		return cancion;
+	}
+
+	public void setCancion(ArrayList<Cancion> cancion) {
+		this.cancion = cancion;
 	}
 	
-
-	public String getHistorial() {
-		return historial;
-	}
-
-	public void setHistorial(String historial) {
-		this.historial = historial;
-	}
-
-	public String getPruebas() {
-		return pruebas;
-	}
-
-	public void setPruebas(String pruebas) {
-		this.pruebas = pruebas;
-	}
+	
+	
 }

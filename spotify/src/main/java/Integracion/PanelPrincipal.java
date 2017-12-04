@@ -149,10 +149,19 @@ public class PanelPrincipal extends JPanel {
 		btnCrearPaciente.setToolTipText("PanelPrincipal.9"); //$NON-NLS-1$
 		panelControles.add(btnCrearPaciente);
 		
-		btnBorrar = new JButton("HUECO PARA MIGUEL"); //$NON-NLS-1$
+		btnBorrar = new JButton("Eliminar Usuario"); //$NON-NLS-1$
 		btnBorrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							EliminarUsuario window = new EliminarUsuario(null);
+							window.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
 			}
 		});
 		//btnBorrar.addActionListener(new BtnBorrarActionListener());
@@ -191,7 +200,7 @@ public class PanelPrincipal extends JPanel {
 		/*Boton btnNewButton_3 = new Boton("Puta ah�",Color.BLUE, Color.RED,30,30);
 		panelControles.add(btnNewButton_3);*/
 		
-		btnProfesional = new JButton("HUECO PARA MIGUEL"); //$NON-NLS-1$
+		btnProfesional = new JButton("Enviar Mensaje"); //$NON-NLS-1$
 		btnProfesional.setToolTipText("PanelPrincipal.19"); //$NON-NLS-1$
 		btnProfesional.addActionListener(new BtnProfesionalActionListener());
 		btnProfesional.setHorizontalTextPosition(SwingConstants.RIGHT);
@@ -287,7 +296,16 @@ public class PanelPrincipal extends JPanel {
 	}
 	class BtnProfesionalActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			
+			EventQueue.invokeLater(new Runnable() {
+				public void run() {
+					try {
+						EnviarMensaje window = new EnviarMensaje();
+						window.getFrame().setVisible(true);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
 		}
 		}
 	

@@ -76,6 +76,11 @@
     	<artifactId>EliminarCancionesYAlbumes</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
     </dependency>
+    <dependency>
+    	<groupId>ISO2</groupId>
+    	<artifactId>CreacionYLoginDeUsers</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
   <modules>
   	
@@ -88,10 +93,15 @@
   	<module>EliminacionDeUsuarios</module>
   	<module>EnvioDeMensajes</module>
   	<module>CreacionYLoginDeUsers</module>
-  	<module>AdquisicionCancionPago</module>
-  	<module>reproducirCancionAlbum</module>
-  	<module>modificarBorrarListaCancion</module>
-  	<module>Integracion</module>
+  	
+  	
+  	
+  	
+  	
   </modules>
   <groupId>ISO2</groupId>
+  <build>
+  
+  </build>
+  
 </project>

@@ -89,7 +89,7 @@ public class IntegracionMenu extends JFrame {
 		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel.setLayout(gbl_panel);
 		
-		JLabel lblNewLabel = new JLabel("New label");
+		JLabel lblNewLabel = new JLabel("");
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 0);
 		gbc_lblNewLabel.anchor = GridBagConstraints.NORTHWEST;
@@ -116,7 +116,7 @@ public class IntegracionMenu extends JFrame {
 		gbc_button.gridy = 1;
 		panel.add(button, gbc_button);
 		
-		JButton btnfaltaPorRellenar = new JButton("HUECO PARA MIGUEL");
+		JButton btnfaltaPorRellenar = new JButton("GesionDeUsuarios");
 		btnfaltaPorRellenar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -151,12 +151,6 @@ public class IntegracionMenu extends JFrame {
 		gbc_btnCreacinDeUsuarios.gridy = 3;
 		panel.add(btnCreacinDeUsuarios, gbc_btnCreacinDeUsuarios);
 		
-		JButton btnfaltaPorRellenar_1 = new JButton("HUECO PARA MIGUEL");
-		btnfaltaPorRellenar_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		
 		JButton btnModificarProductos = new JButton("Modificar Productos");
 		btnModificarProductos.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		btnModificarProductos.setHorizontalTextPosition(SwingConstants.LEADING);
@@ -174,16 +168,6 @@ public class IntegracionMenu extends JFrame {
 		gbc_btnModificarProductos.gridx = 0;
 		gbc_btnModificarProductos.gridy = 4;
 		panel.add(btnModificarProductos, gbc_btnModificarProductos);
-		btnfaltaPorRellenar_1.setPreferredSize(new Dimension(209, 45));
-		btnfaltaPorRellenar_1.setHorizontalTextPosition(SwingConstants.LEADING);
-		btnfaltaPorRellenar_1.setHorizontalAlignment(SwingConstants.LEFT);
-		btnfaltaPorRellenar_1.setFont(new Font("Verdana", Font.BOLD, 13));
-		btnfaltaPorRellenar_1.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		GridBagConstraints gbc_btnfaltaPorRellenar_1 = new GridBagConstraints();
-		gbc_btnfaltaPorRellenar_1.insets = new Insets(0, 0, 5, 0);
-		gbc_btnfaltaPorRellenar_1.gridx = 0;
-		gbc_btnfaltaPorRellenar_1.gridy = 5;
-		panel.add(btnfaltaPorRellenar_1, gbc_btnfaltaPorRellenar_1);
 		
 		JButton btnListadoDeCompradores = new JButton("Listado de compradores");
 		btnListadoDeCompradores.addActionListener(new ActionListener() {
@@ -202,27 +186,8 @@ public class IntegracionMenu extends JFrame {
 		GridBagConstraints gbc_btnListadoDeCompradores = new GridBagConstraints();
 		gbc_btnListadoDeCompradores.insets = new Insets(0, 0, 5, 0);
 		gbc_btnListadoDeCompradores.gridx = 0;
-		gbc_btnListadoDeCompradores.gridy = 6;
+		gbc_btnListadoDeCompradores.gridy = 5;
 		panel.add(btnListadoDeCompradores, gbc_btnListadoDeCompradores);
-		
-		JButton btnHuecoParaMiguel = new JButton("HUECO PARA MIGUEL");
-		btnHuecoParaMiguel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		btnHuecoParaMiguel.setFont(new Font("Verdana", Font.BOLD, 11));
-		btnHuecoParaMiguel.setPreferredSize(new Dimension(209, 45));
-		GridBagConstraints gbc_btnHuecoParaMiguel = new GridBagConstraints();
-		gbc_btnHuecoParaMiguel.insets = new Insets(0, 0, 5, 0);
-		gbc_btnHuecoParaMiguel.gridx = 0;
-		gbc_btnHuecoParaMiguel.gridy = 7;
-		panel.add(btnHuecoParaMiguel, gbc_btnHuecoParaMiguel);
-		
-		JButton btnNewButton = new JButton("HUECO PARA MIGUEL");
-		btnNewButton.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		btnNewButton.setPreferredSize(new Dimension(209, 45));
-		btnNewButton.setFont(new Font("Verdana", Font.BOLD, 11));
-		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
-		gbc_btnNewButton.gridx = 0;
-		gbc_btnNewButton.gridy = 8;
-		panel.add(btnNewButton, gbc_btnNewButton);
 		
 		panelCardLayout= new JPanel();
 		panelCardLayout.setPreferredSize(new Dimension(104, 18));
