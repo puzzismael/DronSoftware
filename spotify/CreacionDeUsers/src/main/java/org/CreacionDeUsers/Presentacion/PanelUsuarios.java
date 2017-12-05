@@ -62,7 +62,6 @@ public class PanelUsuarios extends JPanel {
 	private JScrollPane scrollPane;
 	private JEditorPane textReceta;
 	private JScrollPane scrollPane_1;
-	private JButton btnImprimir;
 	private ButtonGroup grupo1;
 	private JPanel panel;
 	private JTextField textEdad;
@@ -87,6 +86,7 @@ public class PanelUsuarios extends JPanel {
 	private JTextField textId;
 	private JTextField TextNacionalidad;
 	private JTextField textGenero;
+	private JButton btnGuardar;
 
 	
 	public PanelUsuarios(ArrayList<Usuario> users) {
@@ -377,8 +377,14 @@ public class PanelUsuarios extends JPanel {
 		textReceta.setBackground(SystemColor.menu);
 		scrollPane.setViewportView(textReceta);
 		
-		btnImprimir = new JButton("Guardar"); //$NON-NLS-1$
-		btnImprimir.addActionListener(new ActionListener() {
+		btnGenerarReceta = new JButton("imprimir"); //$NON-NLS-1$
+		btnGenerarReceta.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
+		//btnGenerarReceta.setIcon(new ImageIcon(PanelPacientes.class.getResource("PanelPacientes.74"))); //$NON-NLS-1$
+		btnGenerarReceta.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
+		btnGenerarReceta.addActionListener(new BtnGenerarRecetaActionListener());
+		
+		btnGuardar = new JButton("Guardar");
+		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String  ID,contraseña,nacionalidad,nombre,Genero,edad,municipio,CodigoPostal,correo,estudios,cuentaBancaria;
 				ID=textId.getText();
@@ -396,23 +402,11 @@ public class PanelUsuarios extends JPanel {
 				user.insertarBD();
 			}
 		});
-		btnImprimir.setFont(new Font("Verdana", Font.BOLD, 11));
-		btnImprimir.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
-		//btnImprimir.setIcon(new ImageIcon(PanelPacientes.class.getResource("PanelPacientes.71"))); //$NON-NLS-1$
-		GridBagConstraints gbc_btnImprimir = new GridBagConstraints();
-		gbc_btnImprimir.gridheight = 2;
-		gbc_btnImprimir.gridwidth = 2;
-		gbc_btnImprimir.fill = GridBagConstraints.BOTH;
-		gbc_btnImprimir.insets = new Insets(0, 0, 5, 0);
-		gbc_btnImprimir.gridx = 15;
-		gbc_btnImprimir.gridy = 9;
-		add(btnImprimir, gbc_btnImprimir);
-		
-		btnGenerarReceta = new JButton("imprimir"); //$NON-NLS-1$
-		btnGenerarReceta.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
-		//btnGenerarReceta.setIcon(new ImageIcon(PanelPacientes.class.getResource("PanelPacientes.74"))); //$NON-NLS-1$
-		btnGenerarReceta.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
-		btnGenerarReceta.addActionListener(new BtnGenerarRecetaActionListener());
+		GridBagConstraints gbc_btnGuardar = new GridBagConstraints();
+		gbc_btnGuardar.insets = new Insets(0, 0, 5, 0);
+		gbc_btnGuardar.gridx = 16;
+		gbc_btnGuardar.gridy = 9;
+		add(btnGuardar, gbc_btnGuardar);
 		btnGenerarReceta.setEnabled(false);
 		GridBagConstraints gbc_btnGenerarReceta = new GridBagConstraints();
 		gbc_btnGenerarReceta.gridwidth = 2;
@@ -490,7 +484,7 @@ public class PanelUsuarios extends JPanel {
 				btnActualizar.setEnabled(false);
 				btnGenerarReceta.setEnabled(false);
 				btnLimpiar.setEnabled(false);
-				btnImprimir.setEnabled(false);
+			//	btnImprimir.setEnabled(false);
 				//textFecha.setEnabled(false);
 				grupo1.clearSelection();
 				//labelFoto.setIcon(null);
@@ -523,7 +517,7 @@ public class PanelUsuarios extends JPanel {
 				btnGenerarReceta.setEnabled(true);
 				btnLimpiar.setEnabled(true);
 				textReceta.setEnabled(true);
-				btnImprimir.setEnabled(true);
+		//		btnImprimir.setEnabled(true);
 				//textFecha.setEnabled(true);
 				
 			}
