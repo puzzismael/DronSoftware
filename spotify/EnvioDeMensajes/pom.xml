@@ -22,5 +22,5 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <version>0.1.4-SNAPSHOT</version>
+  <version>0.2.4-SNAPSHOT</version>
 </project>

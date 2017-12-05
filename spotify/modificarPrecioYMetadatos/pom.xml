@@ -22,4 +22,5 @@
     </dependency>
   </dependencies>
   <groupId>ISO2</groupId>
+  <version>0.2.4-SNAPSHOT</version>
 </project>

@@ -11,6 +11,13 @@ import com.mysql.jdbc.PreparedStatement;
 public class GestorUser {
 	PreparedStatement ps;
 	ResultSet rs;
+	public static void main(String[]args)
+	{
+		GestorUser gu=new GestorUser();
+		gu.Insertar("e","jhh", "adad", "rt", "yyy", "edad", "municipio", "CodigoPostal", "correo", "estudios"," cuentaBancaria");
+		
+	}
+	
 	public void Insertar(String ID,String contraseña,String nacionalidad,String nombre,String Genero,String edad,String municipio,String CodigoPostal,
 			String correo,String estudios,String cuentaBancaria)
 	{
@@ -19,7 +26,7 @@ public class GestorUser {
 	try {
 		
 		con =c.getConection();
-		ps =(PreparedStatement) con.prepareStatement("INSERT INTO usuario (clave,nombre,domicilio,telefono,correo_electronico,fecha_nacimiento,genero)VALUES(?,?,?,?,?,?,?)");
+		ps =(PreparedStatement) con.prepareStatement("INSERT INTO usuario (ID,contraseña,nacionalidad,nombre,Genero,edad,municipio,CódigoPostal,Correo,estudios,Banc)VALUES(?,?,?,?,?,?,?,?,?,?,?)");
 		ps.setString(1,ID );
 		ps.setString(2,contraseña);
 		ps.setString(3, nacionalidad);
