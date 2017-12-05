@@ -22,7 +22,8 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.text.MaskFormatter;
 
-import org.CreacionDeUsers.Dominio.usuario;
+import org.CreacionDeUsers.Dominio.Usuario;
+
 import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -53,10 +54,10 @@ import javax.swing.JFormattedTextField.AbstractFormatter;
 import javax.swing.JTextArea;
 
 public class PanelUsuarios extends JPanel {
-	private JList<usuario> list;
+	private JList<Usuario> list;
 	private JButton btnGenerarReceta;
 	private JButton btnActualizar;
-	private ArrayList<usuario> users;
+	private ArrayList<Usuario> users;
 	private JButton btnLimpiar;
 	private JScrollPane scrollPane;
 	private JEditorPane textReceta;
@@ -89,11 +90,11 @@ public class PanelUsuarios extends JPanel {
 	private JTextField textField;
 
 	
-	public PanelUsuarios(ArrayList<usuario> users) {
+	public PanelUsuarios(ArrayList<Usuario> users) {
 		setBackground(SystemColor.text);
 		this.users=users;
 		setBorder(null);
-		list = new JList<usuario>();
+		list = new JList<Usuario>();
 		
 		GridBagLayout gbl_GestiondePacientes = new GridBagLayout();
 		gbl_GestiondePacientes.columnWidths = new int[]{120, 53, 0, 37, 40, 26, 73, 38, 37, 35, 30, 33, 46, 43, 43, 0, 0, 0};

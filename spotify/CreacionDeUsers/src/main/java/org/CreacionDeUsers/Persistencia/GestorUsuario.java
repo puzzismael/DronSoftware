@@ -20,7 +20,7 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.awt.event.ActionEvent;
 
-public class Persona {
+public class GestorUsuario {
 
 	private JFrame frame;
 	private JTextField txtClave;
@@ -40,7 +40,7 @@ public class Persona {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Persona window = new Persona();
+					GestorUsuario window = new GestorUsuario();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -52,7 +52,7 @@ public class Persona {
 	/**
 	 * Create the application.
 	 */
-	public Persona() {
+	public GestorUsuario() {
 		initialize();
 	}
 
@@ -121,7 +121,7 @@ public class Persona {
 				GestorBD c=new GestorBD();
 				try {
 					con =c.getConection();
-					ps =(PreparedStatement) con.prepareStatement("INSERT INTO persona (clave,nombre,domicilio,telefono,correo_electronico,fecha_nacimiento,genero)VALUES(?,?,?,?,?,?,?)");
+					ps =(PreparedStatement) con.prepareStatement("INSERT INTO Usuario (clave,nombre,domicilio,telefono,correo_electronico,fecha_nacimiento,genero)VALUES(?,?,?,?,?,?,?)");
 					ps.setString(1, txtClave.getText());
 					ps.setString(2, txtNombre.getText());
 					ps.setString(3, txtDomicilio.getText());
