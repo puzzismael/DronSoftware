@@ -12,41 +12,44 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
+import org.CreacionDeUsers.Persistencia.GestorUser;
+
 
 
 public class Usuario {
-	private String usuario, contraseña,dni, nombre, apellidos,direccion, id,fechanacimiento, sexo;
-	private long tarjetaCredito;
-	private ArrayList<Album> albumes;
-	private ArrayList<Cancion> cancion;
+	private String  ID,contraseña,nacionalidad,nombre,Genero,edad,municipio,CodigoPostal,correo,estudios,cuentaBancaria;
+	//private long tarjetaCredito;
+	//private ArrayList<Album> albumes;
+	//private ArrayList<Cancion> cancion;
 	
-	public Usuario(String usuario, String contraseña, String id,String nombre, String apellidos, String direccion, String dni, String fechanacimiento,
-			 String sexo, long tarjetaCredito,ArrayList<Album> albumes, ArrayList<Cancion> cancion ) {
+	public Usuario(String ID,String contraseña,String nacionalidad ,String nombre ,String Genero, String edad,String  municipio,
+			String CodigoPostal, String correo, String estudios,String  cuentaBancaria) {
 		
 		super();
-		this.usuario=usuario;
+		this.ID = ID;
 		this.contraseña=contraseña;
+		this.nacionalidad=nacionalidad;
 		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.direccion = direccion;
-		this.id = id;
-		this.dni = dni;
-		this.fechanacimiento = fechanacimiento;
-		this.sexo = sexo;
-		this.albumes=albumes;
-		this.cancion=cancion;
-		this.tarjetaCredito=tarjetaCredito;
+		this.Genero=Genero;
+		this.edad=edad;
+		this.municipio=municipio;
+		this.CodigoPostal=CodigoPostal;
+		this.correo=correo;
+		this.estudios=estudios;
+		this.cuentaBancaria=cuentaBancaria;
+		
+		
 	}
 	
-	public Usuario(String usuario, String contraseña, String nombre, String apellidos){
-		this.usuario = usuario;
-		this.contraseña = contraseña;
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-	}
+	//public Usuario(String usuario, String contraseña, String nombre, String apellidos){
+		//this.usuario = usuario;
+		//this.contraseña = contraseña;
+		//this.nombre = nombre;
+		//this.apellidos = apellidos;
+	//}
 
 
-	public String getUsuario() {
+	/*public String getUsuario() {
 		return usuario;
 	}
 
@@ -141,7 +144,11 @@ public class Usuario {
 	public void setCancion(ArrayList<Cancion> cancion) {
 		this.cancion = cancion;
 	}
-	
-	
+	*/
+	public void insertarBD()
+	{
+		GestorUser GestorUser =new GestorUser();
+		GestorUser.Insertar(ID, contraseña, nacionalidad, nombre, Genero, edad, municipio, CodigoPostal, correo, estudios, cuentaBancaria);
+	}
 	
 }

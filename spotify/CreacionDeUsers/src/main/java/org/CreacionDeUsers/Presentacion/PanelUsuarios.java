@@ -65,29 +65,28 @@ public class PanelUsuarios extends JPanel {
 	private JButton btnImprimir;
 	private ButtonGroup grupo1;
 	private JPanel panel;
-	private JTextField textNombre;
-	private JTextField textApellidos;
-	private JRadioButton rdbtnF;
-	private JRadioButton rdbtnM;
+	private JTextField textEdad;
+	private JTextField textNombr;
 	private JScrollPane scrollPane_2;
 	private JScrollPane scrollPane_3;
 	private JScrollPane scrollPane_4;
 	private JScrollPane scrollPane_5;
 	private JButton btnActualizarListaDe;
 	private JLabel lblNacionalidad;
-	private JTextField textNacionalidad;
-	private JTextField textDireccion;
-	private JTextField textMunicipio;
-	private JTextField textDNI;
+	private JTextField textMunicip;
+	private JTextField textCodigoPostal;
+	private JTextField textCorreo;
+	private JTextField textEstudios;
 	private JLabel lblCp;
-	private JTextField textCP;
-	private JTextField textHistoria;
+	private JTextField textCBanc;
+	private JTextField textContraseña;
 	private JTextArea textHistorial;
 	private JTextArea textPruebas;
 	private JTextArea textFavoritos;
 	private JTextArea textTratamiento;
 	private JTextField textId;
-	private JTextField textField;
+	private JTextField TextNacionalidad;
+	private JTextField textGenero;
 
 	
 	public PanelUsuarios(ArrayList<Usuario> users) {
@@ -155,21 +154,21 @@ public class PanelUsuarios extends JPanel {
 		lblEdad.setBounds(52, 103, 44, 15);
 		panel.add(lblEdad);
 		
-		textNombre = new JTextField();
-		textNombre.setFont(new Font("PanelPacientes.10", Font.PLAIN, 12)); //$NON-NLS-1$
-		textNombre.setColumns(10);
-		textNombre.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
-		textNombre.setBackground(SystemColor.scrollbar);
-		textNombre.setBounds(106, 98, 186, 24);
-		panel.add(textNombre);
+		textEdad = new JTextField();
+		textEdad.setFont(new Font("PanelPacientes.10", Font.PLAIN, 12)); //$NON-NLS-1$
+		textEdad.setColumns(10);
+		textEdad.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
+		textEdad.setBackground(SystemColor.scrollbar);
+		textEdad.setBounds(106, 98, 186, 24);
+		panel.add(textEdad);
 		
-		textApellidos = new JTextField();
-		textApellidos.setFont(new Font("PanelPacientes.12", Font.PLAIN, 12)); //$NON-NLS-1$
-		textApellidos.setColumns(10);
-		textApellidos.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$ //$NON-NLS-2$
-		textApellidos.setBackground(SystemColor.scrollbar);
-		textApellidos.setBounds(106, 60, 186, 24);
-		panel.add(textApellidos);
+		textNombr = new JTextField();
+		textNombr.setFont(new Font("PanelPacientes.12", Font.PLAIN, 12)); //$NON-NLS-1$
+		textNombr.setColumns(10);
+		textNombr.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$ //$NON-NLS-2$
+		textNombr.setBackground(SystemColor.scrollbar);
+		textNombr.setBounds(106, 60, 186, 24);
+		panel.add(textNombr);
 		
 		JLabel lblNHistoria = new JLabel("Contraseña:"); //$NON-NLS-1$
 		lblNHistoria.setForeground(Color.BLACK);
@@ -199,94 +198,78 @@ public class PanelUsuarios extends JPanel {
 		lblGenero.setBounds(334, 65, 55, 15);
 		panel.add(lblGenero);
 		
-		rdbtnF = new JRadioButton("F"); //$NON-NLS-1$
-		rdbtnF.addActionListener(new RdbtnFActionListener());
-		rdbtnF.setFont(new Font("PanelPacientes.25", Font.BOLD, 11)); //$NON-NLS-1$
-		rdbtnF.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
-		rdbtnF.setBackground(SystemColor.scrollbar);
-		rdbtnF.setBounds(399, 60, 33, 25);
-		panel.add(rdbtnF);
-		
-		rdbtnM = new JRadioButton("M"); //$NON-NLS-1$
-		rdbtnM.addActionListener(new RdbtnMActionListener());
-		rdbtnM.setFont(new Font("PanelPacientes.28", Font.BOLD, 11)); //$NON-NLS-1$
-		rdbtnM.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
-		rdbtnM.setBackground(SystemColor.scrollbar);
-		rdbtnM.setBounds(460, 60, 35, 25);
-		panel.add(rdbtnM);
-		
 		lblNacionalidad = new JLabel("Municipio"); //$NON-NLS-1$
 		lblNacionalidad.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		lblNacionalidad.setBounds(325, 103, 64, 14);
 		panel.add(lblNacionalidad);
 		
-		textNacionalidad = new JTextField();
-		textNacionalidad.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
-		textNacionalidad.setBackground(SystemColor.scrollbar);
-		textNacionalidad.setFont(new Font("PanelPacientes.33", Font.PLAIN, 12)); //$NON-NLS-1$
-		textNacionalidad.setBounds(393, 100, 102, 20);
-		panel.add(textNacionalidad);
-		textNacionalidad.setColumns(10);
+		textMunicip = new JTextField();
+		textMunicip.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
+		textMunicip.setBackground(SystemColor.scrollbar);
+		textMunicip.setFont(new Font("PanelPacientes.33", Font.PLAIN, 12)); //$NON-NLS-1$
+		textMunicip.setBounds(393, 100, 102, 20);
+		panel.add(textMunicip);
+		textMunicip.setColumns(10);
 		
 		JLabel lblDireccin = new JLabel("Código Postal"); //$NON-NLS-1$
 		lblDireccin.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		lblDireccin.setBounds(9, 138, 101, 14);
 		panel.add(lblDireccin);
 		
-		textDireccion = new JTextField();
-		textDireccion.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
-		textDireccion.setBackground(SystemColor.scrollbar);
-		textDireccion.setFont(new Font("PanelPacientes.37", Font.PLAIN, 12)); //$NON-NLS-1$
-		textDireccion.setBounds(106, 136, 186, 20);
-		panel.add(textDireccion);
-		textDireccion.setColumns(10);
+		textCodigoPostal = new JTextField();
+		textCodigoPostal.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
+		textCodigoPostal.setBackground(SystemColor.scrollbar);
+		textCodigoPostal.setFont(new Font("PanelPacientes.37", Font.PLAIN, 12)); //$NON-NLS-1$
+		textCodigoPostal.setBounds(106, 136, 186, 20);
+		panel.add(textCodigoPostal);
+		textCodigoPostal.setColumns(10);
 		
 		JLabel lblMunicipio = new JLabel("Correo"); //$NON-NLS-1$
 		lblMunicipio.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		lblMunicipio.setBounds(345, 138, 44, 15);
 		panel.add(lblMunicipio);
 		
-		textMunicipio = new JTextField();
-		textMunicipio.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
-		textMunicipio.setBackground(SystemColor.scrollbar);
-		textMunicipio.setFont(new Font("PanelPacientes.41", Font.PLAIN, 12)); //$NON-NLS-1$
-		textMunicipio.setBounds(394, 136, 101, 20);
-		panel.add(textMunicipio);
-		textMunicipio.setColumns(10);
+		textCorreo = new JTextField();
+		textCorreo.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
+		textCorreo.setBackground(SystemColor.scrollbar);
+		textCorreo.setFont(new Font("PanelPacientes.41", Font.PLAIN, 12)); //$NON-NLS-1$
+		textCorreo.setBounds(394, 136, 101, 20);
+		panel.add(textCorreo);
+		textCorreo.setColumns(10);
 		
 		JLabel lblDni = new JLabel("Estudios"); //$NON-NLS-1$
 		lblDni.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		lblDni.setBounds(38, 170, 58, 14);
 		panel.add(lblDni);
 		
-		textDNI = new JTextField();
-		textDNI.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
-		textDNI.setBackground(SystemColor.scrollbar);
-		textDNI.setFont(new Font("PanelPacientes.45", Font.PLAIN, 12)); //$NON-NLS-1$
-		textDNI.setBounds(106, 167, 186, 20);
-		panel.add(textDNI);
-		textDNI.setColumns(10);
+		textEstudios = new JTextField();
+		textEstudios.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
+		textEstudios.setBackground(SystemColor.scrollbar);
+		textEstudios.setFont(new Font("PanelPacientes.45", Font.PLAIN, 12)); //$NON-NLS-1$
+		textEstudios.setBounds(106, 167, 186, 20);
+		panel.add(textEstudios);
+		textEstudios.setColumns(10);
 		
 		lblCp = new JLabel("C. Bancaria"); //$NON-NLS-1$
 		lblCp.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		lblCp.setBounds(316, 170, 73, 14);
 		panel.add(lblCp);
 		
-		textCP = new JTextField();
-		textCP.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
-		textCP.setBackground(SystemColor.scrollbar);
-		textCP.setFont(new Font("PanelPacientes.49", Font.PLAIN, 12)); //$NON-NLS-1$
-		textCP.setBounds(393, 167, 102, 20);
-		panel.add(textCP);
-		textCP.setColumns(10);
+		textCBanc = new JTextField();
+		textCBanc.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
+		textCBanc.setBackground(SystemColor.scrollbar);
+		textCBanc.setFont(new Font("PanelPacientes.49", Font.PLAIN, 12)); //$NON-NLS-1$
+		textCBanc.setBounds(393, 167, 102, 20);
+		panel.add(textCBanc);
+		textCBanc.setColumns(10);
 		
-		textHistoria = new JTextField();
-		textHistoria.setFont(new Font("PanelPacientes.52", Font.PLAIN, 12)); //$NON-NLS-1$
-		textHistoria.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
-		textHistoria.setBackground(SystemColor.scrollbar);
-		textHistoria.setBounds(228, 24, 64, 20);
-		panel.add(textHistoria);
-		textHistoria.setColumns(10);
+		textContraseña = new JTextField();
+		textContraseña.setFont(new Font("PanelPacientes.52", Font.PLAIN, 12)); //$NON-NLS-1$
+		textContraseña.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
+		textContraseña.setBackground(SystemColor.scrollbar);
+		textContraseña.setBounds(228, 24, 64, 20);
+		panel.add(textContraseña);
+		textContraseña.setColumns(10);
 		
 		textId = new JTextField();
 		textId.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
@@ -296,13 +279,21 @@ public class PanelUsuarios extends JPanel {
 		panel.add(textId);
 		textId.setColumns(10);
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Dialog", Font.PLAIN, 12));
-		textField.setColumns(10);
-		textField.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		textField.setBackground(SystemColor.scrollbar);
-		textField.setBounds(399, 25, 96, 24);
-		panel.add(textField);
+		TextNacionalidad = new JTextField();
+		TextNacionalidad.setFont(new Font("Dialog", Font.PLAIN, 12));
+		TextNacionalidad.setColumns(10);
+		TextNacionalidad.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		TextNacionalidad.setBackground(SystemColor.scrollbar);
+		TextNacionalidad.setBounds(399, 25, 96, 24);
+		panel.add(TextNacionalidad);
+		
+		textGenero = new JTextField();
+		textGenero.setFont(new Font("Dialog", Font.PLAIN, 12));
+		textGenero.setColumns(10);
+		textGenero.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		textGenero.setBackground(SystemColor.scrollbar);
+		textGenero.setBounds(399, 63, 96, 24);
+		panel.add(textGenero);
 		
 		scrollPane_5 = new JScrollPane();
 		scrollPane_5.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Historial spotify", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
@@ -387,8 +378,25 @@ public class PanelUsuarios extends JPanel {
 		scrollPane.setViewportView(textReceta);
 		
 		btnImprimir = new JButton("Guardar"); //$NON-NLS-1$
+		btnImprimir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String  ID,contraseña,nacionalidad,nombre,Genero,edad,municipio,CodigoPostal,correo,estudios,cuentaBancaria;
+				ID=textId.getText();
+				contraseña=textContraseña.getText();
+				nacionalidad=TextNacionalidad.getText();
+				nombre=textNombr.getText();
+				Genero=textGenero.getText();
+				edad=textEdad.getText();
+				municipio=textMunicip.getText();
+				CodigoPostal=textCodigoPostal.getText();
+				correo=textCorreo.getText();
+				estudios=textEstudios.getText();
+				cuentaBancaria=textCBanc.getText();
+				Usuario user=new Usuario(  ID,contraseña,nacionalidad,nombre,Genero,edad,municipio,CodigoPostal,correo,estudios,cuentaBancaria);
+				user.insertarBD();
+			}
+		});
 		btnImprimir.setFont(new Font("Verdana", Font.BOLD, 11));
-		btnImprimir.setEnabled(false);
 		btnImprimir.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		//btnImprimir.setIcon(new ImageIcon(PanelPacientes.class.getResource("PanelPacientes.71"))); //$NON-NLS-1$
 		GridBagConstraints gbc_btnImprimir = new GridBagConstraints();
@@ -463,18 +471,18 @@ public class PanelUsuarios extends JPanel {
 		public void valueChanged(ListSelectionEvent arg0) {
 			int i=list.getSelectedIndex();
 			if(i==-1){
-				textNombre.setText("PanelPacientes.82"); //$NON-NLS-1$
-				textApellidos.setText("PanelPacientes.83"); //$NON-NLS-1$
+				textEdad.setText("PanelPacientes.82"); //$NON-NLS-1$
+				textNombr.setText("PanelPacientes.83"); //$NON-NLS-1$
 				textId.setText("PanelPacientes.84"); //$NON-NLS-1$
-				textHistoria.setText("PanelPacientes.85"); //$NON-NLS-1$
+				textContraseña.setText("PanelPacientes.85"); //$NON-NLS-1$
 				textReceta.setEnabled(false);
 				textReceta.setText("PanelPacientes.86"); //$NON-NLS-1$
 			//.setText("PanelPacientes.87"); //$NON-NLS-1$
-				textDireccion.setText("PanelPacientes.88"); //$NON-NLS-1$
-				textDNI.setText("PanelPacientes.89"); //$NON-NLS-1$
-				textNacionalidad.setText("PanelPacientes.90"); //$NON-NLS-1$
-				textMunicipio.setText("PanelPacientes.91"); //$NON-NLS-1$
-				textCP.setText("PanelPacientes.92"); //$NON-NLS-1$
+				textCodigoPostal.setText("PanelPacientes.88"); //$NON-NLS-1$
+				textEstudios.setText("PanelPacientes.89"); //$NON-NLS-1$
+				textMunicip.setText("PanelPacientes.90"); //$NON-NLS-1$
+				textCorreo.setText("PanelPacientes.91"); //$NON-NLS-1$
+				textCBanc.setText("PanelPacientes.92"); //$NON-NLS-1$
 				textHistorial.setText("PanelPacientes.93"); //$NON-NLS-1$
 				textFavoritos.setText("PanelPacientes.94"); //$NON-NLS-1$
 				textPruebas.setText("PanelPacientes.95"); //$NON-NLS-1$
@@ -488,17 +496,17 @@ public class PanelUsuarios extends JPanel {
 				//labelFoto.setIcon(null);
 				
 			}else{
-				textApellidos.setText(users.get(i).getApellidos());
-				textNombre.setText(users.get(i).getNombre());
+			//	textApellidos.setText(users.get(i).getApellidos());
+				//textNombre.setText(users.get(i).getNombre());
 				//textId.setText("PanelPacientes.97"+users.get(i).getId()); //$NON-NLS-1$
 				//textHistoria.setText(users.get(i).getHistoria());
 				//textFecha.setText(users.get(i).getEdad());
 				//if(users.get(i).getSexo().equals(Messages.getString("PanelPacientes.98"))){ //$NON-NLS-1$
-					rdbtnM.setSelected(true);
-					rdbtnF.setSelected(false);
+					//rdbtnM.setSelected(true);
+					//rdbtnF.setSelected(false);
 			//	}else{
-					rdbtnF.setSelected(true);
-					rdbtnM.setSelected(false);
+					//rdbtnF.setSelected(true);
+					//rdbtnM.setSelected(false);
 				//}
 				//textDireccion.setText(users.get(i).getDireccion());
 			//	textDNI.setText(users.get(i).getDni());
@@ -538,13 +546,8 @@ public class PanelUsuarios extends JPanel {
 			pacientes.get(i).setAlergias(textAlergias.getText());
 			pacientes.get(i).setPruebas(textPruebas.getText());
 			pacientes.get(i).setPruebas(textPruebas.getText()); */
-			if(rdbtnF.isSelected()){
-			//	users.get(i).setSexo("PanelPacientes.99"); //$NON-NLS-1$
-			}else{
-				//pacientes.get(i).setSexo(Messages.getString("PanelPacientes.100")); //$NON-NLS-1$
-			}
-			
-			actualizarDatos();
+						
+			//actualizarDatos();
 		}
 	}
 	private class BtnGenerarRecetaActionListener implements ActionListener {
@@ -559,7 +562,7 @@ public class PanelUsuarios extends JPanel {
 					String ruta=fcSave.getSelectedFile().getAbsolutePath();
 					try {
 						BufferedWriter bw=new BufferedWriter(new FileWriter(fcSave.getSelectedFile()));
-						bw.write("PanelPacientes.104"+ textNombre.getText()+"PanelPacientes.105"+textApellidos.getText()+"PanelPacientes.106"+textReceta.getText()); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						bw.write("PanelPacientes.104"+ textEdad.getText()+"PanelPacientes.105"+textNombr.getText()+"PanelPacientes.106"+textReceta.getText()); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 						bw.flush();
 						JOptionPane.showMessageDialog(new JPanel(),"PanelPacientes.107"+ruta); //$NON-NLS-1$
 						bw.close();
@@ -582,20 +585,6 @@ public class PanelUsuarios extends JPanel {
 	private class BtnActualizarListaDeActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			actualizarDatos();
-		}
-	}
-	private class RdbtnFActionListener implements ActionListener {
-		public void actionPerformed(ActionEvent arg0) {
-			if(rdbtnF.isSelected()){
-				rdbtnM.setSelected(false);
-			}
-		}
-	}
-	private class RdbtnMActionListener implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
-			if(rdbtnM.isSelected()){
-				rdbtnF.setSelected(false);
-			}
 		}
 	}
 }

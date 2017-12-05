@@ -121,7 +121,7 @@ public class GestorUsuario {
 				GestorBD c=new GestorBD();
 				try {
 					con =c.getConection();
-					ps =(PreparedStatement) con.prepareStatement("INSERT INTO Usuario (clave,nombre,domicilio,telefono,correo_electronico,fecha_nacimiento,genero)VALUES(?,?,?,?,?,?,?)");
+					ps =(PreparedStatement) con.prepareStatement("INSERT INTO usuario (clave,nombre,domicilio,telefono,correo_electronico,fecha_nacimiento,genero)VALUES(?,?,?,?,?,?,?)");
 					ps.setString(1, txtClave.getText());
 					ps.setString(2, txtNombre.getText());
 					ps.setString(3, txtDomicilio.getText());
