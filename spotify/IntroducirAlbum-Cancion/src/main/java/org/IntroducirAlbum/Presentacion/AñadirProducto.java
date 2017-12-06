@@ -235,7 +235,6 @@ public class AñadirProducto extends JFrame {
 		panel.add(lblNumeroDeVentas);
 		
 		textNumeroVentas = new JTextField();
-		textNumeroVentas.setEditable(false);
 		textNumeroVentas.setBounds(159, 266, 69, 30);
 		textNumeroVentas.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		textNumeroVentas.setBackground(SystemColor.scrollbar);
@@ -286,30 +285,46 @@ public class AñadirProducto extends JFrame {
 	}
 	private class BtnAñadirActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-		    Album albm= new Album();
+		boolean bol=true;
+			
+		
+		 if((textID.getText().replace(" ","")).equals("")||(textNombre.getText().replace(" ","")).equals("")||
+			(textNombre.getText().replace(" ","")).equals("")||(textTipo.getText().replace(" ","")).equals("")||
+			(textPrecio.getText().replaceAll(" ", "")).equals("")||(textPrecAlbum.getText().replace(" ","")).equals("")||
+			(textArtista.getText().replace(" ","")).equals("")||(textFechaLanz.getText().replace(" ","")).equals("")||
+			(textRanking.getText().replace(" ","")).equals("")||(textPais.getText().replace(" ","")).equals("")||
+			(textNumeroVentas.getText().replace(" ","")).equals(""))
+		 {
+			 JOptionPane.showMessageDialog(null,"No deje espacios en blanco");
+			 
+		 }else {
+			Album albm= new Album();
 			Album [] albumes=albm.obtenerListaDeBD();
 			for(int i=0;i<albumes.length;i++)
 			{
 				if(albumes[i].getID().equals(textID.getText())) {
 					JOptionPane.showMessageDialog(null,"Ese producto ya existe, cambie su id");
-				}
-				else {
-			String ID,nombre ,tipo,PrecioCancion,PrecioAlbum, artista, estreno,ranking,pais,NVentas;
-		    ID=textID.getText();
-			nombre=textNombre.getText();
-			tipo=textTipo.getText();
-			PrecioCancion=textPrecio.getText();
-			PrecioAlbum=textPrecAlbum.getText();
-			artista=textArtista.getText();
-			estreno=textFechaLanz.getText();
-			ranking=textRanking.getText();
-			pais=textPais.getText();
-			NVentas=textNumeroVentas.getText();
-			GestorAlbum gestAl=new GestorAlbum();
-			gestAl.Insertar( ID,nombre, tipo, PrecioCancion, PrecioAlbum, artista, estreno, ranking, pais, NVentas);
+			bol=false;
 				}
 			}
-		
+			if(bol) {
+				String ID,nombre ,tipo,PrecioCancion,PrecioAlbum, artista, estreno,ranking,pais,NVentas;
+			    ID=textID.getText();
+				nombre=textNombre.getText();
+				tipo=textTipo.getText();
+				PrecioCancion=textPrecio.getText();
+				PrecioAlbum=textPrecAlbum.getText();
+				artista=textArtista.getText();
+				estreno=textFechaLanz.getText();
+				ranking=textRanking.getText();
+				pais=textPais.getText();
+				NVentas=textNumeroVentas.getText();
+				GestorAlbum gestAl=new GestorAlbum();
+				gestAl.Insertar( ID,nombre, tipo, PrecioCancion, PrecioAlbum, artista, estreno, ranking, pais, NVentas);
+			}
+				
+			}
+		 }
 		}
 	}
-}
+

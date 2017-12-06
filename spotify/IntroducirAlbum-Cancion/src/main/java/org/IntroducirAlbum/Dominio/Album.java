@@ -9,7 +9,7 @@ public class Album {
 	
 	private String ID,nombre ,tipo,PrecioCancion,PrecioAlbum, artista, estreno,ranking,pais,NVentas;
 
-	private double precioAlbum;
+	
 	private ArrayList<Cancion> canciones;
 	
 public Album(String ID,String nombre,String tipo,String PrecioCancion,String PrecioAlbum,String artista,String estreno,String ranking,
@@ -19,6 +19,7 @@ public Album(String ID,String nombre,String tipo,String PrecioCancion,String Pre
 		this.nombre=nombre;
 		this.tipo=tipo;
 		this.PrecioCancion=PrecioCancion;
+		this.PrecioAlbum=PrecioAlbum;
 		this.artista=artista;
 		this.estreno=estreno;
 		this.ranking=ranking;
@@ -33,7 +34,7 @@ public String getProducto()
 {
 	return tipo;
 }
-public Album()
+public  Album()
 {
 	
 }
@@ -130,6 +131,12 @@ public String getNVentas() {
 public String getPrecioAlbum() {
 	// TODO Auto-generated method stub
 	return PrecioAlbum;
+}
+public void modificarRegistro(String id,String nombre,String tipo,String PrecioCancion,String PrecioAlbum,String artista,String estreno,String ranking,
+		String pais,String NVentas)
+{
+	GestorAlbum gestAlbum=new GestorAlbum();
+	gestAlbum.modificarRegistro(id, nombre, tipo, PrecioCancion, PrecioAlbum, artista, estreno, ranking, pais, NVentas);
 }
 }
 

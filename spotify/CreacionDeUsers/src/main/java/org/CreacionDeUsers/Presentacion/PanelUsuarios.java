@@ -23,6 +23,7 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.text.MaskFormatter;
 
 import org.CreacionDeUsers.Dominio.Usuario;
+import org.IntroducirAlbum.Dominio.Album;
 
 import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
@@ -54,7 +55,7 @@ import javax.swing.JFormattedTextField.AbstractFormatter;
 import javax.swing.JTextArea;
 
 public class PanelUsuarios extends JPanel {
-	private JList<Usuario> list;
+
 	private JButton btnGenerarReceta;
 	private JButton btnActualizar;
 	private ArrayList<Usuario> users;
@@ -87,13 +88,15 @@ public class PanelUsuarios extends JPanel {
 	private JTextField TextNacionalidad;
 	private JTextField textGenero;
 	private JButton btnGuardar;
-
+	private Usuario usuario=new Usuario();
+	private Usuario[] usuarios =usuario.obtenerListaDeBD();
+	private JList list ;
 	
 	public PanelUsuarios(ArrayList<Usuario> users) {
 		setBackground(SystemColor.text);
 		this.users=users;
 		setBorder(null);
-		list = new JList<Usuario>();
+		list = new JList();
 		
 		GridBagLayout gbl_GestiondePacientes = new GridBagLayout();
 		gbl_GestiondePacientes.columnWidths = new int[]{120, 53, 0, 37, 40, 26, 73, 38, 37, 35, 30, 33, 46, 43, 43, 0, 0, 0};
@@ -101,7 +104,7 @@ public class PanelUsuarios extends JPanel {
 		gbl_GestiondePacientes.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
 		gbl_GestiondePacientes.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
 		setLayout(gbl_GestiondePacientes);
-		actualizarDatos();
+		
 		
 		scrollPane_1 = new JScrollPane();
 		scrollPane_1.setEnabled(false);
@@ -124,7 +127,12 @@ public class PanelUsuarios extends JPanel {
 		list.addListSelectionListener(new ListListSelectionListener());
 		list.setBorder(null);
 		
+DefaultListModel modelo = new DefaultListModel();
 		
+		for(int i = 0; i<usuarios.length; i++){
+		        modelo.addElement("Nombre:"+ usuarios[i].getNombre());
+		}
+		list.setModel(modelo);
 		grupo1 = new ButtonGroup();
 		
 		panel = new JPanel();
@@ -381,11 +389,33 @@ public class PanelUsuarios extends JPanel {
 		btnGenerarReceta.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
 		//btnGenerarReceta.setIcon(new ImageIcon(PanelPacientes.class.getResource("PanelPacientes.74"))); //$NON-NLS-1$
 		btnGenerarReceta.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
-		btnGenerarReceta.addActionListener(new BtnGenerarRecetaActionListener());
+		
 		
 		btnGuardar = new JButton("Guardar");
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				boolean bol=true;
+				 if((textId.getText().replace(" ","")).equals("")||(textContraseña.getText().replace(" ","")).equals("")||
+					(TextNacionalidad.getText().replace(" ","")).equals("")||(textNombr.getText().replace(" ","")).equals("")||
+					(textGenero.getText().replaceAll(" ", "")).equals("")||(textEdad.getText().replace(" ","")).equals("")||
+					(textMunicip.getText().replace(" ","")).equals("")||(textCodigoPostal.getText().replace(" ","")).equals("")||
+					(textCorreo.getText().replace(" ","")).equals("")||(textEstudios.getText().replace(" ","")).equals("")||
+					(textCBanc.getText().replace(" ","")).equals(""))
+				 {
+					 JOptionPane.showMessageDialog(null,"No deje espacios en blanco");
+					 
+				 }else {
+						Usuario user= new Usuario();
+						Usuario [] users=user.obtenerListaDeBD();
+						for(int i=0;i<users.length;i++)
+						{
+							if(users[i].getID().equals(textId.getText())) {
+								JOptionPane.showMessageDialog(null,"Ese usuario ya existe, cambie su id");
+						bol=false;
+							}
+						}
+					if(bol)
+					{
 				String  ID,contraseña,nacionalidad,nombre,Genero,edad,municipio,CodigoPostal,correo,estudios,cuentaBancaria;
 				ID=textId.getText();
 				contraseña=textContraseña.getText();
@@ -398,8 +428,10 @@ public class PanelUsuarios extends JPanel {
 				correo=textCorreo.getText();
 				estudios=textEstudios.getText();
 				cuentaBancaria=textCBanc.getText();
-				Usuario user=new Usuario(  ID,contraseña,nacionalidad,nombre,Genero,edad,municipio,CodigoPostal,correo,estudios,cuentaBancaria);
-				user.insertarBD();
+				Usuario use=new Usuario(  ID,contraseña,nacionalidad,nombre,Genero,edad,municipio,CodigoPostal,correo,estudios,cuentaBancaria);
+				use.insertarBD();
+			}
+				 }
 			}
 		});
 		GridBagConstraints gbc_btnGuardar = new GridBagConstraints();
@@ -453,13 +485,8 @@ public class PanelUsuarios extends JPanel {
 		
 	}
 	
-	public void actualizarDatos(){
-		DefaultListModel modelo = new DefaultListModel();
-		/*for(int i=0;i<users.size();i++){
-			modelo.addElement(users.get(i).getApellidos()+"PanelPacientes.81"+users.get(i).getNombre()); //$NON-NLS-1$
-		}*/
-		list.setModel(modelo);
-	}
+	
+
 	
 	private class ListListSelectionListener implements ListSelectionListener {
 		public void valueChanged(ListSelectionEvent arg0) {
@@ -544,41 +571,23 @@ public class PanelUsuarios extends JPanel {
 			//actualizarDatos();
 		}
 	}
-	private class BtnGenerarRecetaActionListener implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
-			if(textReceta.getText().equals("PanelPacientes.101")){ //$NON-NLS-1$
-				JOptionPane.showMessageDialog(new JFrame(), "PanelPacientes.102", //$NON-NLS-1$
-						"PanelPacientes.103",JOptionPane.PLAIN_MESSAGE ); //$NON-NLS-1$
-			}else{
-				JFileChooser fcSave = new JFileChooser();
-				int valorDevuelto = fcSave.showSaveDialog(new JPanel());
-				if (valorDevuelto == JFileChooser.APPROVE_OPTION) {
-					String ruta=fcSave.getSelectedFile().getAbsolutePath();
-					try {
-						BufferedWriter bw=new BufferedWriter(new FileWriter(fcSave.getSelectedFile()));
-						bw.write("PanelPacientes.104"+ textEdad.getText()+"PanelPacientes.105"+textNombr.getText()+"PanelPacientes.106"+textReceta.getText()); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						bw.flush();
-						JOptionPane.showMessageDialog(new JPanel(),"PanelPacientes.107"+ruta); //$NON-NLS-1$
-						bw.close();
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-				}
-									
-			}
-			
-		}
-	}
+	
 	private class BtnLimpiarActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			list.setSelectedIndex(-1);
-			actualizarDatos();
+			
 		}
 	}
 	private class BtnActualizarListaDeActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			actualizarDatos();
+			Usuario us=new Usuario();
+			Usuario [] u =us.obtenerListaDeBD();
+			DefaultListModel modelo = new DefaultListModel();
+			
+			for(int i = 0; i<u.length; i++){
+			        modelo.addElement("Nombre:"+ u[i].getNombre());
+			}
+			list.setModel(modelo);
+		}
 		}
 	}
-}
+

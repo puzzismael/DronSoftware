@@ -20,7 +20,6 @@ public class GestorAlbum {
 	{
 		GestorAlbum gu=new GestorAlbum();
 		
-	
 	}
 	
 	public void Insertar(String id,String nombre,String tipo,String PrecioCancion,String PrecioAlbum,String artista,String estreno,String ranking,
@@ -88,50 +87,73 @@ public class GestorAlbum {
 			albumes =new Album[numRows];
 			System.out.println(numRows);
 			
-			obtenerIDS();
-			while(cont<numRows)
-			{
+			
 				
 			ps =(PreparedStatement) con.prepareStatement("SELECT * from album ");
-			//ps.setInt(1,(cont+1));
 			rs=ps.executeQuery();
 			
+			
+		    while(cont<numRows) {
 			if(rs.next())
-			{
-				album=new Album(rs.getString("id"),rs.getString("nombre"),rs.getString("tipo"),
+			{	album=new Album(rs.getString("id"),rs.getString("nombre"),rs.getString("tipo"),
 				rs.getString("precioCancion"),rs.getString("precioAlbum"),rs.getString("artista"),
 				rs.getString("estreno"),rs.getString("ranking"),rs.getString("pais"),rs.getString("NVentas"));
 				albumes[cont]=album;
-				eliminar(rs.getString("id"));
-			}else {
+				cont++;
+				
+			}
+			else {
 				JOptionPane.showMessageDialog(null,"No existe una persona con la clave");
 			}
+		}
+	
 			
-			cont++;
-			}
-			int i=0;
+			
 			
 	}catch(Exception ex){
 		System.err.println(ex);
 		
 	}
 		
-		for(int i=0;i<albumes.length;i++)
-		{
-			Insertar(albumes[i].getID(),albumes[i].getNombre(),albumes[i].getTipo(),albumes[i].getPrecioCancion(),
-					albumes[i].getPrecioAlbum(),albumes[i].getArtista(),albumes[i].getEstreno(),albumes[i].getRanking(),
-					albumes[i].getPais(),albumes[i].getNVentas());
-		}
 		return albumes;
 	}
-	public int []obtenerIDS() throws SQLException
-	{   Connection con =null;
-	     GestorBD c=new GestorBD();
-		con =c.getConection();
-		ps =(PreparedStatement) con.prepareStatement("select id FROM album ");
-	    
+	
+	public void modificarRegistro(String id,String nombre,String tipo,String PrecioCancion,String PrecioAlbum,String artista,String estreno,String ranking,
+			String pais,String NVentas) {
+		Connection con =null;
+		GestorBD c=new GestorBD();
+		try {
+			con =c.getConection();
+			ps =(PreparedStatement) con.prepareStatement("UPDATE album SET nombre=?,tipo=?,precioCancion=?,precioAlbum=?,artista=?,estreno=?,ranking=?,pais=?,NVentas=? where id=?");
 		
-		return null;
+			ps.setString(1,nombre);
+			ps.setString(2, tipo);
+			ps.setString(3, PrecioCancion);
+			ps.setString(4, PrecioAlbum);
+			ps.setString(5,artista);
+			ps.setString(6,estreno);
+			ps.setString(7,ranking);
+			ps.setString(8,pais);
+			ps.setString(9,NVentas);
+			 ps.setString(10, id);
+			
+			int res =ps.executeUpdate();
+			
+			
+			if(res >0)
+				
+			{	
+				JOptionPane.showMessageDialog(null,"Persona modificada");
+			} else {
+				
+				JOptionPane.showMessageDialog(null,"Error al modificar persona ");
+			}
+		}catch(Exception exc){
+			System.err.println(exc);
+			
+		}
+		
 	}
-}
+	}
+
 

@@ -2,9 +2,13 @@ package org.CreacionDeUsers.Persistencia;
 
 import java.sql.Date;
 import java.sql.ResultSet;
+import java.util.Stack;
 
 import javax.swing.JOptionPane;
 import org.CreacionDeUsers.Dominio.*;
+
+import org.IntroducirAlbum.Persistencia.GestorBD;
+
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
@@ -14,7 +18,7 @@ public class GestorUser {
 	public static void main(String[]args)
 	{
 		GestorUser gu=new GestorUser();
-		gu.Insertar("e","jhh", "adad", "rt", "yyy", "edad", "municipio", "CodigoPostal", "correo", "estudios"," cuentaBancaria");
+		gu.obtenerLista();
 		
 	}
 	
@@ -54,4 +58,58 @@ public class GestorUser {
 		
 	}
 }
+
+	public Usuario[] obtenerLista() {
+		 Stack <String> pila=new Stack();
+			Connection con =null;
+			GestorBD c=new GestorBD();
+			Usuario [] users = null;
+			try {
+				con =c.getConection();
+				ps =(PreparedStatement) con.prepareStatement("SELECT * from usuario ");
+				rs=ps.executeQuery();
+				rs.last();
+				int numRows = rs.getRow(); 
+				rs.beforeFirst();
+				int cont=0;
+				Usuario  user;
+				users =new Usuario[numRows];
+				System.out.println(numRows);
+				
+				
+				
+					
+				ps =(PreparedStatement) con.prepareStatement("SELECT * from usuario ");
+				rs=ps.executeQuery();
+				
+				
+			    while(cont<numRows) {
+				if(rs.next())
+				{	user=new Usuario(rs.getString("ID"),rs.getString("contraseña"),rs.getString("nacionalidad"),
+					rs.getString("nombre"),rs.getString("Genero"),rs.getString("edad"),
+					rs.getString("municipio"),rs.getString("CódigoPostal"),rs.getString("correo"),rs.getString("estudios"),rs.getString("Banc"));
+					users[cont]=user;
+					cont++;
+					
+					
+					
+					
+				
+				}
+				else {
+					JOptionPane.showMessageDialog(null,"No existe una persona con la clave");
+				}
+			}
+		
+				
+				
+				
+		}catch(Exception ex){
+			System.err.println(ex);
+			
+		}
+			
+			return users;
+		
+	}
 }

@@ -16,6 +16,7 @@ import org.CreacionDeUsers.Persistencia.GestorUser;
 
 
 
+
 public class Usuario {
 	private String  ID,contraseña,nacionalidad,nombre,Genero,edad,municipio,CodigoPostal,correo,estudios,cuentaBancaria;
 	//private long tarjetaCredito;
@@ -48,6 +49,10 @@ public class Usuario {
 		//this.apellidos = apellidos;
 	//}
 
+
+	public Usuario() {
+		// TODO Auto-generated constructor stub
+	}
 
 	/*public String getUsuario() {
 		return usuario;
@@ -150,5 +155,20 @@ public class Usuario {
 		GestorUser GestorUser =new GestorUser();
 		GestorUser.Insertar(ID, contraseña, nacionalidad, nombre, Genero, edad, municipio, CodigoPostal, correo, estudios, cuentaBancaria);
 	}
-	
+	public  Usuario [] obtenerListaDeBD()
+	{
+		GestorUser gUser =new GestorUser();
+		Usuario [] user=gUser.obtenerLista();
+		return user;
+	}
+
+	public String getID() {
+		// TODO Auto-generated method stub
+		return ID;
+	}
+
+	public String getNombre() {
+		// TODO Auto-generated method stub
+		return nombre;
+	}
 }

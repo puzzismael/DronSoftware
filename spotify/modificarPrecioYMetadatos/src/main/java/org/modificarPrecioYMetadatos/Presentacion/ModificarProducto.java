@@ -28,8 +28,12 @@ import javax.swing.UIManager;
 import javax.swing.JTextPane;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.event.ListSelectionEvent;
 
 public class ModificarProducto extends JPanel {
 	private JTextField textID;
@@ -42,7 +46,9 @@ public class ModificarProducto extends JPanel {
 	private JTextField textPais;
 	private JTextField textNVentas;
 	private JTextField textTipo;
-
+	private Album album=new Album();
+	private Album[] albumes=album.obtenerListaDeBD();
+	private JList list ;
 	/**
 	 * Create the panel.
 	 */
@@ -66,10 +72,41 @@ public class ModificarProducto extends JPanel {
 		gbc_scrollPane.gridy = 0;
 		add(scrollPane, gbc_scrollPane);
 		
-		JList list = new JList();
+		list= new JList();
+		list.addListSelectionListener(new ListSelectionListener() {
+			public void valueChanged(ListSelectionEvent e) {
+				for(int i=0;i<albumes.length;i++)
+				{	
+					if(albumes[i].getID().equals(list.getSelectedValue()))
+					{
+						textID.setText(albumes[i].getID());
+						textArtista.setText(albumes[i].getArtista());
+						textEstreno.setText(albumes[i].getEstreno());
+						textTipo.setText(albumes[i].getTipo());
+						textRanking.setText(albumes[i].getRanking());
+						textNombre.setText(albumes[i].getNombre());
+						textPais.setText(albumes[i].getPais());
+						textPrecioCanc.setText(albumes[i].getPrecioCancion());
+					
+						textNVentas.setText(albumes[i].getNVentas());
+						textPrecioAlb.setText(albumes[i].getPrecioAlbum());
+						
+						
+					}
+				}
+			
+			}
+		});
 		list.setBackground(SystemColor.control);
 		scrollPane.setViewportView(list);
+		list.setEnabled(true);
+		DefaultListModel modelo = new DefaultListModel();
 		
+		for(int i = 0; i<albumes.length; i++){
+		        modelo.addElement("Nombre:"+ albumes[i].getNombre());
+		}
+		list.setModel(modelo);
+	
 		JPanel panel = new JPanel();
 		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Datos Cancion/album", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panel.setLayout(null);
@@ -93,6 +130,7 @@ public class ModificarProducto extends JPanel {
 		panel.add(lblNombre);
 		
 		textID = new JTextField();
+		textID.setEditable(false);
 		textID.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		textID.setBackground(SystemColor.activeCaptionBorder);
 		textID.setBounds(113, 39, 23, 20);
@@ -264,6 +302,19 @@ public class ModificarProducto extends JPanel {
 		panel_4.add(textPane_3, BorderLayout.CENTER);
 		
 		JButton btnActualizarListaDe = new JButton("Actualizar lista de productos");
+		btnActualizarListaDe.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				 Album albu=new Album();
+				Album[] albume=albu.obtenerListaDeBD();
+				DefaultListModel modelo = new DefaultListModel();
+				
+				for(int i = 0; i<albume.length; i++){
+				        modelo.addElement(albume[i].getID());
+				}
+				list.setModel(modelo);
+				
+			}
+		});
 		GridBagConstraints gbc_btnActualizarListaDe = new GridBagConstraints();
 		gbc_btnActualizarListaDe.gridwidth = 4;
 		gbc_btnActualizarListaDe.insets = new Insets(0, 0, 0, 5);
@@ -285,30 +336,24 @@ public class ModificarProducto extends JPanel {
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				boolean bol=true;
-				Album album =new Album();
-				Album [] alb=album.obtenerListaDeBD();
 				
-				if(textID.getText().equals("")||
-				textNombre.getText().equals("")||
-				textTipo.getText().equals("")||
-				textPrecioCanc.getText().equals("")||
-				textPrecioAlb.getText().equals("")||
-				textArtista.getText().equals("")||
-				textEstreno.getText().equals("")||
-				textRanking.getText().equals("")||
-				textPais.getText().equals("")||
-				textNVentas.getText().equals("")) {
+				
+				if(textID.getText().replace(" ","").equals("")||
+				textNombre.getText().replace(" ","").equals("")||
+				textTipo.getText().replace(" ","").equals("")||
+				textPrecioCanc.getText().replace(" ","").equals("")||
+				textPrecioAlb.getText().replace(" ","").equals("")||
+				textArtista.getText().replace(" ","").equals("")||
+				textEstreno.getText().replace(" ","").equals("")||
+				textRanking.getText().replace(" ","").equals("")||
+				textPais.getText().replace(" ","").equals("")||
+				textNVentas.getText().replace(" ","").equals("")) {
 					JOptionPane.showMessageDialog(null,"deben estar todos los espacios llenos");
 				}else {
 					
-					for(int i=0;i<alb.length;i++)
-					{
-						if(alb[i].getID().equals(textID.getText())) {
-							JOptionPane.showMessageDialog(null,"Ese producto ya existe, cambie su id");
-						bol=false;
-						}
-					}
-				if(bol) {
+					
+					
+				
 							String ID,nombre ,tipo,PrecioCancion,PrecioAlbum, artista, estreno,ranking,pais,NVentas;
 							ID=textID.getText();
 							nombre=textNombre.getText();
@@ -320,10 +365,10 @@ public class ModificarProducto extends JPanel {
 							ranking=textRanking.getText();
 							pais=textPais.getText();
 							NVentas=textNVentas.getText();
-							GestorAlbum gestAl=new GestorAlbum();
-							gestAl.Insertar(ID, nombre, tipo, PrecioCancion, PrecioAlbum, artista, estreno, ranking, pais, NVentas);
+							album.modificarRegistro(ID, nombre, tipo, PrecioCancion, PrecioAlbum, artista, estreno, ranking, pais, NVentas);
+							 
 				}
-					}	
+					
 				
 				
 				}
