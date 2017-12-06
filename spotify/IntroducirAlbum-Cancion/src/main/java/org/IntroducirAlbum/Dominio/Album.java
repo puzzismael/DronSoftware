@@ -89,7 +89,7 @@ public void insertarBD()
 	GestorAlbum GestorAlbum =new GestorAlbum();
 	GestorAlbum.Insertar(ID,nombre ,tipo,PrecioCancion,PrecioAlbum, artista, estreno,ranking,pais,NVentas);
 }
-public void EliminarRegistro(int id)
+public void EliminarRegistro(String id)
 {
 	GestorAlbum GestAlb=new GestorAlbum();
 	GestAlb.eliminar(id);

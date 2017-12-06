@@ -11,10 +11,13 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
+
 import java.awt.Color;
 import java.awt.SystemColor;
 import javax.swing.border.TitledBorder;
 
+import org.IntroducirAlbum.Dominio.Album;
 import org.IntroducirAlbum.Persistencia.GestorAlbum;
 
 import javax.swing.JLabel;
@@ -281,20 +284,49 @@ public class ModificarProducto extends JPanel {
 		JButton button_2 = new JButton("Guardar Cambios");
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String ID,nombre ,tipo,PrecioCancion,PrecioAlbum, artista, estreno,ranking,pais,NVentas;
-				ID=textID.getText();
-				nombre=textNombre.getText();
-				tipo=textTipo.getText();
-				PrecioCancion=textPrecioCanc.getText();
-				PrecioAlbum=textPrecioAlb.getText();
-				artista=textArtista.getText();
-				estreno=textEstreno.getText();
-				ranking=textRanking.getText();
-				pais=textPais.getText();
-				NVentas=textNVentas.getText();
-				GestorAlbum gestAl=new GestorAlbum();
-				gestAl.Insertar(ID, nombre, tipo, PrecioCancion, PrecioAlbum, artista, estreno, ranking, pais, NVentas);
-			}
+				boolean bol=true;
+				Album album =new Album();
+				Album [] alb=album.obtenerListaDeBD();
+				
+				if(textID.getText().equals("")||
+				textNombre.getText().equals("")||
+				textTipo.getText().equals("")||
+				textPrecioCanc.getText().equals("")||
+				textPrecioAlb.getText().equals("")||
+				textArtista.getText().equals("")||
+				textEstreno.getText().equals("")||
+				textRanking.getText().equals("")||
+				textPais.getText().equals("")||
+				textNVentas.getText().equals("")) {
+					JOptionPane.showMessageDialog(null,"deben estar todos los espacios llenos");
+				}else {
+					
+					for(int i=0;i<alb.length;i++)
+					{
+						if(alb[i].getID().equals(textID.getText())) {
+							JOptionPane.showMessageDialog(null,"Ese producto ya existe, cambie su id");
+						bol=false;
+						}
+					}
+				if(bol) {
+							String ID,nombre ,tipo,PrecioCancion,PrecioAlbum, artista, estreno,ranking,pais,NVentas;
+							ID=textID.getText();
+							nombre=textNombre.getText();
+							tipo=textTipo.getText();
+							PrecioCancion=textPrecioCanc.getText();
+							PrecioAlbum=textPrecioAlb.getText();
+							artista=textArtista.getText();
+							estreno=textEstreno.getText();
+							ranking=textRanking.getText();
+							pais=textPais.getText();
+							NVentas=textNVentas.getText();
+							GestorAlbum gestAl=new GestorAlbum();
+							gestAl.Insertar(ID, nombre, tipo, PrecioCancion, PrecioAlbum, artista, estreno, ranking, pais, NVentas);
+				}
+					}	
+				
+				
+				}
 		});
 		button_2.setFont(new Font("Verdana", Font.BOLD, 11));
 		GridBagConstraints gbc_button_2 = new GridBagConstraints();

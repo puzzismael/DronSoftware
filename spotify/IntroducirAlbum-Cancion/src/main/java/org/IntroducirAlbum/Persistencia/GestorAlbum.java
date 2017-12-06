@@ -20,7 +20,7 @@ public class GestorAlbum {
 	{
 		GestorAlbum gu=new GestorAlbum();
 		
-	  gu.eliminar(1);
+	
 	}
 	
 	public void Insertar(String id,String nombre,String tipo,String PrecioCancion,String PrecioAlbum,String artista,String estreno,String ranking,
@@ -50,7 +50,7 @@ public class GestorAlbum {
 		
 	}
 }
-	public void eliminar(int id)
+	public void eliminar(String id)
 	{
 		Connection con =null;
 		GestorBD c=new GestorBD();
@@ -58,7 +58,7 @@ public class GestorAlbum {
 			con =c.getConection();
 			ps =(PreparedStatement) con.prepareStatement("DELETE FROM album where id=?");
 		
-			ps.setInt(1,id);
+			ps.setString(1,id);
 			
 			int res =ps.executeUpdate();
 			
@@ -102,7 +102,7 @@ public class GestorAlbum {
 				rs.getString("precioCancion"),rs.getString("precioAlbum"),rs.getString("artista"),
 				rs.getString("estreno"),rs.getString("ranking"),rs.getString("pais"),rs.getString("NVentas"));
 				albumes[cont]=album;
-				eliminar(rs.getInt("id"));
+				eliminar(rs.getString("id"));
 			}else {
 				JOptionPane.showMessageDialog(null,"No existe una persona con la clave");
 			}

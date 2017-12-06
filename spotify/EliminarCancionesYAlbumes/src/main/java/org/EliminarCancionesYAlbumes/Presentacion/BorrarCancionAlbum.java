@@ -148,7 +148,7 @@ public class BorrarCancionAlbum extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			
 			Album album =new Album();
-			album.EliminarRegistro(Integer.parseInt(textIDCanc.getText()));
+			album.EliminarRegistro(textIDCanc.getText());
 			dispose();
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
