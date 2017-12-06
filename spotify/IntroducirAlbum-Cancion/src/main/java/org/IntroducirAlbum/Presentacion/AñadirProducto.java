@@ -9,7 +9,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 
-import org.IntroducirAlbum.Dominio.Usuario;
+//import org.IntroducirAlbum.Dominio.Usuario;
 
 
 
@@ -27,6 +27,10 @@ import javax.swing.JInternalFrame;
 import java.awt.Rectangle;
 import java.awt.GridLayout;
 import javax.swing.table.DefaultTableModel;
+
+import org.IntroducirAlbum.Dominio.Album;
+import org.IntroducirAlbum.Persistencia.GestorAlbum;
+
 import javax.swing.ScrollPaneConstants;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -57,7 +61,7 @@ public class AñadirProducto extends JFrame {
 	private JLabel lblPrecAlbum;
 	private JTextField textPrecAlbum;
 	private JLabel lblDireccin;
-	private JTextField textDireccion;
+	private JTextField textArtista;
 	private JLabel lblFechaLanz;
 	private JTextField textFechaLanz;
 	private JLabel lblRanking;
@@ -67,11 +71,12 @@ public class AñadirProducto extends JFrame {
 	private JButton btnAñadir;
 	private JButton btnLimpiar;
 	private JTextField textNumeroVentas;
-	ArrayList<Usuario> users;
-	private JTextField textField;
+	//ArrayList<Usuario> users;
+	private JTextField textPais;
+	private JTextField textTipo;
 
-	public AñadirProducto(ArrayList<Usuario> users) {
-		this.users=users;
+	public AñadirProducto(/*ArrayList<Usuario> users*/) {
+		//this.users=users;
 		setType(Type.POPUP);
 		setResizable(false);
 		setTitle("AñadirPaciente.0"); //$NON-NLS-1$
@@ -184,13 +189,13 @@ public class AñadirProducto extends JFrame {
 		lblDireccin.setFont(new Font("Verdana", Font.BOLD, 11)); //$NON-NLS-1$
 		panel.add(lblDireccin);
 		
-		textDireccion = new JTextField();
-		textDireccion.setBounds(572, 123, 120, 29);
-		textDireccion.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
-		textDireccion.setBackground(SystemColor.scrollbar);
-		textDireccion.setFont(new Font("AñadirPaciente.37", Font.BOLD, 11)); //$NON-NLS-1$
-		textDireccion.setColumns(10);
-		panel.add(textDireccion);
+		textArtista = new JTextField();
+		textArtista.setBounds(572, 121, 120, 29);
+		textArtista.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); //$NON-NLS-1$
+		textArtista.setBackground(SystemColor.scrollbar);
+		textArtista.setFont(new Font("AñadirPaciente.37", Font.BOLD, 11)); //$NON-NLS-1$
+		textArtista.setColumns(10);
+		panel.add(textArtista);
 		
 		lblFechaLanz = new JLabel("Estreno"); //$NON-NLS-1$
 		lblFechaLanz.setBounds(34, 190, 65, 37);
@@ -238,18 +243,21 @@ public class AñadirProducto extends JFrame {
 		panel.add(textNumeroVentas);
 		textNumeroVentas.setColumns(10);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Canci\u00F3n", "Album"}));
-		comboBox.setBounds(336, 54, 73, 20);
-		panel.add(comboBox);
+		textPais = new JTextField();
+		textPais.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		textPais.setBackground(Color.LIGHT_GRAY);
+		textPais.setForeground(Color.WHITE);
+		textPais.setBounds(572, 199, 120, 28);
+		panel.add(textPais);
+		textPais.setColumns(10);
 		
-		textField = new JTextField();
-		textField.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		textField.setBackground(Color.LIGHT_GRAY);
-		textField.setForeground(Color.WHITE);
-		textField.setBounds(572, 199, 120, 28);
-		panel.add(textField);
-		textField.setColumns(10);
+		textTipo = new JTextField();
+		textTipo.setFont(new Font("Dialog", Font.BOLD, 11));
+		textTipo.setColumns(10);
+		textTipo.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		textTipo.setBackground(SystemColor.scrollbar);
+		textTipo.setBounds(328, 54, 120, 29);
+		panel.add(textTipo);
 		
 	}
 	
@@ -259,10 +267,10 @@ public class AñadirProducto extends JFrame {
 		textID.setText("AñadirPaciente.61"); //$NON-NLS-1$
 		textPrecio.setText("AñadirPaciente.62"); //$NON-NLS-1$
 		textPrecAlbum.setText("AñadirPaciente.63"); //$NON-NLS-1$
-		textDireccion.setText("AñadirPaciente.64"); //$NON-NLS-1$
+		textArtista.setText("AñadirPaciente.64"); //$NON-NLS-1$
 		textFechaLanz.setText("AñadirPaciente.65"); //$NON-NLS-1$
 		textRanking.setText("AñadirPaciente.66"); //$NON-NLS-1$
-		textNumeroVentas.setText("AñadirPaciente.67"+(users.size()+1)); //$NON-NLS-1$
+		//textNumeroVentas.setText("AñadirPaciente.67"+(users.size()+1)); //$NON-NLS-1$
 		
 	}
 
@@ -278,30 +286,30 @@ public class AñadirProducto extends JFrame {
 	}
 	private class BtnAñadirActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			String nombre=textNombre.getText();
-			
-			String DNI= textID.getText();
-			String fecha= textPrecio.getText();
-			String nacion = textPrecAlbum.getText();
-			String direccion = textDireccion.getText();
-			String municipio= textFechaLanz.getText();
-			String cp = textRanking.getText();
-			String npaciente= textNumeroVentas.getText();
-			String sexo;
-			if(nombre.equals("AñadirPaciente.68")){ //$NON-NLS-1$
-				JOptionPane.showMessageDialog(new JFrame(),"AñadirPaciente.69", //$NON-NLS-1$
-						"AñadirPaciente.70",JOptionPane.PLAIN_MESSAGE ); //$NON-NLS-1$
-			}else{
-				
-			//	Paciente paciente = new Paciente(npaciente,nombre,nacion,direccion,municipio,cp ,DNI,fecha,sexo);
-				if(JOptionPane.showConfirmDialog(new JFrame (), "AñadirPaciente.73", "AñadirPaciente.74",  //$NON-NLS-1$ //$NON-NLS-2$
-						JOptionPane.OK_CANCEL_OPTION)==JOptionPane.YES_OPTION){
-				//	pacientes.add(paciente);
-					JOptionPane.showMessageDialog(new JFrame (), "AñadirPaciente.75"); //$NON-NLS-1$
-					limpiar();
+		    Album albm= new Album();
+			Album [] albumes=albm.obtenerListaDeBD();
+			for(int i=0;i<albumes.length;i++)
+			{
+				if(albumes[i].getID().equals(textID.getText())) {
+					JOptionPane.showMessageDialog(null,"Ese producto ya existe, cambie su id");
 				}
-				
+				else {
+			String ID,nombre ,tipo,PrecioCancion,PrecioAlbum, artista, estreno,ranking,pais,NVentas;
+		    ID=textID.getText();
+			nombre=textNombre.getText();
+			tipo=textTipo.getText();
+			PrecioCancion=textPrecio.getText();
+			PrecioAlbum=textPrecAlbum.getText();
+			artista=textArtista.getText();
+			estreno=textFechaLanz.getText();
+			ranking=textRanking.getText();
+			pais=textPais.getText();
+			NVentas=textNumeroVentas.getText();
+			GestorAlbum gestAl=new GestorAlbum();
+			gestAl.Insertar( ID,nombre, tipo, PrecioCancion, PrecioAlbum, artista, estreno, ranking, pais, NVentas);
+				}
 			}
+		
 		}
 	}
 }

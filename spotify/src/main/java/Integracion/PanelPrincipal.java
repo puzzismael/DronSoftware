@@ -224,7 +224,7 @@ public class PanelPrincipal extends JPanel {
 					EventQueue.invokeLater(new Runnable() {
 						public void run() {
 							try {
-								BorrarCancionAlbum bc =new BorrarCancionAlbum(null);
+								BorrarCancionAlbum bc =new BorrarCancionAlbum();
 								bc.setVisible(true);
 							} catch (Exception e) {
 								e.printStackTrace();
@@ -284,8 +284,8 @@ public class PanelPrincipal extends JPanel {
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						ArrayList<Usuario> users=new ArrayList();
-						AñadirProducto window = new AñadirProducto( users);
+						ArrayList<Cancion> users=new ArrayList();
+						AñadirProducto window = new AñadirProducto( /*users*/);
 						window.setVisible(true);
 					} catch (Exception e) {
 						e.printStackTrace();

@@ -14,6 +14,9 @@ import javax.swing.JList;
 import java.awt.Color;
 import java.awt.SystemColor;
 import javax.swing.border.TitledBorder;
+
+import org.IntroducirAlbum.Persistencia.GestorAlbum;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -22,18 +25,20 @@ import javax.swing.UIManager;
 import javax.swing.JTextPane;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ModificarProducto extends JPanel {
 	private JTextField textID;
 	private JTextField textNombre;
-	private JTextField textDireccion;
-	private JTextField textDNI;
-	private JTextField textNHistoria;
-	private JTextField textFechaNacimiento;
-	private JTextField textGenero;
-	private JTextField textNacionalidad;
-	private JTextField textMunicipio;
-	private JTextField textCP;
+	private JTextField textPrecioCanc;
+	private JTextField textPrecioAlb;
+	private JTextField textArtista;
+	private JTextField textEstreno;
+	private JTextField textRanking;
+	private JTextField textPais;
+	private JTextField textNVentas;
+	private JTextField textTipo;
 
 	/**
 	 * Create the panel.
@@ -98,71 +103,59 @@ public class ModificarProducto extends JPanel {
 		textNombre.setBounds(113, 102, 172, 20);
 		panel.add(textNombre);
 		
-		textDireccion = new JTextField();
-		textDireccion.setColumns(10);
-		textDireccion.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		textDireccion.setBackground(SystemColor.activeCaptionBorder);
-		textDireccion.setBounds(113, 128, 172, 20);
-		panel.add(textDireccion);
+		textPrecioCanc = new JTextField();
+		textPrecioCanc.setColumns(10);
+		textPrecioCanc.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		textPrecioCanc.setBackground(SystemColor.activeCaptionBorder);
+		textPrecioCanc.setBounds(113, 128, 172, 20);
+		panel.add(textPrecioCanc);
 		
-		textDNI = new JTextField();
-		textDNI.setColumns(10);
-		textDNI.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		textDNI.setBackground(SystemColor.activeCaptionBorder);
-		textDNI.setBounds(113, 159, 172, 20);
-		panel.add(textDNI);
+		textPrecioAlb = new JTextField();
+		textPrecioAlb.setColumns(10);
+		textPrecioAlb.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		textPrecioAlb.setBackground(SystemColor.activeCaptionBorder);
+		textPrecioAlb.setBounds(113, 159, 172, 20);
+		panel.add(textPrecioAlb);
 		
-		textNHistoria = new JTextField();
-		textNHistoria.setColumns(10);
-		textNHistoria.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		textNHistoria.setBackground(SystemColor.activeCaptionBorder);
-		textNHistoria.setBounds(240, 39, 45, 20);
-		panel.add(textNHistoria);
+		textArtista = new JTextField();
+		textArtista.setColumns(10);
+		textArtista.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		textArtista.setBackground(SystemColor.activeCaptionBorder);
+		textArtista.setBounds(240, 39, 45, 20);
+		panel.add(textArtista);
 		
-		textFechaNacimiento = new JTextField();
-		textFechaNacimiento.setColumns(10);
-		textFechaNacimiento.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		textFechaNacimiento.setBackground(SystemColor.activeCaptionBorder);
-		textFechaNacimiento.setBounds(444, 45, 86, 20);
-		panel.add(textFechaNacimiento);
+		textEstreno = new JTextField();
+		textEstreno.setColumns(10);
+		textEstreno.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		textEstreno.setBackground(SystemColor.activeCaptionBorder);
+		textEstreno.setBounds(444, 45, 86, 20);
+		panel.add(textEstreno);
 		
-		textGenero = new JTextField();
-		textGenero.setColumns(10);
-		textGenero.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		textGenero.setBackground(SystemColor.activeCaptionBorder);
-		textGenero.setBounds(444, 76, 86, 20);
-		panel.add(textGenero);
+		textRanking = new JTextField();
+		textRanking.setColumns(10);
+		textRanking.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		textRanking.setBackground(SystemColor.activeCaptionBorder);
+		textRanking.setBounds(444, 76, 86, 20);
+		panel.add(textRanking);
 		
-		textNacionalidad = new JTextField();
-		textNacionalidad.setColumns(10);
-		textNacionalidad.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		textNacionalidad.setBackground(SystemColor.activeCaptionBorder);
-		textNacionalidad.setBounds(444, 102, 86, 20);
-		panel.add(textNacionalidad);
+		textPais = new JTextField();
+		textPais.setColumns(10);
+		textPais.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		textPais.setBackground(SystemColor.activeCaptionBorder);
+		textPais.setBounds(444, 102, 86, 20);
+		panel.add(textPais);
 		
-		textMunicipio = new JTextField();
-		textMunicipio.setColumns(10);
-		textMunicipio.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		textMunicipio.setBackground(SystemColor.activeCaptionBorder);
-		textMunicipio.setBounds(444, 130, 86, 20);
-		panel.add(textMunicipio);
-		
-		textCP = new JTextField();
-		textCP.setColumns(10);
-		textCP.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		textCP.setBackground(SystemColor.activeCaptionBorder);
-		textCP.setBounds(444, 159, 86, 20);
-		panel.add(textCP);
+		textNVentas = new JTextField();
+		textNVentas.setColumns(10);
+		textNVentas.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		textNVentas.setBackground(SystemColor.activeCaptionBorder);
+		textNVentas.setBounds(444, 130, 86, 20);
+		panel.add(textNVentas);
 		
 		JLabel label = new JLabel("Tipo:");
 		label.setFont(new Font("Verdana", Font.BOLD, 11));
 		label.setBounds(61, 57, 33, 36);
 		panel.add(label);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"canción", "album"}));
-		comboBox.setBounds(113, 71, 73, 20);
-		panel.add(comboBox);
 		
 		JLabel label_1 = new JLabel("Precio Canción");
 		label_1.setFont(new Font("Verdana", Font.BOLD, 11));
@@ -198,6 +191,13 @@ public class ModificarProducto extends JPanel {
 		label_7.setFont(new Font("Verdana", Font.BOLD, 11));
 		label_7.setBounds(375, 119, 73, 36);
 		panel.add(label_7);
+		
+		textTipo = new JTextField();
+		textTipo.setColumns(10);
+		textTipo.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		textTipo.setBackground(SystemColor.activeCaptionBorder);
+		textTipo.setBounds(113, 70, 172, 20);
+		panel.add(textTipo);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Mensaje", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
@@ -279,8 +279,24 @@ public class ModificarProducto extends JPanel {
 		add(button_1, gbc_button_1);
 		
 		JButton button_2 = new JButton("Guardar Cambios");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String ID,nombre ,tipo,PrecioCancion,PrecioAlbum, artista, estreno,ranking,pais,NVentas;
+				ID=textID.getText();
+				nombre=textNombre.getText();
+				tipo=textTipo.getText();
+				PrecioCancion=textPrecioCanc.getText();
+				PrecioAlbum=textPrecioAlb.getText();
+				artista=textArtista.getText();
+				estreno=textEstreno.getText();
+				ranking=textRanking.getText();
+				pais=textPais.getText();
+				NVentas=textNVentas.getText();
+				GestorAlbum gestAl=new GestorAlbum();
+				gestAl.Insertar(ID, nombre, tipo, PrecioCancion, PrecioAlbum, artista, estreno, ranking, pais, NVentas);
+			}
+		});
 		button_2.setFont(new Font("Verdana", Font.BOLD, 11));
-		button_2.setEnabled(false);
 		GridBagConstraints gbc_button_2 = new GridBagConstraints();
 		gbc_button_2.gridwidth = 5;
 		gbc_button_2.insets = new Insets(0, 0, 0, 5);

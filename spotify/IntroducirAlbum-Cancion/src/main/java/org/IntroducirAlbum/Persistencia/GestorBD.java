@@ -108,7 +108,7 @@ public class GestorBD {
 			
 		Class.forName("com.mysql.jdbc.Driver");	
 		con=(Connection) DriverManager.getConnection(URL,USERNAME,PASSWORD);
-		JOptionPane.showMessageDialog(null,"Conexion exitosa");
+		//JOptionPane.showMessageDialog(null,"Conexion exitosa");
 		}
 		catch(Exception e) {
 			System.out.println(e);
