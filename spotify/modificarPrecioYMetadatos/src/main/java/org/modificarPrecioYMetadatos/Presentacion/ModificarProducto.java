@@ -62,7 +62,7 @@ public class ModificarProducto extends JPanel {
 		setLayout(gridBagLayout);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Listado De Canciones", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		scrollPane.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Listado De Canciones(ID).", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
 		gbc_scrollPane.gridheight = 12;
 		gbc_scrollPane.gridwidth = 4;
@@ -103,7 +103,7 @@ public class ModificarProducto extends JPanel {
 		DefaultListModel modelo = new DefaultListModel();
 		
 		for(int i = 0; i<albumes.length; i++){
-		        modelo.addElement("Nombre:"+ albumes[i].getNombre());
+		        modelo.addElement(albumes[i].getID());
 		}
 		list.setModel(modelo);
 	
@@ -130,6 +130,7 @@ public class ModificarProducto extends JPanel {
 		panel.add(lblNombre);
 		
 		textID = new JTextField();
+		textID.setEnabled(false);
 		textID.setEditable(false);
 		textID.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		textID.setBackground(SystemColor.activeCaptionBorder);

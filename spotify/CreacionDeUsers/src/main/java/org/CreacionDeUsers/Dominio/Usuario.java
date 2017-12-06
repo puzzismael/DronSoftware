@@ -171,4 +171,9 @@ public class Usuario {
 		// TODO Auto-generated method stub
 		return nombre;
 	}
+
+	public String getContraseña() {
+		// TODO Auto-generated method stub
+		return contraseña;
+	}
 }

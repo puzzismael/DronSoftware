@@ -10,6 +10,7 @@ import javax.swing.JScrollPane;
 import java.awt.Dimension;
 import java.awt.SystemColor;
 import java.util.ArrayList;
+import java.util.Stack;
 
 import javax.swing.JList;
 import javax.swing.JOptionPane;
@@ -25,6 +26,10 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JLabel;
 import javax.swing.event.ListSelectionListener;
+
+import org.AdquisicionProductos.Dominio.ProductoAdquirido;
+import org.IntroducirAlbum.Dominio.Album;
+
 import javax.swing.event.ListSelectionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -39,6 +44,14 @@ public class AdquirirProductos extends JFrame {
 	//private JList<Paciente> list1;
 	//private ArrayList<Doctor> usuarios=new ArrayList<Doctor>();
 
+	private Album album=new Album();
+	private Album[] albumes=album.obtenerListaDeBD();
+	private JList list ;
+	private JList list1 ;
+	private String  id;
+	private String precio;
+	private String comprador;
+	Stack acumulados = new Stack();
 	
 	public AdquirirProductos(/*ArrayList<Doctor> usuarios*/) {
 		//this.usuarios=usuarios;
@@ -55,8 +68,17 @@ public class AdquirirProductos extends JFrame {
 		scrollPane.setPreferredSize(new Dimension(150, 2));
 		contentPane.add(scrollPane, BorderLayout.WEST);
 		
-		JList list = new JList();
+		 list = new JList();
 		scrollPane.setViewportView(list);
+		list.setBackground(SystemColor.control);
+		scrollPane.setViewportView(list);
+		list.setEnabled(true);
+		DefaultListModel modelo = new DefaultListModel();
+		
+		for(int i = 0; i<albumes.length; i++){
+		        modelo.addElement(albumes[i].getNombre());
+		}
+		list.setModel(modelo);
 		
 		//list = new JList</*Doctor*/>();
 		//list.addListSelectionListener(new ListListSelectionListener());
@@ -69,8 +91,8 @@ public class AdquirirProductos extends JFrame {
 		scrollPane_1.setPreferredSize(new Dimension(150, 2));
 		contentPane.add(scrollPane_1, BorderLayout.EAST);
 		
-		JList list_1 = new JList();
-		scrollPane_1.setViewportView(list_1);
+		list1 = new JList();
+		scrollPane_1.setViewportView(list1);
 		
 		//list1 = new JList<Paciente>();
 		//list1.setBorder(new TitledBorder(null, Messages.getString("BuscarPaciente.2"), TitledBorder.LEADING, TitledBorder.TOP, null, SystemColor.infoText)); //$NON-NLS-1$
@@ -81,11 +103,6 @@ public class AdquirirProductos extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JButton button = new JButton(">>"); //$NON-NLS-1$
-		button.addActionListener(new ButtonActionListener());
-		button.setBounds(34, 90, 52, 23);
-		panel.add(button);
-		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(UIManager.getColor("Button.disabledShadow"));
 		contentPane.add(panel_1, BorderLayout.SOUTH);
@@ -94,6 +111,29 @@ public class AdquirirProductos extends JFrame {
 		JButton btnNewButton = new JButton("Comprar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				int cont=0;
+				boolean bol=true;
+				while(cont<acumulados.size())
+				{
+					if(list.getSelectedValue().equals(acumulados.elementAt(cont))){
+						bol=false;
+						JOptionPane.showMessageDialog(null,"Ya tiene ese producto, seleccionen otro");
+					}
+					cont++;
+				}
+					if(bol)
+					{
+				DefaultListModel modelo1 = new DefaultListModel();
+				
+			          acumulados.push(list.getSelectedValue());
+				      for(int i=0;i<acumulados.size();i++)  
+			          modelo1.addElement(acumulados.elementAt(i));
+				
+				list1.setModel(modelo1);
+				ProductoAdquirido prodAd =new ProductoAdquirido();
+				prodAd.insertarBD(id, list.getSelectedValue().toString(), comprador);
+				
+			}
 			}
 		});
 		panel_1.add(btnNewButton);
@@ -111,20 +151,11 @@ public class AdquirirProductos extends JFrame {
 		public void valueChanged(ListSelectionEvent arg0) {
 		}
 	}
-	private class ButtonActionListener implements ActionListener {
-		public void actionPerformed(ActionEvent arg0) {
-		/*	int i=list.getSelectedIndex();
-			try{
-				DefaultListModel modelo = new DefaultListModel();
-				for(int j=0;j<usuarios.get(i).getPacientes().size();j++){
-					modelo.addElement(usuarios.get(i).getPacientes().get(j).getApellidos()+Messages.getString("BuscarPaciente.5")+usuarios.get(i).getPacientes().get(j).getNombre()); //$NON-NLS-1$
-				}
-				list1.setModel(modelo);
-			}catch(ArrayIndexOutOfBoundsException e){
-				JOptionPane.showMessageDialog(new JFrame(), Messages.getString("BuscarPaciente.6"), //$NON-NLS-1$
-						Messages.getString("BuscarPaciente.7"),JOptionPane.PLAIN_MESSAGE ); //$NON-NLS-1$
-			*/}
-			
-		
+	public void setId(String id) {
+		this.id=id;
 	}
+	public void comprador(String comp) {
+		this.comprador=comp;
+	}
+	
 }

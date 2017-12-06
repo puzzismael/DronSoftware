@@ -53,7 +53,7 @@ public class BorrarCancionAlbum extends JFrame {
 		setResizable(false);
 		setTitle("Borrar Productos"); //$NON-NLS-1$
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 452, 299);
+		setBounds(100, 100, 543, 299);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -80,7 +80,7 @@ public class BorrarCancionAlbum extends JFrame {
 		textIDCanc.setColumns(10);
 		textIDCanc.setText(albm.getID());
 		scrollPane = new JScrollPane();
-		scrollPane.setPreferredSize(new Dimension(150, 2));
+		scrollPane.setPreferredSize(new Dimension(200, 2));
 		contentPane.add(scrollPane, BorderLayout.WEST);
 		
 		

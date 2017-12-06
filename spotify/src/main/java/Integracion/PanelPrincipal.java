@@ -180,6 +180,8 @@ public class PanelPrincipal extends JPanel {
 					public void run() {
 						try {
 							AdquirirProductos window = new AdquirirProductos();
+							window.setId(IntegracionMenu.lblID.getText());
+							window.comprador(IntegracionMenu.lblNombre.getText());
 							window.setVisible(true);
 						} catch (Exception e) {
 							e.printStackTrace();
@@ -278,6 +280,7 @@ public class PanelPrincipal extends JPanel {
 			});
 			}
 		}
+
 	}
 	class BtnCrearPacienteActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
@@ -307,6 +310,17 @@ public class PanelPrincipal extends JPanel {
 				}
 			});
 		}
+		
 		}
 	
 
+
+	
+	
+	
+	
+	
+	
+	
+	
+	

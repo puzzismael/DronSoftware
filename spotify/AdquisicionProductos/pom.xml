@@ -22,6 +22,11 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+     <dependency>
+     	<groupId>ISO2</groupId>
+     	<artifactId>IntroducirAlbum-Cancion</artifactId>
+     	<version>0.2.2-SNAPSHOT</version>
+     </dependency>
   </dependencies>
   <groupId>ISO2</groupId>
 </project>

@@ -58,11 +58,6 @@ public class FrameLogin extends JFrame {
 		contentPane.add(panelBotones, BorderLayout.SOUTH); 
 		panelBotones.setLayout(new GridLayout(1, 4, 5, 0));
 		
-		JButton btnRegistar = new JButton("Registrar");
-		btnRegistar.addActionListener(new BtnRegistarActionListener());
-		btnRegistar.setFont(new Font("Registrar", Font.BOLD, 11));
-		panelBotones.add(btnRegistar);
-		
 		JButton btnCerrar = new JButton("Cerrar"); 
 		btnCerrar.addActionListener(new BtnCerraActionListener());
 		btnCerrar.setFont(new Font("Cerrar", Font.BOLD, 11));
@@ -199,13 +194,6 @@ public class FrameLogin extends JFrame {
 			
 			}
 				
-		}
-	}
-	private class BtnRegistarActionListener implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
-		   FrameRegistro registro =new FrameRegistro(usuarios);
-			registro.setVisible(true);
-			dispose();
 		}
 	}
 }

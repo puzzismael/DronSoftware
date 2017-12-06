@@ -33,7 +33,9 @@ import java.awt.event.ActionEvent;
 public class IntegracionMenu extends JFrame {
 	private JPanel panelCardLayout;
 	private JPanel contentPane;
-
+	 static JLabel lblID;
+	static JLabel lblNombre;
+	 
 	/**
 	 * Launch the application.
 	 */
@@ -78,14 +80,6 @@ public class IntegracionMenu extends JFrame {
 		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel.setLayout(gbl_panel);
 		
-		JLabel lblNewLabel = new JLabel("");
-		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 0);
-		gbc_lblNewLabel.anchor = GridBagConstraints.NORTHWEST;
-		gbc_lblNewLabel.gridx = 0;
-		gbc_lblNewLabel.gridy = 0;
-		panel.add(lblNewLabel, gbc_lblNewLabel);
-		
 		JButton button = new JButton("Panel Principal");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -93,6 +87,36 @@ public class IntegracionMenu extends JFrame {
 				cl.show(panelCardLayout, "panel inicio"); //$NON-NLS-1$
 			}
 		});
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setLayout(null);
+		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
+		gbc_panel_1.insets = new Insets(0, 0, 5, 0);
+		gbc_panel_1.fill = GridBagConstraints.BOTH;
+		gbc_panel_1.gridx = 0;
+		gbc_panel_1.gridy = 0;
+		panel.add(panel_1, gbc_panel_1);
+		
+		lblID = new JLabel("");
+		lblID.setBounds(74, 59, 107, 14);
+		panel_1.add(lblID);
+		
+		
+		lblNombre= new JLabel("");
+		lblNombre.setBounds(74, 96, 125, 14);
+		panel_1.add(lblNombre);
+		
+		JLabel lblNewLabel = new JLabel("ID:");
+		lblNewLabel.setBounds(10, 59, 46, 14);
+		panel_1.add(lblNewLabel);
+		
+		JLabel lblNombre_1 = new JLabel("Nombre:");
+		lblNombre_1.setBounds(10, 96, 54, 14);
+		panel_1.add(lblNombre_1);
+		
+		JLabel lblDatosDelLogin = new JLabel("Datos del login");
+		lblDatosDelLogin.setBounds(74, 11, 125, 14);
+		panel_1.add(lblDatosDelLogin);
 		button.setHorizontalAlignment(SwingConstants.LEFT);
 		button.setPreferredSize(new Dimension(209, 45));
 		button.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -184,6 +208,7 @@ public class IntegracionMenu extends JFrame {
 		panelCardLayout.setLayout(new CardLayout(0, 0));
 		
 		JPanel panelInicio = new PanelPrincipal();
+	     
 		panelCardLayout.add(panelInicio, "panel inicio");
 		
 		JPanel panelCreacionDeUsers = new PanelUsuarios(null);
@@ -201,4 +226,12 @@ public class IntegracionMenu extends JFrame {
 		
 	}
 
+   public void setlblID(String text)
+   {
+	   lblID.setText(text);
+   }
+   public void setlblNombre(String text)
+   {
+	   lblNombre.setText(text);
+   }
 }

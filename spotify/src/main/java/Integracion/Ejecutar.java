@@ -41,7 +41,7 @@ public class Ejecutar extends JFrame {
 	EventQueue.invokeLater(new Runnable() {
 		public void run() {
 			try {
-				IntegracionMenu frame = new IntegracionMenu();
+				FrameLogin frame = new FrameLogin();
 				frame.setVisible(true);
 			} catch (Exception e) {
 				e.printStackTrace();
