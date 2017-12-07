@@ -146,7 +146,9 @@ public class BorrarCancionAlbum extends JFrame {
 	}
 	private class BtnBorrarActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			
+			if((textIDCanc.getText().replace(" ","")).equals("")) {
+				JOptionPane.showMessageDialog(null,"deben estar todos los espacios llenos");
+			}else {
 			Album album =new Album();
 			album.EliminarRegistro(textIDCanc.getText());
 			dispose();
@@ -161,7 +163,7 @@ public class BorrarCancionAlbum extends JFrame {
 				}
 			});
 			
-			
+			}
 		
 			
 	}

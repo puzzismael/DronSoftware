@@ -261,14 +261,14 @@ public class AñadirProducto extends JFrame {
 	}
 	
 	public void limpiar(){
-		textNombre.setText("AñadirPaciente.59"); //$NON-NLS-1$
+		textNombre.setText(""); //$NON-NLS-1$
 		
-		textID.setText("AñadirPaciente.61"); //$NON-NLS-1$
-		textPrecio.setText("AñadirPaciente.62"); //$NON-NLS-1$
-		textPrecAlbum.setText("AñadirPaciente.63"); //$NON-NLS-1$
-		textArtista.setText("AñadirPaciente.64"); //$NON-NLS-1$
-		textFechaLanz.setText("AñadirPaciente.65"); //$NON-NLS-1$
-		textRanking.setText("AñadirPaciente.66"); //$NON-NLS-1$
+		textID.setText(""); //$NON-NLS-1$
+		textPrecio.setText(""); //$NON-NLS-1$
+		textPrecAlbum.setText(""); //$NON-NLS-1$
+		textArtista.setText(""); //$NON-NLS-1$
+		textFechaLanz.setText(""); //$NON-NLS-1$
+		textRanking.setText(""); //$NON-NLS-1$
 		//textNumeroVentas.setText("AñadirPaciente.67"+(users.size()+1)); //$NON-NLS-1$
 		
 	}
@@ -321,6 +321,7 @@ public class AñadirProducto extends JFrame {
 				NVentas=textNumeroVentas.getText();
 				GestorAlbum gestAl=new GestorAlbum();
 				gestAl.Insertar( ID,nombre, tipo, PrecioCancion, PrecioAlbum, artista, estreno, ranking, pais, NVentas);
+				JOptionPane.showMessageDialog(null,"Producto añadido");
 			}
 				
 			}

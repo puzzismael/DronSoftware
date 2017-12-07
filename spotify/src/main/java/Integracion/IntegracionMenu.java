@@ -12,7 +12,7 @@ import java.awt.GridLayout;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.border.TitledBorder;
-
+import Presentacion.*;
 import org.CreacionDeUsers.Presentacion.PanelUsuarios;
 import org.AdquisicionProductos.Presentacion.*;
 import org.CreacionDeUsers.Dominio.*;
@@ -132,6 +132,9 @@ public class IntegracionMenu extends JFrame {
 		JButton btnGestionUsuarios = new JButton("Gestión De Usuarios");
 		btnGestionUsuarios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout)(panelCardLayout.getLayout());
+				cl.show(panelCardLayout, "Gestion de usuarios");
+				
 			}
 		});
 		btnGestionUsuarios.setPreferredSize(new Dimension(209, 45));
@@ -220,8 +223,8 @@ public class IntegracionMenu extends JFrame {
 		JPanel panelListadoCompradores = new ListadoCompradores();
 		panelCardLayout.add(panelListadoCompradores, "panel Compradores"); //$NON-NLS-1$
 			
-		JPanel panelGestionUsuarios = new JPanel();
-		panelCardLayout.add(panelGestionUsuarios, "name_34805739852261");
+		JPanel panelGestionUsuarios = new GestionDeUsuarios();
+		panelCardLayout.add(panelGestionUsuarios, "Gestion de usuarios");
 		
 		
 	}

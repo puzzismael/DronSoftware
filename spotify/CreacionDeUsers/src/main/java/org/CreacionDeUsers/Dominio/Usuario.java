@@ -175,5 +175,21 @@ public class Usuario {
 	public String getContraseña() {
 		// TODO Auto-generated method stub
 		return contraseña;
+	}public void EliminarRegistro(String id)
+	{
+		GestorUser user=new GestorUser();
+		user.eliminar(id);
+	}public String getCorreo() {
+		return this.correo;
+	}
+
+	public String getApellidos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getCancion() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

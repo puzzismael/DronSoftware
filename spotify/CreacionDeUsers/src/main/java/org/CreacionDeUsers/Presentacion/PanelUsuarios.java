@@ -124,7 +124,7 @@ public class PanelUsuarios extends JPanel {
 		list.setFont(new Font("PanelPacientes.2", Font.BOLD, 11)); //$NON-NLS-1$
 		list.setSelectionBackground(SystemColor.scrollbar);
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		list.addListSelectionListener(new ListListSelectionListener());
+		
 		list.setBorder(null);
 		
 DefaultListModel modelo = new DefaultListModel();
@@ -488,68 +488,6 @@ DefaultListModel modelo = new DefaultListModel();
 	
 
 	
-	private class ListListSelectionListener implements ListSelectionListener {
-		public void valueChanged(ListSelectionEvent arg0) {
-			int i=list.getSelectedIndex();
-			if(i==-1){
-				textEdad.setText("PanelPacientes.82"); //$NON-NLS-1$
-				textNombr.setText("PanelPacientes.83"); //$NON-NLS-1$
-				textId.setText("PanelPacientes.84"); //$NON-NLS-1$
-				textContraseña.setText("PanelPacientes.85"); //$NON-NLS-1$
-				textReceta.setEnabled(false);
-				textReceta.setText("PanelPacientes.86"); //$NON-NLS-1$
-			//.setText("PanelPacientes.87"); //$NON-NLS-1$
-				textCodigoPostal.setText("PanelPacientes.88"); //$NON-NLS-1$
-				textEstudios.setText("PanelPacientes.89"); //$NON-NLS-1$
-				textMunicip.setText("PanelPacientes.90"); //$NON-NLS-1$
-				textCorreo.setText("PanelPacientes.91"); //$NON-NLS-1$
-				textCBanc.setText("PanelPacientes.92"); //$NON-NLS-1$
-				textHistorial.setText("PanelPacientes.93"); //$NON-NLS-1$
-				textFavoritos.setText("PanelPacientes.94"); //$NON-NLS-1$
-				textPruebas.setText("PanelPacientes.95"); //$NON-NLS-1$
-				textTratamiento.setText("PanelPacientes.96"); //$NON-NLS-1$
-				btnActualizar.setEnabled(false);
-				btnGenerarReceta.setEnabled(false);
-				btnLimpiar.setEnabled(false);
-			//	btnImprimir.setEnabled(false);
-				//textFecha.setEnabled(false);
-				grupo1.clearSelection();
-				//labelFoto.setIcon(null);
-				
-			}else{
-			//	textApellidos.setText(users.get(i).getApellidos());
-				//textNombre.setText(users.get(i).getNombre());
-				//textId.setText("PanelPacientes.97"+users.get(i).getId()); //$NON-NLS-1$
-				//textHistoria.setText(users.get(i).getHistoria());
-				//textFecha.setText(users.get(i).getEdad());
-				//if(users.get(i).getSexo().equals(Messages.getString("PanelPacientes.98"))){ //$NON-NLS-1$
-					//rdbtnM.setSelected(true);
-					//rdbtnF.setSelected(false);
-			//	}else{
-					//rdbtnF.setSelected(true);
-					//rdbtnM.setSelected(false);
-				//}
-				//textDireccion.setText(users.get(i).getDireccion());
-			//	textDNI.setText(users.get(i).getDni());
-				//textNacionalidad.setText(pacientes.get(i).getNacionalidad());
-				//textMunicipio.setText(pacientes.get(i).getMunicipio());
-				//textCP.setText(pacientes.get(i).getCp());
-			//	labelFoto.setIcon(pacientes.get(i).getImage());
-				//textHistoria.setText(pacientes.get(i).getHistoria());
-				//textTratamiento.setText(pacientes.get(i).getMedicaci�n());
-				//textAlergias.setText(pacientes.get(i).getAlergias());
-				//textPruebas.setText(pacientes.get(i).getPruebas());
-				//textHistorial.setText(pacientes.get(i).getHistorial());
-				btnActualizar.setEnabled(true);
-				btnGenerarReceta.setEnabled(true);
-				btnLimpiar.setEnabled(true);
-				textReceta.setEnabled(true);
-		//		btnImprimir.setEnabled(true);
-				//textFecha.setEnabled(true);
-				
-			}
-		}
-	}
 	private class BtnActualizarActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			int i=list.getSelectedIndex();

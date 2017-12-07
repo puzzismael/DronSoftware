@@ -22,5 +22,10 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+    	<groupId>ISO2</groupId>
+    	<artifactId>CreacionDeUsers</artifactId>
+    	<version>0.3.3-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 </project>

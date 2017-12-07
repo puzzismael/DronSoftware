@@ -36,6 +36,7 @@ import java.awt.event.ActionEvent;
 import java.awt.FlowLayout;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import java.awt.Color;
 
 public class AdquirirProductos extends JFrame {
 
@@ -52,7 +53,7 @@ public class AdquirirProductos extends JFrame {
 	private String precio;
 	private String comprador;
 	Stack acumulados = new Stack();
-	
+	private JButton btnComprar;
 	public AdquirirProductos(/*ArrayList<Doctor> usuarios*/) {
 		//this.usuarios=usuarios;
 		setTitle("Adquirir Productos"); //$NON-NLS-1$
@@ -69,6 +70,11 @@ public class AdquirirProductos extends JFrame {
 		contentPane.add(scrollPane, BorderLayout.WEST);
 		
 		 list = new JList();
+		 list.addListSelectionListener(new ListSelectionListener() {
+		 	public void valueChanged(ListSelectionEvent e) {
+		 		btnComprar.setEnabled(true);
+		 	}
+		 });
 		scrollPane.setViewportView(list);
 		list.setBackground(SystemColor.control);
 		scrollPane.setViewportView(list);
@@ -87,7 +93,7 @@ public class AdquirirProductos extends JFrame {
 		actualizarDatos();
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBorder(new TitledBorder(null, "Cesta", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		scrollPane_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Productos Comprados", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		scrollPane_1.setPreferredSize(new Dimension(150, 2));
 		contentPane.add(scrollPane_1, BorderLayout.EAST);
 		
@@ -108,8 +114,9 @@ public class AdquirirProductos extends JFrame {
 		contentPane.add(panel_1, BorderLayout.SOUTH);
 		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JButton btnNewButton = new JButton("Comprar");
-		btnNewButton.addActionListener(new ActionListener() {
+		btnComprar = new JButton("Comprar");
+		btnComprar.setEnabled(false);
+		btnComprar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int cont=0;
 				boolean bol=true;
@@ -132,11 +139,11 @@ public class AdquirirProductos extends JFrame {
 				list1.setModel(modelo1);
 				ProductoAdquirido prodAd =new ProductoAdquirido();
 				prodAd.insertarBD(id, list.getSelectedValue().toString(), comprador);
-				
+				JOptionPane.showMessageDialog(null,"Producto adquirido!!!");
 			}
 			}
 		});
-		panel_1.add(btnNewButton);
+		panel_1.add(btnComprar);
 	}
 
 	

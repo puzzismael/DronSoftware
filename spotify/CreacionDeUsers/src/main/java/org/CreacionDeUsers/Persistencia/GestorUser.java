@@ -112,4 +112,25 @@ public class GestorUser {
 			return users;
 		
 	}
+	public void eliminar(String id)
+	{
+		Connection con =null;
+		GestorBD c=new GestorBD();
+		try {
+			con =c.getConection();
+			ps =(PreparedStatement) con.prepareStatement("DELETE FROM usuario where ID=?");
+		
+			ps.setString(1,id);
+			
+			int res =ps.executeUpdate();
+			
+			
+			
+		}catch(Exception exc){
+			System.err.println(exc);
+			
+		}
+		
+		
+	}
 }

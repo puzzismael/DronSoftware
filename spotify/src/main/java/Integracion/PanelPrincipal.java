@@ -155,7 +155,7 @@ public class PanelPrincipal extends JPanel {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
-							EliminarUsuario window = new EliminarUsuario(null);
+							EliminarUsuario window = new EliminarUsuario();
 							window.setVisible(true);
 						} catch (Exception e) {
 							e.printStackTrace();
@@ -302,8 +302,8 @@ public class PanelPrincipal extends JPanel {
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						EnviarMensaje window = new EnviarMensaje();
-						window.getFrame().setVisible(true);
+						EnvioMensajes window = new EnvioMensajes();
+						window.setVisible(true);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}

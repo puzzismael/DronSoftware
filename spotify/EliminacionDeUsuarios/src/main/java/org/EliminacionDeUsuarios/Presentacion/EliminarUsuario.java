@@ -15,7 +15,9 @@ import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import org.EliminacionDeUsuarios.Dominio.Usuario;
+import org.CreacionDeUsers.Dominio.Usuario;
+
+
 
 import java.awt.SystemColor;
 import java.util.ArrayList;
@@ -34,17 +36,16 @@ import java.awt.Color;
 
 public class EliminarUsuario extends JFrame {
 	
-	private ArrayList<Usuario> user;
+	
 	private JPanel contentPane;
-	private JTextField textNombre;
-	private JTextField textApellidos;
+	private JTextField textID;
 	private JScrollPane scrollPane;
 	private JList<Usuario> list;
-
-
-	public EliminarUsuario(ArrayList<Usuario> user) {
+	private Usuario user=new Usuario();
+	private Usuario[] users =user.obtenerListaDeBD();
+	public EliminarUsuario() {
 		setTitle("Eliminar Usuario");
-		this.user=user;
+		
 		setResizable(false);
 		 
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -61,44 +62,35 @@ public class EliminarUsuario extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JLabel lblNombre = new JLabel("Nombre:");
+		JLabel lblNombre = new JLabel("ID:");
 		lblNombre.setFont(new Font("", Font.BOLD, 11)); 
-		lblNombre.setBounds(38, 71, 63, 14);
+		lblNombre.setBounds(67, 71, 33, 14);
 		panel.add(lblNombre);
 		
-		textNombre = new JTextField();
-		textNombre.setEditable(false);
-		textNombre.setFont(new Font("", Font.BOLD, 11)); 
-		textNombre.setBackground(SystemColor.scrollbar);
-		textNombre.setBounds(110, 68, 145, 20);
-		panel.add(textNombre);
-		textNombre.setColumns(10);
-		
-		JLabel lblApellidos = new JLabel("Apellidos:"); 
-		lblApellidos.setFont(new Font("", Font.BOLD, 11)); 
-		lblApellidos.setBounds(33, 121, 77, 14);
-		panel.add(lblApellidos);
-		
-		textApellidos = new JTextField();
-		textApellidos.setEditable(false);
-		textApellidos.setFont(new Font("", Font.BOLD, 11)); 
-		textApellidos.setBackground(SystemColor.scrollbar);
-		textApellidos.setBounds(110, 118, 145, 20);
-		panel.add(textApellidos);
-		textApellidos.setColumns(10);
+		textID = new JTextField();
+		textID.setFont(new Font("", Font.BOLD, 11)); 
+		textID.setBackground(SystemColor.scrollbar);
+		textID.setBounds(110, 68, 145, 20);
+		panel.add(textID);
+		textID.setColumns(10);
 		
 		scrollPane = new JScrollPane();
 		scrollPane.setPreferredSize(new Dimension(150, 2));
 		contentPane.add(scrollPane, BorderLayout.WEST);
 		
-		list = new JList<Usuario>();
+		list = new JList();
+		list.setEnabled(false);
 		list.addListSelectionListener(new ListListSelectionListener());
 		scrollPane.setViewportView(list);
 		list.setFont(new Font("", Font.BOLD, 11)); 
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		list.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Usuario", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0))); 
 		actualizarDatos();
-		
+		DefaultListModel modelo = new DefaultListModel();
+		for(int i = 0; i<users.length; i++){
+		        modelo.addElement("id: "+ users[i].getID()+"/nombre: "+users[i].getNombre());
+		}
+		list.setModel(modelo);
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(SystemColor.text);
 		contentPane.add(panel_1, BorderLayout.SOUTH);
@@ -130,16 +122,7 @@ public class EliminarUsuario extends JFrame {
 	private class ListListSelectionListener implements ListSelectionListener {
 		public void valueChanged(ListSelectionEvent e) {
 			
-					int i=list.getSelectedIndex();
-					if(i==-1){
-						textNombre.setText(""); 
-						textApellidos.setText(""); 
-						
-					}else{
-						textApellidos.setText(user.get(i).getApellidos());
-						textNombre.setText(user.get(i).getNombre());
-						
-			}
+			
 		}
 	}
 	private class BtnCancelarActionListener implements ActionListener {
@@ -150,20 +133,31 @@ public class EliminarUsuario extends JFrame {
 	
 	private class BtnBorrarActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			int i=list.getSelectedIndex();
-			if(i==-1){
-				JOptionPane.showMessageDialog(new JFrame(), "Borrar usuario", 
-						"No hay usuarios para borrar.\n",JOptionPane.PLAIN_MESSAGE );
-			}else{
-				if((JOptionPane.showConfirmDialog(new JFrame (),"Borrar usuario","�Desea  borrar el usuario seleccionado?",JOptionPane.OK_CANCEL_OPTION)==JOptionPane.YES_OPTION)){
-					user.remove(i);
-					actualizarDatos();
-					JOptionPane.showMessageDialog(new JFrame(), "Enhorabuena", 
-							"Usuario eliminado con �xito",JOptionPane.PLAIN_MESSAGE ); 
-				}
-					
+			if((textID.getText().replace(" ","")).equals("")) {
+				JOptionPane.showMessageDialog(null,"deben estar todos los espacios llenos");
+			}else {
+				Usuario us =new Usuario();
+				us.EliminarRegistro(textID.getText().toString());
+				dispose();
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							EliminarUsuario eu =new EliminarUsuario();
+							eu.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			
 			}
 			
 		}
 	}
 }
+	
+			
+		
+	
+	
+
