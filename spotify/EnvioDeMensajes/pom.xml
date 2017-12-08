@@ -7,7 +7,6 @@
     <artifactId>spotify</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>ISO2</groupId>
   <artifactId>EnvioDeMensajes</artifactId>
   <name>EnvioDeMensajes</name>
   <url>http://maven.apache.org</url>
@@ -28,4 +27,5 @@
     </dependency>
   </dependencies>
   <version>0.2.4-SNAPSHOT</version>
+  <groupId>ISO2</groupId>
 </project>
