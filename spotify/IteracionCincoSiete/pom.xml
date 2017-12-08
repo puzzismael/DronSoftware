@@ -9,7 +9,7 @@
   </parent>
   <groupId>ISO2</groupId>
   <artifactId>IteracionCincoSiete</artifactId>
-  <version>0.3.10-SNAPSHOT</version>
+  <version>0.3.11-SNAPSHOT</version>
   <name>IteracionCincoSiete</name>
   <url>http://maven.apache.org</url>
   <properties>

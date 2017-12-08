@@ -9,7 +9,7 @@
   </parent>
   <groupId>ISO2</groupId>
   <artifactId>CreacionYLoginDeUsers</artifactId>
-  <version>0.2.5-SNAPSHOT</version>
+  <version>0.3.5-SNAPSHOT</version>
   <name>CreacionYLoginDeUsers</name>
   <url>http://maven.apache.org</url>
   <properties>
@@ -24,8 +24,8 @@
     </dependency>
     <dependency>
     	<groupId>ISO2</groupId>
-    	<artifactId>CreacionDeUsers</artifactId>
-    	<version>0.3.3-SNAPSHOT</version>
+    	<artifactId>IteracionCincoSiete</artifactId>
+    	<version>0.3.10-SNAPSHOT</version>
     </dependency>
   </dependencies>
 </project>

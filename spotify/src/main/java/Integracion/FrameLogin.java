@@ -25,7 +25,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
 import javax.swing.border.TitledBorder;
 
-import org.CreacionDeUsers.Dominio.Usuario;
+import dominioo.Usuario;
 
 import java.awt.Color;
 import javax.swing.UIManager;

@@ -13,7 +13,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.border.TitledBorder;
 import Presentacion.*;
-import org.CreacionDeUsers.Presentacion.PanelUsuarios;
+import presentación.PanelUsuarios;
 import org.AdquisicionProductos.Presentacion.*;
 
 

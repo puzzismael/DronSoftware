@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>spotify</artifactId>
-  <version>1.1.0-SNAPSHOT</version>
+  <version>1.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>spotify</name>
@@ -39,54 +39,34 @@
     <dependency>
     	<groupId>ISO2</groupId>
     	<artifactId>EnvioDeMensajes</artifactId>
-    	<version>0.2.4-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-    	<groupId>ISO2</groupId>
-    	<artifactId>CreacionDeUsers</artifactId>
-    	<version>0.3.3-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-    	<groupId>ISO2</groupId>
-    	<artifactId>EliminacionDeUsuarios</artifactId>
-    	<version>0.2.1-SNAPSHOT</version>
+    	<version>0.3.6-SNAPSHOT</version>
     </dependency>
     <dependency>
     	<groupId>ISO2</groupId>
     	<artifactId>AdquisicionProductos</artifactId>
-    	<version>0.2.2-SNAPSHOT</version>
+    	<version>0.3.2-SNAPSHOT</version>
     </dependency>
     <dependency>
     	<groupId>ISO2</groupId>
     	<artifactId>BuscarCanciones</artifactId>
-    	<version>0.2.4-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-    	<groupId>ISO2</groupId>
-    	<artifactId>IntroducirAlbum-Cancion</artifactId>
-    	<version>0.2.2-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-    	<groupId>ISO2</groupId>
-    	<artifactId>modificarPrecioYMetadatos</artifactId>
-    	<version>0.2.4-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-    	<groupId>ISO2</groupId>
-    	<artifactId>EliminarCancionesYAlbumes</artifactId>
-    	<version>0.2.1-SNAPSHOT</version>
+    	<version>0.3.4-SNAPSHOT</version>
     </dependency>
    
  <dependency>
     	<groupId>ISO2</groupId>
     	<artifactId>GestionDeUsuarios</artifactId>
-    	<version>0.3.15-SNAPSHOT</version>
+    	<version>0.3.3-SNAPSHOT</version>
     </dependency>
 
  <dependency>
  	<groupId>ISO2</groupId>
  	<artifactId>IteracionUnoDosTres</artifactId>
- 	<version>0.3.12-SNAPSHOT</version>
+ 	<version>0.3.7-SNAPSHOT</version>
+ </dependency>
+ <dependency>
+ 	<groupId>ISO2</groupId>
+ 	<artifactId>IteracionCincoSiete</artifactId>
+ 	<version>0.3.11-SNAPSHOT</version>
  </dependency>
   </dependencies>
   <modules>
@@ -95,9 +75,9 @@
   	
   	<module>BuscarCanciones</module>
   	
-  	<module>CreacionDeUsers</module>
+  	
   	<module>AdquisicionProductos</module>
-  	<module>EliminacionDeUsuarios</module>
+  	
   	<module>EnvioDeMensajes</module>
   	<module>CreacionYLoginDeUsers</module>
   	

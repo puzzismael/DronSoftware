@@ -28,7 +28,7 @@ import javax.swing.JLabel;
 import javax.swing.event.ListSelectionListener;
 
 import org.AdquisicionProductos.Dominio.ProductoAdquirido;
-import org.IntroducirAlbum.Dominio.Album;
+import Dominio.Album;
 
 import javax.swing.event.ListSelectionEvent;
 import java.awt.event.ActionListener;

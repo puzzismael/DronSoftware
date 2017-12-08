@@ -14,9 +14,9 @@ import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import org.CreacionDeUsers.Dominio.Cancion;
-import org.CreacionDeUsers.Dominio.Usuario;
-import org.IntroducirAlbum.Dominio.Album;
+import dominioo.Cancion;
+import dominioo.Usuario;
+import Dominio.Album;
 
 
 

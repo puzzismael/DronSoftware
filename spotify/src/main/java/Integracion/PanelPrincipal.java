@@ -35,7 +35,7 @@ import javax.swing.SwingConstants;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import Dominio.*;
-import org.EliminacionDeUsuarios.Presentacion.*;
+import presentación.*;
 import org.EnvioDeMensajes.Presentacion.*;
 import org.AdquisicionProductos.Presentacion.*;
 import Presentacion.*;

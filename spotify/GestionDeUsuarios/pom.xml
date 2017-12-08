@@ -9,7 +9,7 @@
   </parent>
   <groupId>ISO2</groupId>
   <artifactId>GestionDeUsuarios</artifactId>
-  <version>0.3.15-SNAPSHOT</version>
+  <version>0.3.3-SNAPSHOT</version>
   <name>GestionDeUsuarios</name>
   <url>http://maven.apache.org</url>
   <properties>
@@ -22,10 +22,16 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+
     <dependency>
     	<groupId>ISO2</groupId>
-    	<artifactId>CreacionDeUsers</artifactId>
-    	<version>0.3.3-SNAPSHOT</version>
+    	<artifactId>IteracionCincoSiete</artifactId>
+    	<version>0.3.10-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+    	<groupId>ISO2</groupId>
+    	<artifactId>IteracionUnoDosTres</artifactId>
+    	<version>0.3.12-SNAPSHOT</version>
     </dependency>
   </dependencies>
 </project>

@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>AdquisicionProductos</artifactId>
-  <version>0.2.2-SNAPSHOT</version>
+  <version>0.3.2-SNAPSHOT</version>
   <name>AdquisicionProductos</name>
   <url>http://maven.apache.org</url>
   <properties>
@@ -22,11 +22,11 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-     <dependency>
-     	<groupId>ISO2</groupId>
-     	<artifactId>IntroducirAlbum-Cancion</artifactId>
-     	<version>0.2.2-SNAPSHOT</version>
-     </dependency>
+    <dependency>
+    	<groupId>ISO2</groupId>
+    	<artifactId>IteracionUnoDosTres</artifactId>
+    	<version>0.3.12-SNAPSHOT</version>
+    </dependency>
   </dependencies>
   <groupId>ISO2</groupId>
 </project>

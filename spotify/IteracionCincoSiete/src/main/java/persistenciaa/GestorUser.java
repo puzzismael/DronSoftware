@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.util.Stack;
 
 import javax.swing.JOptionPane;
-import org.CreacionDeUsers.Dominio.*;
+import dominioo.*;
 
 import org.IntroducirAlbum.Persistencia.GestorBD;
 

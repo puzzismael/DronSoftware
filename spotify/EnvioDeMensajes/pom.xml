@@ -14,18 +14,18 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencies>
+  <dependency>
+ 	<groupId>ISO2</groupId>
+ 	<artifactId>IteracionCincoSiete</artifactId>
+ 	<version>0.3.10-SNAPSHOT</version>
+ </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-    	<groupId>ISO2</groupId>
-    	<artifactId>CreacionDeUsers</artifactId>
-    	<version>0.3.3-SNAPSHOT</version>
-    </dependency>
   </dependencies>
-  <version>0.2.4-SNAPSHOT</version>
+  <version>0.3.6-SNAPSHOT</version>
   <groupId>ISO2</groupId>
 </project>
