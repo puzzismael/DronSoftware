@@ -151,7 +151,7 @@ public class FrameLogin extends JFrame {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
-							
+							JOptionPane.showMessageDialog(null,"Bienvenido");
 							IntegracionMenu frame = new IntegracionMenu();
 							frame.setlblID(textID.getText());
 							frame.setlblNombre(nombre);
@@ -181,4 +181,29 @@ public class FrameLogin extends JFrame {
 		return textContraseña.getText();
 	}
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

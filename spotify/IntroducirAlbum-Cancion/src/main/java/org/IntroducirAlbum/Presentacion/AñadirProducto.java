@@ -79,7 +79,7 @@ public class AñadirProducto extends JFrame {
 		//this.users=users;
 		setType(Type.POPUP);
 		setResizable(false);
-		setTitle("AñadirPaciente.0"); //$NON-NLS-1$
+		setTitle("Añadir Producto"); //$NON-NLS-1$
 		//setIconImage(Toolkit.getDefaultToolkit().getImage(AñadirProducto.class.getResource("AñadirPaciente.1"))); //$NON-NLS-1$
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 731, 391);
