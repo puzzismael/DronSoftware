@@ -9,7 +9,7 @@
   </parent>
   <groupId>ISO2</groupId>
   <artifactId>IteracionUnoDosTres</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>0.3.2-SNAPSHOT</version>
   <name>IteracionUnoDosTres</name>
   <url>http://maven.apache.org</url>
   <properties>
