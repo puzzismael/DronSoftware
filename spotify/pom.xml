@@ -91,10 +91,10 @@
   </dependencies>
   <modules>
   	
-  	<module>modificarPrecioYMetadatos</module>
-  	<module>EliminarCancionesYAlbumes</module>
+  	
+  	
   	<module>BuscarCanciones</module>
-  	<module>IntroducirAlbum-Cancion</module>
+  	
   	<module>CreacionDeUsers</module>
   	<module>AdquisicionProductos</module>
   	<module>EliminacionDeUsuarios</module>
@@ -107,6 +107,7 @@
   	
   	<module>GestionDeUsuarios</module>
   	<module>IteracionUnoDosTres</module>
+  	<module>IteracionCincoSiete</module>
   </modules>
   <build>
   

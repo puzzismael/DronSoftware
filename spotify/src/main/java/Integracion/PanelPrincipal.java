@@ -20,7 +20,7 @@ import javax.swing.UIManager;
 import javax.swing.border.TitledBorder;
 
 import org.BuscarCanciones.Presentacion.*;
-import org.EliminarCancionesYAlbumes.Presentacion.*;
+
 import java.awt.SystemColor;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.BevelBorder;
@@ -34,11 +34,11 @@ import javax.swing.SwingConstants;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
-import org.IntroducirAlbum.Dominio.*;
+import Dominio.*;
 import org.EliminacionDeUsuarios.Presentacion.*;
 import org.EnvioDeMensajes.Presentacion.*;
 import org.AdquisicionProductos.Presentacion.*;
-import org.IntroducirAlbum.Presentacion.*;
+import Presentacion.*;
 public class PanelPrincipal extends JPanel {
 	private JButton btnNCrearConsulta;
 	private JButton btnCrearPaciente;

@@ -15,8 +15,8 @@ import javax.swing.border.TitledBorder;
 import Presentacion.*;
 import org.CreacionDeUsers.Presentacion.PanelUsuarios;
 import org.AdquisicionProductos.Presentacion.*;
-import org.CreacionDeUsers.Dominio.*;
-import org.modificarPrecioYMetadatos.Presentacion.*;
+
+
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.Dimension;
