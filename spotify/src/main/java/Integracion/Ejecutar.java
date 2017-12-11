@@ -32,7 +32,7 @@ import javax.swing.UIManager;
 import java.awt.Toolkit;
 import java.awt.SystemColor;
 
-public class Ejecutar extends JFrame {
+public class Ejecutar extends JFrame {//
 	public Ejecutar() {
 	}
 	public static void main(String[]args)
