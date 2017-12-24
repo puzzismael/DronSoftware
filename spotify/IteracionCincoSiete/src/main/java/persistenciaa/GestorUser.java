@@ -133,4 +133,9 @@ public class GestorUser {
 		
 		
 	}
+
+	public void Insertar(int id, String nombre, int edad, String contraseña, String correo) {
+		// TODO Auto-generated method stub
+		
+	}
 }

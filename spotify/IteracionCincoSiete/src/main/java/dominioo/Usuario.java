@@ -20,6 +20,11 @@ import persistenciaa.GestorUser;
 public class Usuario {
 	private String  ID,contraseña,nacionalidad,nombre,Genero,edad,municipio,CodigoPostal,correo,estudios,cuentaBancaria;
 	Album album;
+	String seguridad;
+	String tipoUsuario;
+	boolean formatMail;
+	boolean existe;
+	String ingreso;
 	//private long tarjetaCredito;
 	//private ArrayList<Album> albumes;
 	//private ArrayList<Cancion> cancion;
@@ -195,14 +200,12 @@ public class Usuario {
 	}
 	public void RegistrarUsuario(int id, String nombre, int edad,String contraseña,String correo){
 
-		String seguridad;
-		String tipoUsuario;
-		if (estaEnBD(id))
-		{
-		}
-		if (nombre.length()>255)
-		{
-		seguridad="error";
+	
+		GestorUser GestorUser =new GestorUser();
+		
+		if (nombre.length()>255||nombre.length()>255||edad<12){
+			
+	    ingreso="error";
 		}
 		if(contraseña.length()<255&&contraseña.length()>100){
 		seguridad ="buena";
@@ -210,26 +213,25 @@ public class Usuario {
 		if(nombre.length()<255){
 		seguridad ="mala";
 		}
-
 		if (edad<18)
-		{
-		tipoUsuario="joven";
+		{tipoUsuario="joven";
 		}
-		if(edad>24){
-		tipoUsuario="adulto";
+		if(edad>24){tipoUsuario="adulto";
 		}
-		if(edad>50){
-		tipoUsuario="mayor";
+		if(edad>50){tipoUsuario="mayor";
 		}
 		if((correo.substring(ObtenerIndice(correo))).equals("@hotmail.com")) {
-			
+			formatMail=true;
 		}else if((correo.substring(ObtenerIndice(correo))).equals("@gmail.com")){
-		
+			formatMail=true;
 		}else if((correo.substring(ObtenerIndice(correo))).equals("@info.com")) {
-			
+			formatMail=true;
 		}else {
-			
+			formatMail=false;	
 		}
+		
+		GestorUser.Insertar(id, nombre, edad,contraseña, correo);
+	
 	}
 
 	private int ObtenerIndice(String correo) {
@@ -246,9 +248,18 @@ public class Usuario {
 		return cont;
 	}
 
-	private boolean estaEnBD(int iD) {
-		// TODO Auto-generated method stub
-		return false;
+	private void estaEnBD(int id) {
+		int [] vector= {1,2,3,4};
+		int cont=0;
+		while(cont <vector.length) {
+			cont++;
+	    if(vector[cont]==id) {
+	    	existe=true;
+	    }else {
+	    	existe=false;
+	    }
+		}
+		
 	}
 	public void AñadirVoletos(int id,int ultimaCompra,int precio,int vol)
 	{
