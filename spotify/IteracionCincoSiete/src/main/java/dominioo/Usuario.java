@@ -279,29 +279,27 @@ public class Usuario {
 	else {
 		valido=true;
 	}
-		
-	if(ultimaCompra<=3) {
-		bol+=2;
-	}if(ultimaCompra>=4&&ultimaCompra<=10) {
-		bol++;
-	}
-	if(ultimaCompra>=11) {
-		bol--;
-	}
-	
-	
-	if(precio>=51) {
-		bol++;
-	}
-	
-	if(bol>=11) {
-		bol=bol-5;
-	}
-	if (existe&&valido) {
+	if(valido&&existe)	
+	{
+		if(ultimaCompra<=3) {
+			bol+=2;
+		}
+		if(ultimaCompra>=4&&ultimaCompra<=10){
+			bol++;
+		}
+		if(ultimaCompra>=11) {
+			bol--;
+		}
+		if(precio>=51) {
+			bol++;
+		}
+		if(bol>=11) {
+			bol=bol-5;
+		}
 		gu.insertarBoletos(id,ultimaCompra,precio,bol);
-	}
-	this.bol=bol;
 	
+	this.bol=bol;
+	}
 	}
 	
 public int getBoletos() {

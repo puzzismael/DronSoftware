@@ -1,6 +1,5 @@
-/**
- * 
- */
+
+
 package org.IteracionCincoSiete;
 
 import static org.junit.Assert.*;
@@ -13,34 +12,18 @@ import org.junit.Test;
 import dominioo.Usuario;
 import junit.framework.TestCase;
 
-/**
- * @author Carlos
- *
- */
-public class UsuarioTest extends TestCase {
 
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
+public class UsuarioTest {
 
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
+	
 
-	/**
-	 * @throws java.lang.Exception
-	 */
+	Usuario user;
+	 
 	@Before
 	public void setUp() throws Exception {
-		
+		user=new Usuario();
 	}
-	Usuario user=new Usuario();
+	
 	@Test
 	public void testAñadirBoletos4_3_50_10() {
 		user.AñadirBoletos(4, 3, 50, 10);
@@ -365,69 +348,87 @@ public class UsuarioTest extends TestCase {
 	public void testm1_19() {
 		user.asignarid(18,6);
 	}
-	/*@Test
+	@Test
 	public void testm1_20() {
-		prueba1.asignarid(18,200);
+		
+		assertTrue(user.asignarid(18,200)==182);
+		
 	}
 	@Test
 	public void testm1_21() {
-		prueba1.asignarid(3,-8);
+	
+		assertTrue(user.asignarid(3,-8)==-5);
 	}
 	@Test
 	public void testm1_22() {
-		prueba1.asignarid(3,0);
+		
+		assertTrue(user.asignarid(3,0)==3);
 	}
 	@Test
 	public void testm1_23() {
-		prueba1.asignarid(3,14);
+		
+		assertTrue(user.asignarid(3,14)==17);
 	}
 	@Test
 	public void testm1_24() {
-		prueba1.asignarid(3, 6);
+		
+		assertTrue(user.asignarid(3, 6)==9);
 	}
 	@Test
 	public void testm1_25() {
-		prueba1.asignarid(3,200);
+		
+		assertTrue(user.asignarid(3,200)==197);
 	}
 	@Test
 	public void testm1_26() {
-		prueba1.asignarid(14,-8);
+		
+		assertTrue(user.asignarid(14,-8)==6);
 	}
 	@Test
 	public void testm1_27() {
-		prueba1.asignarid(14,0);
+		
+		assertTrue(user.asignarid(14,0)==14);
 	}
 	@Test
 	public void testm1_28() {
-		prueba1.asignarid(14,14);
+		
+		assertTrue(user.asignarid(14,14)==28);
 	}
 	@Test
 	public void testm1_29() {
-		prueba1.asignarid(14,6);
+		
+		assertTrue(user.asignarid(14,6)==20);
 	}
 	@Test
 	public void testm1_30() {
-		prueba1.asignarid(14, 200);
+		
+		assertTrue(user.asignarid(14, 200)==186);
 	}
 	@Test
 	public void testm1_31() {
-		prueba1.asignarid(85,-8);
+		
+		assertTrue(user.asignarid(85,-8)==-152);
 	}
 	@Test
 	public void testm1_32() {
-		prueba1.asignarid(85,0);
+		
+		assertTrue(user.asignarid(85,0)==0);
 	}
 	@Test
 	public void testm1_33() {
-		prueba1.asignarid(85,14);
+		
+		assertTrue(user.asignarid(85,14)==14);
 	}
 	@Test
 	public void testm1_34() {
-		prueba1.asignarid(85,6);
+		
+		assertTrue(user.asignarid(85,6)==114);
 	}
 	@Test
 	public void testm1_35() {
-		prueba1.asignarid(85,200);
+		user.asignarid(85,200);
+		assertTrue(user.asignarid(85,200)==115);
+	}
 	
-*/
 }
+

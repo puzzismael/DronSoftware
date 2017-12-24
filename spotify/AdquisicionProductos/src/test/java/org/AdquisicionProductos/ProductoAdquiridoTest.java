@@ -1,25 +1,23 @@
 package org.AdquisicionProductos;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import org.AdquisicionProductos.Dominio.ProductoAdquirido;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-import junit.framework.TestCase;
 
-public class ProductoAdquiridoTest extends TestCase {
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
+public class ProductoAdquiridoTest  {
+
+	ProductoAdquirido pa;
 
 	@Before
 	public void setUp() throws Exception {
+	 pa=new ProductoAdquirido();
 	}
 
-	ProductoAdquirido pa=new ProductoAdquirido();
+	
 
 	
 	
