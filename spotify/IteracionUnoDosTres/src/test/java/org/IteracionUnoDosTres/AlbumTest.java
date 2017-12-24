@@ -20,6 +20,7 @@ public class AlbumTest  {
 		assertTrue(albm.getExistir());
 		
 	}
+	@Test
 	public void testEliminarProductoNoExiste() {
 		Album albm =new Album();
 		albm.EliminarAlbum(9);

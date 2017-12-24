@@ -426,7 +426,7 @@ public class UsuarioTest {
 	}
 	@Test
 	public void testm1_35() {
-		user.asignarid(85,200);
+		
 		assertTrue(user.asignarid(85,200)==115);
 	}
 	

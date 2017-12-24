@@ -257,16 +257,15 @@ public class Usuario {
 	private void estaEnBD(int id) {
 		int [] vector= {1,2,3,4};
 		int cont=0;
+		existe=false;
 		while(cont <vector.length) {
 			
 	    if(vector[cont]==id) {
 	    	existe=true;
-	    }else {
-	    	existe=false;
 	    }
 	    cont++;
-		}
 		
+		}
 	}
 	
 	public void AñadirBoletos(int id,int ultimaCompra,int precio,int bol)
@@ -279,7 +278,7 @@ public class Usuario {
 	else {
 		valido=true;
 	}
-	if(valido&&existe)	
+	if(valido)	
 	{
 		if(ultimaCompra<=3) {
 			bol+=2;
