@@ -42,7 +42,7 @@ public class ProductoAdquirido {
 	}
 	public void InsertarAdquisicion(int id,int edad,String producto,String comprador,double precio)
 	{   
-		if(edad<=11||id<=0||precio<=0){
+		if(edad<=11||id<=-1||precio<=-1||producto.length()<=0||comprador.length()<=0){
 			descuento=-1;
 		}else if(((edad>=12)&&(edad<=18))&&(id<=100)){
 			descuento=0.2;
@@ -50,11 +50,11 @@ public class ProductoAdquirido {
 			descuento=0.3;
 		}else if(((edad>=40))&&(id<=100)){
 			descuento=0.4;
-		}else if(((edad>=12)&&(edad<=18))&&((id<=200)&&(id>=101))){
+		}else if(((edad>=12)&&(edad<=18))&&((id>=101))){
 			descuento=0.5;
-		}else if(((edad>=19)&&(edad<=39))&&((id<=200)&&(id>=101))){
+		}else if(((edad>=19)&&(edad<=39))&&((id>=101))){
 			descuento=0.6;
-		}else if(((edad>=40))&&((id<=200)&&(id>=101))){
+		}else if(((edad>=40))&&((id>=101))){
 			descuento=0.7;
 		}	
 		
@@ -66,9 +66,10 @@ public class ProductoAdquirido {
 		if(producto.length()>=31||comprador.length()>=21) {
 			ingreso="error";}
 		else 
-		{ingreso="correcto";
+		{	ingreso="correcto";
 		}
 		GestorAdquisicionProductos GestorProd =new GestorAdquisicionProductos();
+		if(descuento!=-1)
 		GestorProd.InsertarAdquisicion(id, edad, producto, comprador,precio,descuento);
 	}
 	

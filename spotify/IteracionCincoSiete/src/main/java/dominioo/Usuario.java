@@ -27,6 +27,7 @@ public class Usuario {
 	String ingreso;
 	String login;
 	int bol;
+	boolean valido;
 	//private long tarjetaCredito;
 	//private ArrayList<Album> albumes;
 	//private ArrayList<Cancion> cancion;
@@ -257,12 +258,13 @@ public class Usuario {
 		int [] vector= {1,2,3,4};
 		int cont=0;
 		while(cont <vector.length) {
-			cont++;
+			
 	    if(vector[cont]==id) {
 	    	existe=true;
 	    }else {
 	    	existe=false;
 	    }
+	    cont++;
 		}
 		
 	}
@@ -271,7 +273,13 @@ public class Usuario {
 	{   
 		GestorUser gu=new GestorUser();
 		estaEnBD(id);
-	
+	if(id<=-1||ultimaCompra<=-1||precio<=-1||bol<=-1) {
+		valido=false;
+	}
+	else {
+		valido=true;
+	}
+		
 	if(ultimaCompra<=3) {
 		bol+=2;
 	}if(ultimaCompra>=4&&ultimaCompra<=10) {
@@ -280,22 +288,54 @@ public class Usuario {
 	if(ultimaCompra>=11) {
 		bol--;
 	}
-	if(bol>=11) {
-		bol=bol-5;
-	}
+	
 	
 	if(precio>=51) {
 		bol++;
 	}
-	if (existe) {
+	
+	if(bol>=11) {
+		bol=bol-5;
+	}
+	if (existe&&valido) {
 		gu.insertarBoletos(id,ultimaCompra,precio,bol);
 	}
 	this.bol=bol;
+	
 	}
 	
 public int getBoletos() {
 	return this.bol;
 }
+public boolean getExiste() {
+	return this.existe;
+}
 
+public boolean getValido() {
+	// TODO Auto-generated method stub
+	return valido;
+}
+public static void enviarmensaje(int edad, int cuentabanc) {
+	if (edad <0 || cuentabanc <0)
+		System.out.printf("Error al enviar mensaje");
+	if (edad >58 && cuentabanc < 114)
+		System.out.printf("\n Recibiras un pequeña rebaja cuando compres");
+	if(edad > 1 && edad < 8 )	
+		System.out.printf("\n No cumples la edad reglamentada");
+	if(cuentabanc < 4)
+		System.out.printf("\n No aceptamos cuentas menores a 4");
+}
+public static int asignarid(int edad, int cuentabanc) {
+	int id=cuentabanc;
+	if (edad <=0 || cuentabanc <=0)
+		System.out.printf("Error al asignar id");
+	if (edad >18 && cuentabanc < 14)
+		id=cuentabanc*19;
+	if(edad<29)	
+		id=edad+cuentabanc;
+	if(cuentabanc>14)
+		id=cuentabanc-edad;
+	return id;
+}
 
 }

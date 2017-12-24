@@ -585,4 +585,13 @@ public void testInsertarAdquisicion100_39_31_21_100() {
 				assertTrue(pa.getDescuento()==0.35&&pa.getPrecio()==(101*0.35)&&pa.getIngreso().equals("error"));
 				
 			}
+				@Test
+				public void testInsertarAdquisicionValoresNegativosYCeros() {
+				
+				
+				pa.InsertarAdquisicion(-1, -1, "", "",-1);
+				
+				assertTrue(pa.getDescuento()==-1);
+				
+			}
 }
