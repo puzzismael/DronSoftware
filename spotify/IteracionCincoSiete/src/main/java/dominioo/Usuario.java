@@ -25,6 +25,7 @@ public class Usuario {
 	boolean formatMail;
 	boolean existe;
 	String ingreso;
+	String login;
 	//private long tarjetaCredito;
 	//private ArrayList<Album> albumes;
 	//private ArrayList<Cancion> cancion;
@@ -199,19 +200,24 @@ public class Usuario {
 		return null;
 	}
 	public void RegistrarUsuario(int id, String nombre, int edad,String contraseña,String correo){
-
-	
 		GestorUser GestorUser =new GestorUser();
-		
-		if (nombre.length()>255||nombre.length()>255||edad<12){
-			
+		estaEnBD(id);
+		if (nombre.length()<=4||nombre.length()>=201||edad<12||contraseña.length()<=19||contraseña.length()>=201){
 	    ingreso="error";
 		}
-		if(contraseña.length()<255&&contraseña.length()>100){
+		if(contraseña.length()<=200&&contraseña.length()>=101){
 		seguridad ="buena";
 		}
-		if(nombre.length()<255){
-		seguridad ="mala";
+		if(contraseña.length()<=100&&contraseña.length()>=20){
+			seguridad ="mala";
+			}
+		if(nombre.length()<=30&&nombre.length()>=5){
+		login="normal";
+		}
+		
+		if(nombre.length()<=200&&nombre.length()>=31)
+		{
+			login="grande";
 		}
 		if (edad<18)
 		{tipoUsuario="joven";
@@ -229,9 +235,7 @@ public class Usuario {
 		}else {
 			formatMail=false;	
 		}
-		
-		GestorUser.Insertar(id, nombre, edad,contraseña, correo);
-	
+			GestorUser.Insertar(id, nombre, edad,contraseña, correo);
 	}
 
 	private int ObtenerIndice(String correo) {
@@ -262,13 +266,13 @@ public class Usuario {
 		
 	}
 	public void AñadirVoletos(int id,int ultimaCompra,int precio,int vol)
-	{
+	{   estaEnBD(id);
 		if(vol==0) {
-			
+			ingreso="error";
 		}
-	if(estaEnBD(id)) {
+	
 		
-	}
+	
 	if(ultimaCompra<3) {
 		vol+=2;
 	}if(ultimaCompra>3&&ultimaCompra<6) {
@@ -279,6 +283,10 @@ public class Usuario {
 	}
 	if(vol>10) {
 		vol=vol/2;
+	}
+	
+	if(precio>50) {
+		vol++;
 	}
 	}
 
