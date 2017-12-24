@@ -265,13 +265,11 @@ public class Usuario {
 		}
 		
 	}
-	public void AñadirVoletos(int id,int ultimaCompra,int precio,int vol)
-	{   estaEnBD(id);
-		if(vol==0) {
-			ingreso="error";
-		}
 	
-		
+	public void AñadirVoletos(int id,int ultimaCompra,int precio,int vol)
+	{   
+		GestorUser gu=new GestorUser();
+		estaEnBD(id);
 	
 	if(ultimaCompra<3) {
 		vol+=2;
@@ -288,7 +286,11 @@ public class Usuario {
 	if(precio>50) {
 		vol++;
 	}
+	if (existe) {
+		gu.insertarVoletos(id,ultimaCompra,precio,vol);
 	}
+	}
+	
 
 
 
