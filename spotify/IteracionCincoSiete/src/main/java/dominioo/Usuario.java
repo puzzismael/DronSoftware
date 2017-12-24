@@ -193,4 +193,84 @@ public class Usuario {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	public void RegistrarUsuario(int id, String nombre, int edad,String contraseña,String correo){
+
+		String seguridad;
+		String tipoUsuario;
+		if (estaEnBD(id))
+		{
+		}
+		if (nombre.length()>255)
+		{
+		seguridad="error";
+		}
+		if(contraseña.length()<255&&contraseña.length()>100){
+		seguridad ="buena";
+		}
+		if(nombre.length()<255){
+		seguridad ="mala";
+		}
+
+		if (edad<18)
+		{
+		tipoUsuario="joven";
+		}
+		if(edad>24){
+		tipoUsuario="adulto";
+		}
+		if(edad>50){
+		tipoUsuario="mayor";
+		}
+		if((correo.substring(ObtenerIndice(correo))).equals("@hotmail.com")) {
+			
+		}else if((correo.substring(ObtenerIndice(correo))).equals("@gmail.com")){
+		
+		}else if((correo.substring(ObtenerIndice(correo))).equals("@info.com")) {
+			
+		}else {
+			
+		}
+	}
+
+	private int ObtenerIndice(String correo) {
+		int cont=0;
+		int indice=0;
+		while(cont <correo.length()) {
+			
+			if(correo.charAt(cont)=='@') {
+				indice=cont;
+				cont=correo.length();
+			}
+			cont++;
+		}
+		return cont;
+	}
+
+	private boolean estaEnBD(int iD) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	public void AñadirVoletos(int id,int ultimaCompra,int precio,int vol)
+	{
+		if(vol==0) {
+			
+		}
+	if(estaEnBD(id)) {
+		
+	}
+	if(ultimaCompra<3) {
+		vol+=2;
+	}if(ultimaCompra>3&&ultimaCompra<6) {
+		vol++;
+	}
+	if(ultimaCompra>6) {
+		vol--;
+	}
+	if(vol>10) {
+		vol=vol/2;
+	}
+	}
+
+
+
 }

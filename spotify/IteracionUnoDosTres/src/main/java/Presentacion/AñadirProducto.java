@@ -28,8 +28,8 @@ import java.awt.Rectangle;
 import java.awt.GridLayout;
 import javax.swing.table.DefaultTableModel;
 
-import org.IntroducirAlbum.Dominio.Album;
-import org.IntroducirAlbum.Persistencia.GestorAlbum;
+import Dominio.Album;
+import Persistencia.GestorAlbum;
 
 import javax.swing.ScrollPaneConstants;
 import javax.swing.JLabel;

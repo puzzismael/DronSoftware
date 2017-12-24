@@ -33,7 +33,7 @@ public class GestorBD {
 			public void run() {
 				try {
 					GestorBD window = new GestorBD();
-					window.frame.setVisible(true);
+					window.getConection();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -111,8 +111,10 @@ public class GestorBD {
 		//JOptionPane.showMessageDialog(null,"Conexion exitosa");
 		}
 		catch(Exception e) {
+			
 			System.out.println(e);
 		}
+	
 		return con;
 	}
 }

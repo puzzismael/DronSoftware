@@ -154,6 +154,11 @@ public class GestorAlbum {
 		}
 		
 	}
+
+	public void eliminar(int id) {
+		// TODO Auto-generated method stub
+		
+	}
 	}
 
 

@@ -108,4 +108,25 @@ public class GestorAdquisicionProductos {
 		
 		
 	}
+public  void InsertarAdquisicion(int id, int edad,String producto,String comprador,double precio,double descuento) {
+		
+		Connection con =null;
+		GestorBD c=new GestorBD();
+		/*try {
+			
+		    con =c.getConection();
+		    ps =(PreparedStatement) con.prepareStatement("INSERT INTO adquirir (id,Producto,Comprador)VALUES(?,?,?)");
+			ps.setString(1,id);
+			ps.setString(2,Producto);
+			ps.setString(3, comprador);
+			
+			int res =ps.executeUpdate();
+			
+			
+		}catch(Exception exc){
+			System.err.println(exc);
+			
+		}*/
+		
+	}
 }
