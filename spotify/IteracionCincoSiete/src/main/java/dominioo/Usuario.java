@@ -26,6 +26,7 @@ public class Usuario {
 	boolean existe;
 	String ingreso;
 	String login;
+	int bol;
 	//private long tarjetaCredito;
 	//private ArrayList<Album> albumes;
 	//private ArrayList<Cancion> cancion;
@@ -266,32 +267,35 @@ public class Usuario {
 		
 	}
 	
-	public void AñadirVoletos(int id,int ultimaCompra,int precio,int vol)
+	public void AñadirBoletos(int id,int ultimaCompra,int precio,int bol)
 	{   
 		GestorUser gu=new GestorUser();
 		estaEnBD(id);
 	
-	if(ultimaCompra<3) {
-		vol+=2;
-	}if(ultimaCompra>3&&ultimaCompra<6) {
-		vol++;
+	if(ultimaCompra<=3) {
+		bol+=2;
+	}if(ultimaCompra>=4&&ultimaCompra<=10) {
+		bol++;
 	}
-	if(ultimaCompra>6) {
-		vol--;
+	if(ultimaCompra>=11) {
+		bol--;
 	}
-	if(vol>10) {
-		vol=vol/2;
+	if(bol>=11) {
+		bol=bol-5;
 	}
 	
-	if(precio>50) {
-		vol++;
+	if(precio>=51) {
+		bol++;
 	}
 	if (existe) {
-		gu.insertarVoletos(id,ultimaCompra,precio,vol);
+		gu.insertarBoletos(id,ultimaCompra,precio,bol);
 	}
+	this.bol=bol;
 	}
 	
-
+public int getBoletos() {
+	return this.bol;
+}
 
 
 }

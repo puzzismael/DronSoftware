@@ -139,7 +139,7 @@ public class GestorUser {
 		
 	}
 
-	public void insertarVoletos(int id, int ultimaCompra, int precio, int vol) {
+	public void insertarBoletos(int id, int ultimaCompra, int precio, int vol) {
 		// TODO Auto-generated method stub
 		
 	}
