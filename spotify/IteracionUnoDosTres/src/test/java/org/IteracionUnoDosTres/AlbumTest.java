@@ -25,10 +25,16 @@ public class AlbumTest  extends TestCase{
 		//fail("Not yet implemented");
 	}
 	@Test
-	public boolean InsertarID()
-	{
+	public void testEliminarProductoExiste() {
 		Album albm =new Album();
-		//album.insertar();
-		return true;
+		albm.EliminarAlbum(1);
+		assertTrue(albm.getExistir());
+		
+	}
+	public void testEliminarProductoNoExiste() {
+		Album albm =new Album();
+		albm.EliminarAlbum(9);
+		assertTrue(!albm.getExistir());
+		
 	}
 }

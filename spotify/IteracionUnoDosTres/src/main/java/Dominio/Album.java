@@ -151,9 +151,24 @@ public void EliminarAlbum(int id)
 	}
 	if(existir)GestAlb.eliminar(id);
 }
+
+
+
 private boolean EstaEnBD(int id) {
-	// TODO Auto-generated method stub
-	return true;
+  int[]	vector = {1,2,3,4};
+  int cont=0;
+  boolean exis=false;
+  while(cont<vector.length) {
+	  if(vector[cont]==id) {
+		  exis=true;
+	  }
+	  cont++;
+  }
+	return exis;
+}
+public boolean getExistir()
+{
+return this.existir;	
 }
 }
 

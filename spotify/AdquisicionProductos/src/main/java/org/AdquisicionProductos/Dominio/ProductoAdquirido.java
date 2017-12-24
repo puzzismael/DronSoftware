@@ -6,6 +6,7 @@ import org.IntroducirAlbum.Persistencia.GestorAlbum;
 public class ProductoAdquirido {
 	double descuento=0;
 	double precio=0;
+	String ingreso;
 	public static void main(String[]args) {
 		ProductoAdquirido pa=new ProductoAdquirido();
 		
@@ -55,24 +56,20 @@ public class ProductoAdquirido {
 			descuento=0.6;
 		}else if(((edad>=40))&&((id<=200)&&(id>=101))){
 			descuento=0.7;
-		}else if(((edad>=12)&&(edad<=18))&&(id>=201)){
-			descuento=0.8;
-		}else if(((edad>=19)&&(edad<=39))&&(id>=201)) {
-			descuento=0.9;
-		}else if(((edad>=40))&&(id>=201)){
-			descuento=1;
 		}	
-		
 		
 		if(precio>=101){
 			descuento=descuento/2;
 		}
 		precio=precio*descuento;
 		this.precio=precio;
-		
+		if(producto.length()>=31||comprador.length()>=21) {
+			ingreso="error";}
+		else 
+		{ingreso="correcto";
+		}
 		GestorAdquisicionProductos GestorProd =new GestorAdquisicionProductos();
 		GestorProd.InsertarAdquisicion(id, edad, producto, comprador,precio,descuento);
-	
 	}
 	
 	
@@ -82,5 +79,9 @@ public class ProductoAdquirido {
 	}
 	public  double getPrecio() {
 		return this.precio;
+	}
+	public String getIngreso() {
+		// TODO Auto-generated method stub
+		return this.ingreso;
 	}
 }
